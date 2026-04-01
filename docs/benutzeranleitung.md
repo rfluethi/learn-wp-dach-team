@@ -20,7 +20,7 @@ Diese Anleitung richtet sich an alle Teammitglieder des Learn WP DACH Teams.
 
 Möchtest du ein Thema in die nächste Sitzung einbringen?
 
-1. [Issues](../../issues) → **New issue**
+1. [Issues](https://github.com/rfluethi/learn-wp-dach-team/issues) → **New issue**
 2. Vorlage **Traktandum** wählen
 3. Ausfüllen:
    - **Titel:** Kurzer, prägnanter Thementitel
@@ -40,7 +40,7 @@ Der Moderator verlinkt dein Traktandum im Sitzungs-Issue unter Punkt 6.
 
 **Wann:** 1 Woche vor der Sitzung
 
-1. [Issues](../../issues) → **New issue**
+1. [Issues](https://github.com/rfluethi/learn-wp-dach-team/issues) → **New issue**
 2. Vorlage **Sitzung** wählen
 3. Titel setzen: `Sitzung YYYY-MM-DD` (z.B. `Sitzung 2026-04-28`)
 4. Felder ausfüllen: Datum, Uhrzeit, Moderation, Protokollführung
@@ -49,7 +49,7 @@ Der Moderator verlinkt dein Traktandum im Sitzungs-Issue unter Punkt 6.
 **Vor der Sitzung:**
 - Alle eingereichten Traktanden-Issues unter Punkt 6 verlinken: `- [ ] #42`
 - Reihenfolge festlegen
-- Link zum [Aufgaben-Board](../../projects/1) unter Punkt 3 eintragen
+- Link zum [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) unter Punkt 3 eintragen
 
 ---
 
@@ -73,7 +73,7 @@ Der Moderator verlinkt dein Traktandum im Sitzungs-Issue unter Punkt 6.
 
 ## Aufgabe erfassen
 
-1. [Issues](../../issues) → **New issue**
+1. [Issues](https://github.com/rfluethi/learn-wp-dach-team/issues) → **New issue**
 2. Vorlage **Aufgabe** wählen
 3. Ausfüllen:
    - **Titel:** `Aufgabe: [kurze Beschreibung]`
@@ -91,7 +91,7 @@ Der Moderator verlinkt dein Traktandum im Sitzungs-Issue unter Punkt 6.
 
 ## Kanban Board nutzen
 
-Das [Aufgaben-Board](../../projects/1) zeigt alle offenen Aufgaben.
+Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle offenen Aufgaben.
 
 **Spalten:**
 
@@ -112,7 +112,7 @@ Das [Aufgaben-Board](../../projects/1) zeigt alle offenen Aufgaben.
 
 ## Protokolle finden
 
-**Alle Protokolle auf einen Blick:** → [README.md](../../blob/main/README.md) (wird automatisch aktualisiert)
+**Alle Protokolle auf einen Blick:** → [README.md](https://github.com/rfluethi/learn-wp-dach-team/blob/main/README.md) (wird automatisch aktualisiert)
 
 **Direktsuche:** Issues → Filter eingeben: `label:sitzung is:closed`
 
