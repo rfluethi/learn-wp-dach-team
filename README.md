@@ -2,22 +2,6 @@
 
 Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 19:00 Uhr statt.
 
-## Links
-
-| | |
-|---|---|
-| [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |
-| [Alle Issues](https://github.com/rfluethi/learn-wp-dach-team/issues) | Sitzungen, Traktanden und Aufgaben |
-| [Slack #training](https://dewp.slack.com) | Kommunikationskanal |
-
-## Dokumentation
-
-| Dokument | Beschreibung |
-|---|---|
-| [Konzept](docs/konzept.md) | Übersicht über das System |
-| [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |
-| [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |
-
 ## Nächste Sitzung
 
 | Sitzung |
@@ -36,5 +20,20 @@ Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des *
 | [Sitzung 2025-10-28](https://github.com/rfluethi/learn-wp-dach-team/issues/10) | 2026-04-01 |
 | [Sitzung 2025-09-23](https://github.com/rfluethi/learn-wp-dach-team/issues/9) | 2026-04-01 |
 | [Sitzung 2025-08-26](https://github.com/rfluethi/learn-wp-dach-team/issues/8) | 2026-04-01 |
+
+## Links
+
+| | |
+|---|---|
+| [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |
+| [Alle Issues](https://github.com/rfluethi/learn-wp-dach-team/issues) | Sitzungen, Traktanden und Aufgaben |
+
+## Dokumentation
+
+| Dokument | Beschreibung |
+|---|---|
+| [Konzept](docs/konzept.md) | Übersicht über das System |
+| [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |
+| [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |
 
 _Zuletzt aktualisiert: 2026-04-01_
