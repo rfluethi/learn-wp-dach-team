@@ -6,7 +6,6 @@ on:
 
 jobs:
   update-index:
-    # Nur ausführen wenn das geschlossene Issue das Label 'sitzung' hat
     if: contains(github.event.issue.labels.*.name, 'sitzung')
     runs-on: ubuntu-latest
     permissions:
@@ -20,7 +19,6 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
-          # Alle geschlossenen Sitzungs-Issues holen, nach Titel absteigend sortiert
           gh issue list \
             --repo ${{ github.repository }} \
             --label sitzung \
@@ -31,25 +29,23 @@ jobs:
               "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"' \
             > /tmp/protokolle.txt
 
-          # README.md neu aufbauen
-          cat > README.md << 'README'
-# Learn WP DACH – Team Repository
-
-Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**.
-
-- [Aufgaben-Board](../../projects/1)
-- [Alle Issues](../../issues)
-- [Slack: #training (dewp.slack.com)](https://dewp.slack.com)
-
-## Protokolle
-
-| Sitzung | Datum |
-|---|---|
-README
-
-          cat /tmp/protokolle.txt >> README.md
-
-          printf "\n_Zuletzt aktualisiert: $(date '+%Y-%m-%d')_\n" >> README.md
+          {
+            echo "# Learn WP DACH – Team Repository"
+            echo ""
+            echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**."
+            echo ""
+            echo "- [Aufgaben-Board](../../projects/1)"
+            echo "- [Alle Issues](../../issues)"
+            echo "- [Slack: #training (dewp.slack.com)](https://dewp.slack.com)"
+            echo ""
+            echo "## Protokolle"
+            echo ""
+            echo "| Sitzung | Datum |"
+            echo "|---|---|"
+            cat /tmp/protokolle.txt
+            echo ""
+            echo "_Zuletzt aktualisiert: $(date '+%Y-%m-%d')_"
+          } > README.md
 
       - name: Änderungen committen und pushen
         run: |
