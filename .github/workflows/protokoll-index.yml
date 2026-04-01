@@ -1,0 +1,60 @@
+name: Protokoll-Index aktualisieren
+
+on:
+  issues:
+    types: [closed]
+
+jobs:
+  update-index:
+    # Nur ausführen wenn das geschlossene Issue das Label 'sitzung' hat
+    if: contains(github.event.issue.labels.*.name, 'sitzung')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      issues: read
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Protokoll-Index in README.md aktualisieren
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          # Alle geschlossenen Sitzungs-Issues holen, nach Titel absteigend sortiert
+          gh issue list \
+            --repo ${{ github.repository }} \
+            --label sitzung \
+            --state closed \
+            --limit 100 \
+            --json number,title,closedAt,url \
+            --jq 'sort_by(.title) | reverse | .[] |
+              "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"' \
+            > /tmp/protokolle.txt
+
+          # README.md neu aufbauen
+          cat > README.md << 'README'
+# Learn WP DACH – Team Repository
+
+Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**.
+
+- [Aufgaben-Board](../../projects/1)
+- [Alle Issues](../../issues)
+- [Slack: #training (dewp.slack.com)](https://dewp.slack.com)
+
+## Protokolle
+
+| Sitzung | Datum |
+|---|---|
+README
+
+          cat /tmp/protokolle.txt >> README.md
+
+          printf "\n_Zuletzt aktualisiert: $(date '+%Y-%m-%d')_\n" >> README.md
+
+      - name: Änderungen committen und pushen
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git diff --staged --quiet || git commit -m "Protokoll-Index aktualisiert: ${{ github.event.issue.title }}"
+          git push
