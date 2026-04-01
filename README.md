@@ -1,10 +1,22 @@
 # Learn WP DACH – Team Repository
 
-Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**.
+Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 19:00 Uhr statt.
 
-- [Aufgaben-Board](../../projects/1)
-- [Alle Issues](../../issues)
-- [Slack: #training (dewp.slack.com)](https://dewp.slack.com)
+## Links
+
+| | |
+|---|---|
+| [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |
+| [Alle Issues](https://github.com/rfluethi/learn-wp-dach-team/issues) | Sitzungen, Traktanden und Aufgaben |
+| [Slack #training](https://dewp.slack.com) | Kommunikationskanal |
+
+## Dokumentation
+
+| Dokument | Beschreibung |
+|---|---|
+| [Konzept](docs/konzept.md) | Übersicht über das System |
+| [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |
+| [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |
 
 ## Protokolle
 

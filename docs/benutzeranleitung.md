@@ -103,10 +103,19 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 | Blockiert | Warte auf etwas – Abhängigkeit im Issue beschreiben |
 | Erledigt | Fertig |
 
-**Tipps:**
+**Vordefinierte Views:**
+
+| View | Link | Zeigt |
+|---|---|---|
+| My Items | [Meine Aufgaben](https://github.com/users/rfluethi/projects/11/views/5?sliceBy%5Bvalue%5D=In+Arbeit) | Nur eigene Aufgaben |
+| Lerngruppe | [Lerngruppen-Aufgaben](https://github.com/users/rfluethi/projects/11/views/6) | Alle Aufgaben mit Label `lerngruppe` |
+| Webseite | [Webseiten-Aufgaben](https://github.com/users/rfluethi/projects/11/views/7) | Alle Aufgaben mit Label `webseite` |
+| Sitzungsvorbereitung | [Traktanden](https://github.com/users/rfluethi/projects/11/views/8?groupedBy%5BcolumnId%5D=Assignees&sliceBy%5BcolumnId%5D=Assignees) | Vorgeschlagene Diskussionsthemen |
+| Protokolle | [Protokoll-Archiv](https://github.com/users/rfluethi/projects/11/views/10) | Alle geschlossenen Sitzungs-Issues |
+
+**Weitere Tipps:**
 - Issues per Drag & Drop zwischen Spalten verschieben
-- Eigene Aufgaben anzeigen: Filter `assignee:@me`
-- Nur Lerngruppen-Themen: Filter `label:lerngruppe`
+- Eigene Aufgaben: Filter `assignee:@me` im Suchfeld
 
 ---
 

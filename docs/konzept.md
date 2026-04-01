@@ -67,6 +67,7 @@ Sitzungs-Issue  →  Beschlüsse   →  Protokoll-Archiv
 | `lerngruppe` | Themen rund um Lerngruppen |
 | `webseite` | Themen rund um learn-wp-dach.org |
 | `übersetzung` | Übersetzungsprojekte |
+| `organisation` | Organisatorische Aufgaben |
 
 ---
 

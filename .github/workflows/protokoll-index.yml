@@ -2,7 +2,7 @@ name: Protokoll-Index aktualisieren
 
 on:
   issues:
-    types: [closed]
+    types: [opened, labeled, closed, reopened]
 
 jobs:
   update-index:
@@ -29,17 +29,27 @@ jobs:
               "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"' \
             > /tmp/protokolle.txt
 
+          gh issue list \
+            --repo ${{ github.repository }} \
+            --label sitzung \
+            --state open \
+            --limit 10 \
+            --json number,title,url \
+            --jq 'sort_by(.title) | reverse | .[] |
+              "| [" + .title + "](" + .url + ") |"' \
+            > /tmp/naechste.txt
+
           {
             echo "# Learn WP DACH – Team Repository"
             echo ""
-            echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**."
+            echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 19:00 Uhr statt."
             echo ""
             echo "## Links"
             echo ""
             echo "| | |"
             echo "|---|---|"
-            echo "| [Aufgaben-Board](../../projects/1) | Kanban Board mit allen offenen Aufgaben |"
-            echo "| [Alle Issues](../../issues) | Sitzungen, Traktanden und Aufgaben |"
+            echo "| [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |"
+            echo "| [Alle Issues](https://github.com/${{ github.repository }}/issues) | Sitzungen, Traktanden und Aufgaben |"
             echo "| [Slack #training](https://dewp.slack.com) | Kommunikationskanal |"
             echo ""
             echo "## Dokumentation"
@@ -50,6 +60,14 @@ jobs:
             echo "| [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |"
             echo "| [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |"
             echo ""
+            if [ -s /tmp/naechste.txt ]; then
+              echo "## Nächste Sitzung"
+              echo ""
+              echo "| Sitzung |"
+              echo "|---|"
+              cat /tmp/naechste.txt
+              echo ""
+            fi
             echo "## Protokolle"
             echo ""
             echo "| Sitzung | Datum |"
