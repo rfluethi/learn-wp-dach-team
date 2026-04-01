@@ -20,8 +20,8 @@ body:
     id: uhrzeit
     attributes:
       label: Uhrzeit
-      placeholder: "19:00 Uhr"
-      description: "Standard: 19:00 Uhr (letzter Dienstag im Monat)"
+      placeholder: "20:00 Uhr"
+      description: "Standard: 20:00 Uhr (letzter Dienstag im Monat)"
 
   - type: input
     id: moderation
@@ -51,7 +51,7 @@ body:
         - [ ] 1. Begrüssung (+ ev. Vorstellungsrunde)
         - [ ] 2. News: Was gibt es Neues in der WordPress-Welt?
         - [ ] 3. Status offene Arbeiten → [Aufgaben-Board](https://github.com/REPO/projects/1)
-        - [ ] 4. Status Projekte (Übersetzungen, Lektionen, Workshops)
+        - [ ] 4. Status Projekte (Übersetzungen, Lektionen, Workshops) → [LearnWP Content - Localization](https://github.com/orgs/WordPress/projects/104/views/12)
         - [ ] 5. Status Lerngruppen
 
         ---
@@ -82,7 +82,7 @@ body:
     id: aufgaben
     attributes:
       label: Aufgaben
-      description: "Links zu Aufgaben-Issues mit Verantwortlichen (z.B. #23 @rico)"
+      description: "Links zu Aufgaben-Issues mit Verantwortlichen (z.B. #23 @rfluethi)"
       placeholder: "- "
 
   - type: textarea
