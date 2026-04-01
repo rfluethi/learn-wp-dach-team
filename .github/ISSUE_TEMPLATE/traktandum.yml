@@ -1,0 +1,43 @@
+name: "Traktandum"
+description: "Diskussionsthema für die nächste Sitzung vorschlagen"
+title: "Traktandum: "
+labels: ["traktandum"]
+body:
+  - type: input
+    id: vorgeschlagen-von
+    attributes:
+      label: Vorgeschlagen von
+      placeholder: "Name"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: art
+    attributes:
+      label: Art des Traktandums
+      options:
+        - "Information (kein Entscheid nötig)"
+        - "Diskussion (Meinungsaustausch)"
+        - "Entscheidung (Beschluss erforderlich)"
+    validations:
+      required: true
+
+  - type: input
+    id: zeitbedarf
+    attributes:
+      label: Geschätzter Zeitbedarf
+      placeholder: "10 Minuten"
+
+  - type: textarea
+    id: beschreibung
+    attributes:
+      label: Beschreibung
+      description: "Was ist das Thema, warum ist es relevant?"
+    validations:
+      required: true
+
+  - type: textarea
+    id: ergebnis
+    attributes:
+      label: Gewünschtes Ergebnis
+      description: "Was soll am Ende dieser Sitzung entschieden oder besprochen sein?"

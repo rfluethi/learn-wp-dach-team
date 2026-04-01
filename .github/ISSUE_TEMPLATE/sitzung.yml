@@ -1,0 +1,92 @@
+name: "Sitzung"
+description: "Monatliches Team-Meeting – Traktandenliste und Beschlussprotokoll"
+title: "Sitzung YYYY-MM-DD"
+labels: ["sitzung"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## Sitzungsdetails
+
+  - type: input
+    id: datum
+    attributes:
+      label: Datum
+      placeholder: "2026-04-28"
+    validations:
+      required: true
+
+  - type: input
+    id: uhrzeit
+    attributes:
+      label: Uhrzeit
+      placeholder: "19:00 Uhr"
+      description: "Standard: 19:00 Uhr (letzter Dienstag im Monat)"
+
+  - type: input
+    id: moderation
+    attributes:
+      label: Moderation
+      placeholder: "Name"
+    validations:
+      required: true
+
+  - type: input
+    id: protokoll
+    attributes:
+      label: Protokollführung
+      placeholder: "Name"
+      description: "Rotierende Zuständigkeit"
+    validations:
+      required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Traktanden
+
+        **Feste Traktanden** (immer gleich):
+
+        - [ ] 1. Begrüssung (+ ev. Vorstellungsrunde)
+        - [ ] 2. News: Was gibt es Neues in der WordPress-Welt?
+        - [ ] 3. Status offene Arbeiten → [Aufgaben-Board](https://github.com/REPO/projects/1)
+        - [ ] 4. Status Projekte (Übersetzungen, Lektionen, Workshops)
+        - [ ] 5. Status Lerngruppen
+
+        ---
+
+  - type: textarea
+    id: diskussionsthemen
+    attributes:
+      label: "6. Diskussionsthemen"
+      description: "Issue-Nummern der eingereichten Traktanden eintragen. Bis zur Sitzung ergänzen."
+      placeholder: |
+        - [ ] #
+        - [ ] #
+
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## Protokoll *(nach der Sitzung ausfüllen)*
+
+  - type: textarea
+    id: beschluesse
+    attributes:
+      label: Beschlüsse
+      description: "Alle Entscheidungen aus der Sitzung (eine pro Zeile)"
+      placeholder: "- "
+
+  - type: textarea
+    id: aufgaben
+    attributes:
+      label: Aufgaben
+      description: "Links zu Aufgaben-Issues mit Verantwortlichen (z.B. #23 @rico)"
+      placeholder: "- "
+
+  - type: textarea
+    id: notizen
+    attributes:
+      label: Notizen
+      description: "Kernaussagen und Hintergrundinfos pro Thema"
