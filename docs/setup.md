@@ -73,20 +73,24 @@ gh label create "übersetzung"     --repo "$REPO" --color "006b75" --description
 1. GitHub → Tab **Projects** → **New project**
 2. Vorlage: **Board**
 3. Name: `Learn WP DACH – Aufgaben`
-4. Spalten erstellen:
+4. Spalten erstellen (Traktanden, Offen, In Arbeit, Blockiert, Erledigt):
 
-| Spalte | Beschreibung |
-|---|---|
-| Traktanden | Vorgeschlagene Diskussionsthemen |
-| Offen | Aufgaben, noch nicht begonnen |
-| In Arbeit | Aufgaben aktiv in Bearbeitung |
-| Blockiert | Aufgaben mit Blocker |
-| Erledigt | Abgeschlossene Aufgaben |
+   | Spalte | Beschreibung |
+   | --- | --- |
+   | Traktanden | Vorgeschlagene Diskussionsthemen |
+   | Offen | Aufgaben, noch nicht begonnen |
+   | In Arbeit | Aufgaben aktiv in Bearbeitung |
+   | Blockiert | Aufgaben mit Blocker |
+   | Erledigt | Abgeschlossene Aufgaben |
 
 5. Automation einrichten: Project → **`...`** → **Workflows**
    - *Item added to project* → Status: **Offen**
    - *Item closed* → Status: **Erledigt**
    - *Item reopened* → Status: **Offen**
+6. Feld **Estimate** erstellen: Project → **`...`** → **Settings** → **Custom fields** → **Add field**
+   - Typ: **Number**
+   - Name: `Estimate`
+   - Dieses Feld nimmt den geschätzten Zeitbedarf pro Traktandum in Minuten auf und erlaubt eine Gesamtschätzung der Sitzungsdauer.
 
 ---
 
@@ -102,13 +106,15 @@ git commit -m "Automatischer Protokoll-Index via GitHub Actions"
 git push
 ```
 
-**Workflow-Inhalt:**
+**Workflow-Inhalt** (entspricht `.github/workflows/protokoll-index.yml`)**:**
 
 ```yaml
 name: Protokoll-Index aktualisieren
+
 on:
   issues:
     types: [closed]
+
 jobs:
   update-index:
     if: contains(github.event.issue.labels.*.name, 'sitzung')
@@ -116,8 +122,10 @@ jobs:
     permissions:
       contents: write
       issues: read
+
     steps:
       - uses: actions/checkout@v4
+
       - name: Protokoll-Index in README.md aktualisieren
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -131,23 +139,54 @@ jobs:
             --jq 'sort_by(.title) | reverse | .[] |
               "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"' \
             > /tmp/protokolle.txt
+
+          gh issue list \
+            --repo ${{ github.repository }} \
+            --label sitzung \
+            --state open \
+            --limit 10 \
+            --json number,title,url \
+            --jq 'sort_by(.title) | reverse | .[] |
+              "| [" + .title + "](" + .url + ") |"' \
+            > /tmp/naechste.txt
+
           {
             echo "# Learn WP DACH – Team Repository"
             echo ""
-            echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**."
+            echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt."
             echo ""
-            echo "- [Aufgaben-Board](../../projects/1)"
-            echo "- [Alle Issues](../../issues)"
-            echo "- [Slack: #training (dewp.slack.com)](https://dewp.slack.com)"
-            echo ""
+            if [ -s /tmp/naechste.txt ]; then
+              echo "## Nächste Sitzung"
+              echo ""
+              echo "| Sitzung |"
+              echo "|---|"
+              cat /tmp/naechste.txt
+              echo ""
+            fi
             echo "## Protokolle"
             echo ""
             echo "| Sitzung | Datum |"
             echo "|---|---|"
             cat /tmp/protokolle.txt
             echo ""
+            echo "## Links"
+            echo ""
+            echo "| | |"
+            echo "|---|---|"
+            echo "| [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |"
+            echo "| [Alle Issues](https://github.com/${{ github.repository }}/issues) | Sitzungen, Traktanden und Aufgaben |"
+            echo ""
+            echo "## Dokumentation"
+            echo ""
+            echo "| Dokument | Beschreibung |"
+            echo "|---|---|"
+            echo "| [Konzept](docs/konzept.md) | Übersicht über das System |"
+            echo "| [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |"
+            echo "| [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |"
+            echo ""
             echo "_Zuletzt aktualisiert: $(date '+%Y-%m-%d')_"
           } > README.md
+
       - name: Änderungen committen und pushen
         run: |
           git config user.name "github-actions[bot]"

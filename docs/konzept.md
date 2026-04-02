@@ -41,14 +41,13 @@ Jede Sitzung folgt dieser festen Grundstruktur:
 ## Workflow im Überblick
 
 ```
-1 Woche vorher     Sitzung         Nach der Sitzung
-──────────────     ───────         ────────────────
-Moderator          Protokoll-      Issue wird
-erstellt           führer füllt    geschlossen →
-Sitzungs-Issue  →  Beschlüsse   →  Protokoll-Archiv
-                   und Aufgaben
-                   aus
-                        │
+1 Woche vorher     Sitzung              Nach der Sitzung     Review
+──────────────     ───────              ────────────────     ──────
+Moderator          Protokollführer      Status →             Team gibt OK
+erstellt        →  füllt Beschlüsse  →  "Blockiert"       →  im Kommentar →
+Sitzungs-Issue     und Aufgaben aus     Protokoll-Review       Issue wird
+Status:                                 läuft                  geschlossen →
+"In Arbeit"             │                                      Protokoll-Archiv
                         ▼
                    Aufgaben-Issues → Kanban Board
 ```
@@ -80,7 +79,7 @@ Sitzungs-Issue  →  Beschlüsse   →  Protokoll-Archiv
 | Traktanden | Vorgeschlagene Diskussionsthemen |
 | Offen | Aufgaben, noch nicht begonnen |
 | In Arbeit | Aufgaben aktiv in Bearbeitung |
-| Blockiert | Aufgaben mit Blocker |
+| Blockiert | Aufgaben mit Blocker – oder Sitzungsprotokoll wartet auf Review |
 | Erledigt | Abgeschlossene Aufgaben |
 
 > Sitzungs-Issues erscheinen **nicht** im Kanban – sie sind das Protokoll-Archiv und werden über die Protokoll-View oder die Suche gefunden.

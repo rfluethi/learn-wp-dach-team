@@ -2,7 +2,7 @@ name: Protokoll-Index aktualisieren
 
 on:
   issues:
-    types: [opened, labeled, closed, reopened]
+    types: [closed]
 
 jobs:
   update-index:
@@ -42,38 +42,40 @@ jobs:
           {
             echo "# Learn WP DACH – Team Repository"
             echo ""
-            echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 19:00 Uhr statt."
+            echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt."
             echo ""
             if [ -s /tmp/naechste.txt ]; then
               echo "## Nächste Sitzung"
               echo ""
               echo "| Sitzung |"
-              echo "|---|"
+              echo "| --- |"
               cat /tmp/naechste.txt
               echo ""
             fi
             echo "## Protokolle"
             echo ""
             echo "| Sitzung | Datum |"
-            echo "|---|---|"
+            echo "| --- | --- |"
             cat /tmp/protokolle.txt
             echo ""
             echo "## Links"
             echo ""
             echo "| | |"
-            echo "|---|---|"
+            echo "| --- | --- |"
             echo "| [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |"
             echo "| [Alle Issues](https://github.com/${{ github.repository }}/issues) | Sitzungen, Traktanden und Aufgaben |"
             echo ""
             echo "## Dokumentation"
             echo ""
             echo "| Dokument | Beschreibung |"
-            echo "|---|---|"
+            echo "| --- | --- |"
             echo "| [Konzept](docs/konzept.md) | Übersicht über das System |"
             echo "| [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |"
             echo "| [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |"
+            echo "| [Mitmachen](CONTRIBUTING.md) | Wie du dich beteiligen kannst |"
+            echo "| [Verhaltenskodex](CODE_OF_CONDUCT.md) | Unsere Verhaltensregeln |"
             echo ""
-            echo "_Zuletzt aktualisiert: $(date '+%Y-%m-%d')_"
+            echo "Zuletzt aktualisiert: $(date '+%Y-%m-%d')"
           } > README.md
 
       - name: Änderungen committen und pushen

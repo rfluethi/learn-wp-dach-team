@@ -1,18 +1,18 @@
 # Learn WP DACH – Team Repository
 
-Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 19:00 Uhr statt.
+Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt.
 
 ## Nächste Sitzung
 
 | Sitzung |
-|---|
+| --- |
 | [Sitzung 2026-04-28](https://github.com/rfluethi/learn-wp-dach-team/issues/7) |
 | [Sitzung 2026-03-31](https://github.com/rfluethi/learn-wp-dach-team/issues/5) |
 
 ## Protokolle
 
 | Sitzung | Datum |
-|---|---|
+| --- | --- |
 | [Sitzung 2026-02-24](https://github.com/rfluethi/learn-wp-dach-team/issues/14) | 2026-04-01 |
 | [Sitzung 2026-01-27](https://github.com/rfluethi/learn-wp-dach-team/issues/13) | 2026-04-01 |
 | [Sitzung 2025-12-16](https://github.com/rfluethi/learn-wp-dach-team/issues/12) | 2026-04-01 |
@@ -24,16 +24,18 @@ Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des *
 ## Links
 
 | | |
-|---|---|
+| --- | --- |
 | [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |
 | [Alle Issues](https://github.com/rfluethi/learn-wp-dach-team/issues) | Sitzungen, Traktanden und Aufgaben |
 
 ## Dokumentation
 
 | Dokument | Beschreibung |
-|---|---|
+| --- | --- |
 | [Konzept](docs/konzept.md) | Übersicht über das System |
 | [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |
 | [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |
+| [Mitmachen](CONTRIBUTING.md) | Wie du dich beteiligen kannst |
+| [Verhaltenskodex](CODE_OF_CONDUCT.md) | Unsere Verhaltensregeln |
 
-_Zuletzt aktualisiert: 2026-04-02_
+Zuletzt aktualisiert: 2026-04-02

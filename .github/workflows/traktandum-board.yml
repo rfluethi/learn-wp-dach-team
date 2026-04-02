@@ -15,6 +15,8 @@ jobs:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           ISSUE_NODE_ID: ${{ github.event.issue.node_id }}
         run: |
+          set -e
+
           # Projekt-ID ermitteln (Projekt Nr. 11 von rfluethi)
           PROJECT_ID=$(gh api graphql -f query='
             query {
@@ -25,6 +27,11 @@ jobs:
               }
             }
           ' --jq '.data.user.projectV2.id')
+
+          if [ -z "$PROJECT_ID" ] || [ "$PROJECT_ID" = "null" ]; then
+            echo "::error::Projekt nicht gefunden. Projektnummer oder Benutzername prüfen."
+            exit 1
+          fi
 
           # Status-Feld-ID und Option-ID für "Traktanden" ermitteln
           FIELD_INFO=$(gh api graphql -f query='
@@ -51,6 +58,16 @@ jobs:
           FIELD_ID=$(echo "$FIELD_INFO" | jq -r '.data.node.fields.nodes[] | select(.name == "Status") | .id')
           OPTION_ID=$(echo "$FIELD_INFO" | jq -r '.data.node.fields.nodes[] | select(.name == "Status") | .options[] | select(.name == "Traktanden") | .id')
 
+          if [ -z "$FIELD_ID" ] || [ "$FIELD_ID" = "null" ]; then
+            echo "::error::Status-Feld nicht gefunden. Board-Konfiguration prüfen."
+            exit 1
+          fi
+
+          if [ -z "$OPTION_ID" ] || [ "$OPTION_ID" = "null" ]; then
+            echo "::error::Status-Option 'Traktanden' nicht gefunden. Spaltenbezeichnung im Board prüfen."
+            exit 1
+          fi
+
           # Issue zum Projekt hinzufügen (falls noch nicht vorhanden)
           ITEM_ID=$(gh api graphql -f query='
             mutation($projectId: ID!, $contentId: ID!) {
@@ -61,6 +78,11 @@ jobs:
               }
             }
           ' -f projectId="$PROJECT_ID" -f contentId="$ISSUE_NODE_ID" --jq '.data.addProjectV2ItemById.item.id')
+
+          if [ -z "$ITEM_ID" ] || [ "$ITEM_ID" = "null" ]; then
+            echo "::error::Issue konnte nicht zum Projekt hinzugefügt werden."
+            exit 1
+          fi
 
           # Status auf "Traktanden" setzen
           gh api graphql -f query='

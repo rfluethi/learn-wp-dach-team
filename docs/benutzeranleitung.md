@@ -80,6 +80,8 @@ Der Prozess läuft in drei Schritten ab:
 6. Sobald mindestens ein OK-Kommentar eingegangen ist: Issue **schliessen** → wird automatisch ins Protokoll-Archiv aufgenommen
 
 > Das geschlossene Issue ist das offizielle Beschlussprotokoll. Das Vier-Augen-Prinzip stellt sicher, dass das Protokoll von mindestens einem weiteren Teammitglied geprüft wurde.
+>
+> **Timeout:** Falls nach 3 Werktagen kein OK eingegangen ist, kann die Protokollführung das Issue auch ohne Kommentar schliessen und in der nächsten Sitzung kurz darauf hinweisen.
 
 ---
 
