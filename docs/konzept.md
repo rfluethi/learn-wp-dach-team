@@ -41,15 +41,16 @@ Jede Sitzung folgt dieser festen Grundstruktur:
 ## Workflow im Überblick
 
 ```
-1 Woche vorher     Sitzung              Nach der Sitzung     Review
-──────────────     ───────              ────────────────     ──────
+1 Woche vorher     Sitzung              Nach der Sitzung     Review (max. 3 Werktage)
+──────────────     ───────              ────────────────     ───────────────────────
 Moderator          Protokollführer      Status →             Team gibt OK
 erstellt        →  füllt Beschlüsse  →  "Blockiert"       →  im Kommentar →
 Sitzungs-Issue     und Aufgaben aus     Protokoll-Review       Issue wird
-Status:                                 läuft                  geschlossen →
-"In Arbeit"             │                                      Protokoll-Archiv
-                        ▼
-                   Aufgaben-Issues → Kanban Board
+Board-Status:                           läuft                  geschlossen →
+"In Arbeit"             │               (Timeout: 3 Werk-      Protokoll-Archiv
+                        ▼               tage, dann direkt
+                   Aufgaben-Issues      schliessen)
+                   → Kanban Board
 ```
 
 ---

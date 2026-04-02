@@ -109,7 +109,7 @@ git push
 
 **Workflow-Inhalt** (entspricht `.github/workflows/protokoll-index.yml`)**:**
 
-> Hinweis: Der Workflow benötigt zusätzlich das Secret `GH_PAT` (siehe Schritt 6b), um Sitzungen mit Status "In Arbeit" aus dem Kanban Board abzufragen.
+> Hinweis: Der Workflow benötigt das Secret `GH_PAT` (siehe Schritt 6b), um offene Sitzungen nach Board-Status zu filtern und nach Jahr zu gruppieren. Manueller Start: Repository → **Actions** → **Protokoll-Index aktualisieren** → **Run workflow**.
 
 ```yaml
 name: Protokoll-Index aktualisieren
@@ -117,10 +117,11 @@ name: Protokoll-Index aktualisieren
 on:
   issues:
     types: [closed]
+  workflow_dispatch:
 
 jobs:
   update-index:
-    if: contains(github.event.issue.labels.*.name, 'sitzung')
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, 'sitzung')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -134,29 +135,27 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_PAT_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          # Abgeschlossene Sitzungen
+          # Abgeschlossene Sitzungen – nach Jahr gruppiert
           gh issue list \
             --repo ${{ github.repository }} \
             --label sitzung \
             --state closed \
             --limit 100 \
             --json number,title,closedAt,url \
-            --jq 'sort_by(.title) | reverse | .[] |
-              "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"' \
+            --jq '
+              sort_by(.title) | reverse |
+              group_by(.title | split(" ")[1] | split("-")[0]) | reverse |
+              .[] |
+              (.[0].title | split(" ")[1] | split("-")[0]) as $year |
+              (
+                ["#### " + $year, "", "| Sitzung | Datum |", "| --- | --- |"] +
+                [.[] | "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"] +
+                [""]
+              ) | .[]
+            ' \
             > /tmp/protokolle.txt
 
-          # Offene Sitzungen (Nächste Sitzung)
-          gh issue list \
-            --repo ${{ github.repository }} \
-            --label sitzung \
-            --state open \
-            --limit 10 \
-            --json number,title,url \
-            --jq 'sort_by(.title) | reverse | .[] |
-              "| [" + .title + "](" + .url + ") |"' \
-            > /tmp/naechste.txt
-
-          # Sitzungen mit Status "In Arbeit" aus dem Kanban Board
+          # Offene Sitzungen – nach Board-Status in Nächste/In-Bearbeitung aufgeteilt
           GH_TOKEN="$GH_PAT_TOKEN" gh api graphql -f query='
             query {
               user(login: "rfluethi") {
@@ -195,17 +194,23 @@ jobs:
             select(.content != null) |
             select(.content.state == "OPEN") |
             select(.content.labels.nodes | map(.name) | index("sitzung") != null) |
-            select(.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | (index("In Arbeit") != null or index("Blockiert") != null)) |
-            "| [" + .content.title + "](" + .content.url + ") |"
-          ' > /tmp/in-arbeit.txt || true
+            (.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | .[0]) as $status |
+            if ($status == "In Arbeit" or $status == "Blockiert") then
+              "in-arbeit\t| [" + .content.title + "](" + .content.url + ") |"
+            elif ($status == null or $status == "Offen") then
+              "naechste\t| [" + .content.title + "](" + .content.url + ") |"
+            else empty end
+          ' | tee >(grep "^in-arbeit" | cut -f2 > /tmp/in-arbeit.txt) | grep "^naechste" | cut -f2 > /tmp/naechste.txt || true
 
           {
             echo "# Learn WP DACH – Team Repository"
             echo ""
             echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt."
             echo ""
+            echo "## Sitzungen"
+            echo ""
             if [ -s /tmp/naechste.txt ]; then
-              echo "## Nächste Sitzung"
+              echo "### Nächste Sitzung"
               echo ""
               echo "| Sitzung |"
               echo "| --- |"
@@ -213,19 +218,16 @@ jobs:
               echo ""
             fi
             if [ -s /tmp/in-arbeit.txt ]; then
-              echo "## In Bearbeitung"
+              echo "### In Bearbeitung"
               echo ""
               echo "| Sitzung |"
               echo "| --- |"
               cat /tmp/in-arbeit.txt
               echo ""
             fi
-            echo "## Protokolle"
+            echo "### Protokolle"
             echo ""
-            echo "| Sitzung | Datum |"
-            echo "| --- | --- |"
             cat /tmp/protokolle.txt
-            echo ""
             echo "## Links"
             echo ""
             echo "| | |"
@@ -240,8 +242,11 @@ jobs:
             echo "| [Konzept](docs/konzept.md) | Übersicht über das System |"
             echo "| [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |"
             echo "| [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |"
-            echo "| [Mitmachen](CONTRIBUTING.md) | Wie du dich beteiligen kannst |"
-            echo "| [Verhaltenskodex](CODE_OF_CONDUCT.md) | Unsere Verhaltensregeln |"
+            echo ""
+            echo "## Mitmachen"
+            echo ""
+            echo "- [Wie du dich beteiligen kannst](CONTRIBUTING.md)"
+            echo "- [Verhaltenskodex](CODE_OF_CONDUCT.md)"
             echo ""
             echo "## Lizenz"
             echo ""
@@ -326,6 +331,22 @@ git push
 Repository → **Settings** → **Collaborators** → **Add people**
 
 Alle Teammitglieder brauchen einen GitHub-Account.
+
+> Alle neuen Teammitglieder sollten [CONTRIBUTING.md](../CONTRIBUTING.md) und [CODE_OF_CONDUCT.md](../CODE_OF_CONDUCT.md) lesen, bevor sie aktiv werden.
+
+---
+
+## Schritt 10: Branch-Protection einrichten *(optional)*
+
+> **Hinweis:** Die GitHub Actions Workflows committen direkt auf `main`. Branch-Protection-Rules müssen daher so konfiguriert werden, dass `github-actions[bot]` Pushes bypassen darf.
+
+1. Repository → **Settings** → **Branches** → **Add branch ruleset**
+2. Regelname: `main protection`
+3. Target: `main`
+4. Regeln aktivieren:
+   - **Require a pull request before merging** *(für manuelle Änderungen)*
+   - **Allow specified actors to bypass** → `github-actions[bot]` hinzufügen
+5. **Save changes**
 
 ---
 

@@ -51,15 +51,17 @@ Der Prozess läuft in drei Schritten ab:
 4. Felder ausfüllen: Datum, Uhrzeit, Moderation, Protokollführung
 5. Issue erstellen → das ist die Traktandenliste
 
+> Das Label `sitzung` wird durch die Vorlage automatisch gesetzt – kein manuelles Labeling nötig.
+
 ---
 
 ### Schritt 2: Sitzung vorbereiten *(Moderation, vor der Sitzung)*
 
 1. Alle eingereichten Traktanden-Issues unter **Punkt 6 (Diskussionsthemen)** verlinken: `- [ ] #42`
 2. Reihenfolge der Traktanden festlegen
-3. Issue-Status auf **In Arbeit** setzen: [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) → Issue anklicken → Status ändern
+3. **Board-Status** auf **In Arbeit** setzen: [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) → Sitzungs-Issue anklicken → rechts im Panel **Status → In Arbeit** wählen
 
-> Der Status "In Arbeit" zeigt dem Team: Die Sitzung ist in Vorbereitung.
+> **Hinweis:** Der Board-Status (im Aufgaben-Board) ist unabhängig vom GitHub-Issue-Status (offen/geschlossen). Hier wird immer der **Board-Status** gemeint.
 
 ---
 
@@ -145,6 +147,9 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 ---
 
 ## Häufige Fragen
+
+**Wann wird das Label `beschluss` verwendet?**
+Das Label `beschluss` wird manuell auf ein Traktandum-Issue gesetzt, wenn daraus ein formeller Entscheid resultiert ist. So sind alle Beschlüsse über die Suche `label:beschluss` auffindbar.
 
 **Kann ich ein Traktandum auch spontan in der Sitzung einbringen?**
 Ja – der Moderator fügt es direkt in Punkt 6 des Sitzungs-Issues ein, ohne separates Issue.
