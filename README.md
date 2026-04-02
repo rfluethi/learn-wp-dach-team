@@ -2,24 +2,33 @@
 
 Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt.
 
-## Nächste Sitzung
+## Sitzungen
+
+### Nächste Sitzung
 
 | Sitzung |
 | --- |
 | [Sitzung 2026-04-28](https://github.com/rfluethi/learn-wp-dach-team/issues/7) |
 
-## In Bearbeitung
+### In Bearbeitung
 
 | Sitzung |
 | --- |
 | [Sitzung 2026-03-31](https://github.com/rfluethi/learn-wp-dach-team/issues/5) |
 
-## Protokolle
+### Protokolle
+
+#### 2026
 
 | Sitzung | Datum |
 | --- | --- |
 | [Sitzung 2026-02-24](https://github.com/rfluethi/learn-wp-dach-team/issues/14) | 2026-04-01 |
 | [Sitzung 2026-01-27](https://github.com/rfluethi/learn-wp-dach-team/issues/13) | 2026-04-01 |
+
+#### 2025
+
+| Sitzung | Datum |
+| --- | --- |
 | [Sitzung 2025-12-16](https://github.com/rfluethi/learn-wp-dach-team/issues/12) | 2026-04-01 |
 | [Sitzung 2025-11-26](https://github.com/rfluethi/learn-wp-dach-team/issues/11) | 2026-04-01 |
 | [Sitzung 2025-10-28](https://github.com/rfluethi/learn-wp-dach-team/issues/10) | 2026-04-01 |
@@ -40,8 +49,11 @@ Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des *
 | [Konzept](docs/konzept.md) | Übersicht über das System |
 | [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |
 | [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |
-| [Mitmachen](CONTRIBUTING.md) | Wie du dich beteiligen kannst |
-| [Verhaltenskodex](CODE_OF_CONDUCT.md) | Unsere Verhaltensregeln |
+
+## Mitmachen
+
+- [Wie du dich beteiligen kannst](CONTRIBUTING.md)
+- [Verhaltenskodex](CODE_OF_CONDUCT.md)
 
 ## Lizenz
 

@@ -21,18 +21,27 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_PAT_TOKEN: ${{ secrets.GH_PAT }}
         run: |
-          # Abgeschlossene Sitzungen
+          # Abgeschlossene Sitzungen – nach Jahr gruppiert
           gh issue list \
             --repo ${{ github.repository }} \
             --label sitzung \
             --state closed \
             --limit 100 \
             --json number,title,closedAt,url \
-            --jq 'sort_by(.title) | reverse | .[] |
-              "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"' \
+            --jq '
+              sort_by(.title) | reverse |
+              group_by(.title | split(" ")[1] | split("-")[0]) | reverse |
+              .[] |
+              (.[0].title | split(" ")[1] | split("-")[0]) as $year |
+              (
+                ["#### " + $year, "", "| Sitzung | Datum |", "| --- | --- |"] +
+                [.[] | "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"] +
+                [""]
+              ) | .[]
+            ' \
             > /tmp/protokolle.txt
 
-          # Sitzungen mit Status "In Arbeit" aus dem Kanban Board
+          # Offene Sitzungen – nach Board-Status aufgeteilt
           GH_TOKEN="$GH_PAT_TOKEN" gh api graphql -f query='
             query {
               user(login: "rfluethi") {
@@ -71,7 +80,6 @@ jobs:
             select(.content != null) |
             select(.content.state == "OPEN") |
             select(.content.labels.nodes | map(.name) | index("sitzung") != null) |
-            . as $item |
             (.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | .[0]) as $status |
             if ($status == "In Arbeit" or $status == "Blockiert") then
               "in-arbeit\t| [" + .content.title + "](" + .content.url + ") |"
@@ -85,8 +93,10 @@ jobs:
             echo ""
             echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt."
             echo ""
+            echo "## Sitzungen"
+            echo ""
             if [ -s /tmp/naechste.txt ]; then
-              echo "## Nächste Sitzung"
+              echo "### Nächste Sitzung"
               echo ""
               echo "| Sitzung |"
               echo "| --- |"
@@ -94,19 +104,16 @@ jobs:
               echo ""
             fi
             if [ -s /tmp/in-arbeit.txt ]; then
-              echo "## In Bearbeitung"
+              echo "### In Bearbeitung"
               echo ""
               echo "| Sitzung |"
               echo "| --- |"
               cat /tmp/in-arbeit.txt
               echo ""
             fi
-            echo "## Protokolle"
+            echo "### Protokolle"
             echo ""
-            echo "| Sitzung | Datum |"
-            echo "| --- | --- |"
             cat /tmp/protokolle.txt
-            echo ""
             echo "## Links"
             echo ""
             echo "| | |"
@@ -121,8 +128,11 @@ jobs:
             echo "| [Konzept](docs/konzept.md) | Übersicht über das System |"
             echo "| [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |"
             echo "| [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |"
-            echo "| [Mitmachen](CONTRIBUTING.md) | Wie du dich beteiligen kannst |"
-            echo "| [Verhaltenskodex](CODE_OF_CONDUCT.md) | Unsere Verhaltensregeln |"
+            echo ""
+            echo "## Mitmachen"
+            echo ""
+            echo "- [Wie du dich beteiligen kannst](CONTRIBUTING.md)"
+            echo "- [Verhaltenskodex](CODE_OF_CONDUCT.md)"
             echo ""
             echo "## Lizenz"
             echo ""
