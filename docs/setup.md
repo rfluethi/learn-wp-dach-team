@@ -34,6 +34,7 @@ mkdir -p .github/ISSUE_TEMPLATE
 ```
 
 Die drei Vorlagen-Dateien in `.github/ISSUE_TEMPLATE/` ablegen:
+
 - `sitzung.yml`
 - `traktandum.yml`
 - `aufgabe.yml`
@@ -194,7 +195,7 @@ jobs:
             select(.content != null) |
             select(.content.state == "OPEN") |
             select(.content.labels.nodes | map(.name) | index("sitzung") != null) |
-            select(.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | index("In Arbeit") != null) |
+            select(.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | (index("In Arbeit") != null or index("Blockiert") != null)) |
             "| [" + .content.title + "](" + .content.url + ") |"
           ' > /tmp/in-arbeit.txt || true
 
@@ -335,6 +336,7 @@ Sobald der Zielort feststeht (z.B. DE-WordPress-GitHub):
 Repository → **Settings** → **Danger Zone** → **Transfer ownership**
 
 Folgendes bleibt vollständig erhalten:
+
 - Alle Issues (inkl. Kommentare, Labels, Assignees)
 - GitHub Projects / Kanban Board
 - Labels, Milestones, Issue-Vorlagen

@@ -81,7 +81,7 @@ jobs:
             select(.content != null) |
             select(.content.state == "OPEN") |
             select(.content.labels.nodes | map(.name) | index("sitzung") != null) |
-            select(.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | index("In Arbeit") != null) |
+            select(.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | (index("In Arbeit") != null or index("Blockiert") != null)) |
             "| [" + .content.title + "](" + .content.url + ") |"
           ' > /tmp/in-arbeit.txt || true
 
