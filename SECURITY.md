@@ -8,7 +8,9 @@ Dieses Repository enthält keine Software-Releases. Die Sicherheitsrichtlinie be
 
 Falls du ein Sicherheitsproblem in einem der Workflows oder in der Repository-Konfiguration entdeckst (z.B. unsichere Verwendung von Secrets, Command-Injection-Risiken), melde es bitte **nicht** als öffentliches Issue.
 
-**Melde Sicherheitsprobleme direkt** über die [GitHub Security Advisories](../../security/advisories/new) Funktion dieses Repositories.
+**Melde Sicherheitsprobleme direkt** über die [GitHub Security Advisories](https://github.com/rfluethi/learn-wp-dach-team/security/advisories/new) Funktion dieses Repositories.
+
+> Falls die Security Advisories nicht verfügbar sind, bitte ein Issue mit dem Titel `[SECURITY] ...` erstellen und das Team-Mitglied direkt per Kommentar benachrichtigen.
 
 Wir werden das Problem so schnell wie möglich prüfen und beheben.
 
@@ -17,3 +19,4 @@ Wir werden das Problem so schnell wie möglich prüfen und beheben.
 - Personal Access Tokens (PAT) **nie** in den Code, in Issues oder in Chats einfügen – immer als [Repository-Secret](../../settings/secrets/actions) speichern.
 - Den PAT regelmässig erneuern (Empfehlung: alle 12 Monate).
 - Nur die minimal notwendigen Scopes für den PAT aktivieren (`repo` und `project`).
+- Secrets verwalten: [Repository → Settings → Secrets and variables → Actions](https://github.com/rfluethi/learn-wp-dach-team/settings/secrets/actions).
