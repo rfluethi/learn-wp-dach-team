@@ -7,8 +7,7 @@ Diese Anleitung richtet sich an alle Teammitglieder des Learn WP DACH Teams.
 ## Inhaltsverzeichnis
 
 - [Traktandum vorschlagen](#traktandum-vorschlagen)
-- [Sitzungs-Issue erstellen (Moderation)](#sitzungs-issue-erstellen-moderation)
-- [Protokoll ausfüllen (Protokollführung)](#protokoll-ausfüllen-protokollführung)
+- [Sitzungs-Issue verwalten (Moderation & Protokollführung)](#sitzungs-issue-verwalten-moderation--protokollführung)
 - [Aufgabe erfassen](#aufgabe-erfassen)
 - [Kanban Board nutzen](#kanban-board-nutzen)
 - [Protokolle finden](#protokolle-finden)
@@ -36,9 +35,13 @@ Der Moderator verlinkt dein Traktandum im Sitzungs-Issue unter Punkt 6.
 
 ---
 
-## Sitzungs-Issue erstellen *(Moderation)*
+## Sitzungs-Issue verwalten *(Moderation & Protokollführung)*
 
-**Wann:** 1 Woche vor der Sitzung
+Der Prozess läuft in drei Schritten ab:
+
+---
+
+### Schritt 1: Issue erstellen *(Moderation, 1 Woche vor der Sitzung)*
 
 1. [Issues](https://github.com/rfluethi/learn-wp-dach-team/issues) → **New issue**
 2. Vorlage **Sitzung** wählen
@@ -46,16 +49,19 @@ Der Moderator verlinkt dein Traktandum im Sitzungs-Issue unter Punkt 6.
 4. Felder ausfüllen: Datum, Uhrzeit, Moderation, Protokollführung
 5. Issue erstellen → das ist die Traktandenliste
 
-**Vor der Sitzung:**
-- Alle eingereichten Traktanden-Issues unter Punkt 6 verlinken: `- [ ] #42`
-- Reihenfolge festlegen
-- Link zum [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) unter Punkt 3 eintragen
+---
+
+### Schritt 2: Sitzung vorbereiten *(Moderation, vor der Sitzung)*
+
+1. Alle eingereichten Traktanden-Issues unter **Punkt 6 (Diskussionsthemen)** verlinken: `- [ ] #42`
+2. Reihenfolge der Traktanden festlegen
+3. Issue-Status auf **In Arbeit** setzen: [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) → Issue anklicken → Status ändern
+
+> Der Status "In Arbeit" zeigt dem Team: Die Sitzung ist in Vorbereitung.
 
 ---
 
-## Protokoll ausfüllen *(Protokollführung)*
-
-**Zuständigkeit:** Rotierend – wer dran ist, steht im Sitzungs-Issue.
+### Schritt 3: Protokoll erstellen *(Protokollführung)*
 
 **Während der Sitzung:**
 - Beschlüsse direkt ins Issue eintragen (Abschnitt *Beschlüsse*)
@@ -65,9 +71,11 @@ Der Moderator verlinkt dein Traktandum im Sitzungs-Issue unter Punkt 6.
 1. Für jede beschlossene Aufgabe ein neues [Aufgaben-Issue erstellen](#aufgabe-erfassen)
 2. Links zu den Aufgaben-Issues im Abschnitt *Aufgaben* eintragen: `- #23 @username`
 3. Traktanden-Issues schliessen (erledigt) oder mit Label `nächste-sitzung` versehen (vertagt)
-4. Sitzungs-Issue **schliessen** → wird automatisch ins Protokoll-Archiv aufgenommen
+4. Issue-Status auf **Blockiert** setzen → zeigt dem Team: Protokoll ist bereit zur Prüfung
+5. Kommentar ins Issue schreiben: *"Protokoll ist fertig – bitte prüfen und mit OK bestätigen."*
+6. Sobald mindestens ein OK-Kommentar eingegangen ist: Issue **schliessen** → wird automatisch ins Protokoll-Archiv aufgenommen
 
-> Das geschlossene Issue ist das offizielle Beschlussprotokoll.
+> Das geschlossene Issue ist das offizielle Beschlussprotokoll. Das Vier-Augen-Prinzip stellt sicher, dass das Protokoll von mindestens einem weiteren Teammitglied geprüft wurde.
 
 ---
 
@@ -99,8 +107,8 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 |---|---|
 | Traktanden | Vorgeschlagene Themen für nächste Sitzung |
 | Offen | Aufgabe noch nicht begonnen |
-| In Arbeit | Aktiv in Bearbeitung |
-| Blockiert | Warte auf etwas – Abhängigkeit im Issue beschreiben |
+| In Arbeit | Aktiv in Bearbeitung / Sitzung in Vorbereitung |
+| Blockiert | Aufgabe hat Blocker – oder: Protokoll wartet auf Review (OK) |
 | Erledigt | Fertig |
 
 **Vordefinierte Views:**
