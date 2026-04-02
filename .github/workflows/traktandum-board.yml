@@ -1,0 +1,79 @@
+name: Traktandum ins Board einordnen
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  move-to-traktanden:
+    if: contains(github.event.issue.labels.*.name, 'traktandum')
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Issue in Spalte Traktanden verschieben
+        env:
+          GH_TOKEN: ${{ secrets.GH_PAT }}
+          ISSUE_NODE_ID: ${{ github.event.issue.node_id }}
+        run: |
+          # Projekt-ID ermitteln (Projekt Nr. 11 von rfluethi)
+          PROJECT_ID=$(gh api graphql -f query='
+            query {
+              user(login: "rfluethi") {
+                projectV2(number: 11) {
+                  id
+                }
+              }
+            }
+          ' --jq '.data.user.projectV2.id')
+
+          # Status-Feld-ID und Option-ID für "Traktanden" ermitteln
+          FIELD_INFO=$(gh api graphql -f query='
+            query($projectId: ID!) {
+              node(id: $projectId) {
+                ... on ProjectV2 {
+                  fields(first: 20) {
+                    nodes {
+                      ... on ProjectV2SingleSelectField {
+                        id
+                        name
+                        options {
+                          id
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ' -f projectId="$PROJECT_ID")
+
+          FIELD_ID=$(echo "$FIELD_INFO" | jq -r '.data.node.fields.nodes[] | select(.name == "Status") | .id')
+          OPTION_ID=$(echo "$FIELD_INFO" | jq -r '.data.node.fields.nodes[] | select(.name == "Status") | .options[] | select(.name == "Traktanden") | .id')
+
+          # Issue zum Projekt hinzufügen (falls noch nicht vorhanden)
+          ITEM_ID=$(gh api graphql -f query='
+            mutation($projectId: ID!, $contentId: ID!) {
+              addProjectV2ItemById(input: {projectId: $projectId, contentId: $contentId}) {
+                item {
+                  id
+                }
+              }
+            }
+          ' -f projectId="$PROJECT_ID" -f contentId="$ISSUE_NODE_ID" --jq '.data.addProjectV2ItemById.item.id')
+
+          # Status auf "Traktanden" setzen
+          gh api graphql -f query='
+            mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $optionId: String!) {
+              updateProjectV2ItemFieldValue(input: {
+                projectId: $projectId
+                itemId: $itemId
+                fieldId: $fieldId
+                value: { singleSelectOptionId: $optionId }
+              }) {
+                projectV2Item {
+                  id
+                }
+              }
+            }
+          ' -f projectId="$PROJECT_ID" -f itemId="$ITEM_ID" -f fieldId="$FIELD_ID" -f optionId="$OPTION_ID"
