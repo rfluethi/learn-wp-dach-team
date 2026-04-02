@@ -3,10 +3,11 @@ name: Protokoll-Index aktualisieren
 on:
   issues:
     types: [closed]
+  workflow_dispatch:
 
 jobs:
   update-index:
-    if: contains(github.event.issue.labels.*.name, 'sitzung')
+    if: github.event_name == 'workflow_dispatch' || contains(github.event.issue.labels.*.name, 'sitzung')
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -30,17 +31,6 @@ jobs:
             --jq 'sort_by(.title) | reverse | .[] |
               "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"' \
             > /tmp/protokolle.txt
-
-          # Offene Sitzungen (Nächste Sitzung)
-          gh issue list \
-            --repo ${{ github.repository }} \
-            --label sitzung \
-            --state open \
-            --limit 10 \
-            --json number,title,url \
-            --jq 'sort_by(.title) | reverse | .[] |
-              "| [" + .title + "](" + .url + ") |"' \
-            > /tmp/naechste.txt
 
           # Sitzungen mit Status "In Arbeit" aus dem Kanban Board
           GH_TOKEN="$GH_PAT_TOKEN" gh api graphql -f query='
@@ -81,9 +71,14 @@ jobs:
             select(.content != null) |
             select(.content.state == "OPEN") |
             select(.content.labels.nodes | map(.name) | index("sitzung") != null) |
-            select(.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | (index("In Arbeit") != null or index("Blockiert") != null)) |
-            "| [" + .content.title + "](" + .content.url + ") |"
-          ' > /tmp/in-arbeit.txt || true
+            . as $item |
+            (.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | .[0]) as $status |
+            if ($status == "In Arbeit" or $status == "Blockiert") then
+              "in-arbeit\t| [" + .content.title + "](" + .content.url + ") |"
+            elif ($status == null or $status == "Offen") then
+              "naechste\t| [" + .content.title + "](" + .content.url + ") |"
+            else empty end
+          ' | tee >(grep "^in-arbeit" | cut -f2 > /tmp/in-arbeit.txt) | grep "^naechste" | cut -f2 > /tmp/naechste.txt || true
 
           {
             echo "# Learn WP DACH – Team Repository"
