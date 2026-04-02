@@ -25,11 +25,13 @@ Möchtest du ein Thema in die nächste Sitzung einbringen?
    - **Titel:** Kurzer, prägnanter Thementitel
    - **Vorgeschlagen von:** Dein Name
    - **Art:** Information / Diskussion / Entscheidung
-   - **Zeitbedarf:** Geschätzte Minuten
    - **Beschreibung:** Was ist das Thema?
    - **Gewünschtes Ergebnis:** Was soll am Ende feststehen?
 4. Label `traktandum` setzen
 5. Issue erstellen
+6. Im [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) das Issue öffnen und das Feld **Estimate** mit der geschätzten Anzahl Minuten ausfüllen
+
+> Das Feld **Estimate** ermöglicht bei der Sitzungsplanung eine Übersicht über die voraussichtliche Gesamtdauer der Sitzung.
 
 Der Moderator verlinkt dein Traktandum im Sitzungs-Issue unter Punkt 6.
 
@@ -64,10 +66,12 @@ Der Prozess läuft in drei Schritten ab:
 ### Schritt 3: Protokoll erstellen *(Protokollführung)*
 
 **Während der Sitzung:**
+
 - Beschlüsse direkt ins Issue eintragen (Abschnitt *Beschlüsse*)
 - Kernaussagen pro Thema notieren (Abschnitt *Notizen*)
 
 **Nach der Sitzung:**
+
 1. Für jede beschlossene Aufgabe ein neues [Aufgaben-Issue erstellen](#aufgabe-erfassen)
 2. Links zu den Aufgaben-Issues im Abschnitt *Aufgaben* eintragen: `- #23 @username`
 3. Traktanden-Issues schliessen (erledigt) oder mit Label `nächste-sitzung` versehen (vertagt)
@@ -104,7 +108,7 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 **Spalten:**
 
 | Spalte | Bedeutung |
-|---|---|
+| --- | --- |
 | Traktanden | Vorgeschlagene Themen für nächste Sitzung |
 | Offen | Aufgabe noch nicht begonnen |
 | In Arbeit | Aktiv in Bearbeitung / Sitzung in Vorbereitung |
@@ -114,7 +118,7 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 **Vordefinierte Views:**
 
 | View | Link | Zeigt |
-|---|---|---|
+| --- | --- | --- |
 | My Items | [Meine Aufgaben](https://github.com/users/rfluethi/projects/11/views/5?sliceBy%5Bvalue%5D=In+Arbeit) | Nur eigene Aufgaben |
 | Lerngruppe | [Lerngruppen-Aufgaben](https://github.com/users/rfluethi/projects/11/views/6) | Alle Aufgaben mit Label `lerngruppe` |
 | Webseite | [Webseiten-Aufgaben](https://github.com/users/rfluethi/projects/11/views/7) | Alle Aufgaben mit Label `webseite` |
@@ -122,6 +126,7 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 | Protokolle | [Protokoll-Archiv](https://github.com/users/rfluethi/projects/11/views/10) | Alle geschlossenen Sitzungs-Issues |
 
 **Weitere Tipps:**
+
 - Issues per Drag & Drop zwischen Spalten verschieben
 - Eigene Aufgaben: Filter `assignee:@me` im Suchfeld
 

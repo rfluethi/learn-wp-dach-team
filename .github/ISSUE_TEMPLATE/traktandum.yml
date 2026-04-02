@@ -22,11 +22,10 @@ body:
     validations:
       required: true
 
-  - type: input
-    id: zeitbedarf
+  - type: markdown
     attributes:
-      label: Geschätzter Zeitbedarf
-      placeholder: "10 Minuten"
+      value: |
+        > **Zeitbedarf:** Nach dem Erstellen dieses Issues das Feld **Estimate** im [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) ausfüllen (Anzahl Minuten). So ist bei der Sitzungsplanung ersichtlich, wie lange die Sitzung dauern wird.
 
   - type: textarea
     id: beschreibung
