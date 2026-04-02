@@ -7,12 +7,12 @@ Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des *
 | Sitzung |
 |---|
 | [Sitzung 2026-04-28](https://github.com/rfluethi/learn-wp-dach-team/issues/7) |
+| [Sitzung 2026-03-31](https://github.com/rfluethi/learn-wp-dach-team/issues/5) |
 
 ## Protokolle
 
 | Sitzung | Datum |
 |---|---|
-| [Sitzung 2026-03-31](https://github.com/rfluethi/learn-wp-dach-team/issues/5) | 2026-04-01 |
 | [Sitzung 2026-02-24](https://github.com/rfluethi/learn-wp-dach-team/issues/14) | 2026-04-01 |
 | [Sitzung 2026-01-27](https://github.com/rfluethi/learn-wp-dach-team/issues/13) | 2026-04-01 |
 | [Sitzung 2025-12-16](https://github.com/rfluethi/learn-wp-dach-team/issues/12) | 2026-04-01 |
@@ -36,4 +36,4 @@ Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des *
 | [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |
 | [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |
 
-_Zuletzt aktualisiert: 2026-04-01_
+_Zuletzt aktualisiert: 2026-04-02_
