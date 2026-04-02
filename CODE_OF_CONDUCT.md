@@ -30,6 +30,8 @@ Die Projektverantwortlichen sind dafür verantwortlich, die Standards für akzep
 
 Fälle von missbräuchlichem, belästigendem oder anderweitig inakzeptablem Verhalten können dem Team unter [Issues](../../issues) gemeldet werden. Alle Beschwerden werden geprüft und untersucht und in einer Weise beantwortet, die den Umständen entsprechend angemessen erscheint. Das Projektteam ist verpflichtet, die Vertraulichkeit gegenüber der Person zu wahren, die einen Vorfall meldet.
 
+> Sicherheitsprobleme (z.B. unsichere Workflows oder Secrets) bitte gemäss [SECURITY.md](SECURITY.md) melden.
+
 ## Geltungsbereich
 
 Dieser Verhaltenskodex gilt in allen Projektbereichen sowie in öffentlichen Räumen, in denen eine Person das Projekt oder seine Community repräsentiert.

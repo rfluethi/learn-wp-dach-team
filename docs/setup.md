@@ -63,9 +63,10 @@ gh label create "nächste-sitzung" --repo "$REPO" --color "bfd4f2" --description
 gh label create "lerngruppe"      --repo "$REPO" --color "7057ff" --description "Thema rund um Lerngruppen" --force
 gh label create "webseite"        --repo "$REPO" --color "cfd3d7" --description "Thema rund um learn-wp-dach.org" --force
 gh label create "übersetzung"     --repo "$REPO" --color "006b75" --description "Übersetzungsprojekte" --force
+gh label create "organisation"    --repo "$REPO" --color "e99695" --description "Organisatorische Aufgaben" --force
 ```
 
-**Prüfen:** Issues → **Labels** → 9 Labels sichtbar.
+**Prüfen:** Issues → **Labels** → 10 Labels sichtbar.
 
 ---
 
@@ -347,6 +348,34 @@ Alle Teammitglieder brauchen einen GitHub-Account.
    - **Require a pull request before merging** *(für manuelle Änderungen)*
    - **Allow specified actors to bypass** → `github-actions[bot]` hinzufügen
 5. **Save changes**
+
+---
+
+## Troubleshooting
+
+### Workflow schlägt fehl
+
+**Symptom:** GitHub Actions zeigt roten Fehler beim `protokoll-index.yml` oder `traktandum-board.yml`.
+
+**Vorgehen:**
+
+1. Repository → **Actions** → fehlgeschlagenen Run öffnen → Fehlermeldung lesen
+2. Häufige Ursachen:
+
+| Fehlermeldung | Ursache | Lösung |
+| --- | --- | --- |
+| `Could not resolve to a node with the global id` | PAT hat nicht den Scope `repo` oder `project` | PAT neu erstellen mit beiden Scopes, Secret `GH_PAT` aktualisieren |
+| `Resource not accessible by integration` | `GH_PAT` Secret fehlt oder ist abgelaufen | Repository → Settings → Secrets → `GH_PAT` prüfen oder neu setzen |
+| `Projekt nicht gefunden` | Project-Nummer in Workflow stimmt nicht | Workflow-Datei: `projectV2(number: ...)` auf aktuelle Nummer prüfen |
+| `jq: error` | Unerwartete API-Antwort | Run nochmals manuell starten; falls Problem anhält, API-Response im Log prüfen |
+
+1. Manuell testen: Repository → **Actions** → **Protokoll-Index aktualisieren** → **Run workflow**
+
+### PAT erneuern
+
+1. GitHub.com → Avatar → **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**
+2. Bestehenden Token wählen → **Regenerate token**
+3. Token kopieren → Repository → **Settings** → **Secrets and variables** → **Actions** → `GH_PAT` → **Update secret**
 
 ---
 

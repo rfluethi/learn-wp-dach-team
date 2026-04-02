@@ -77,9 +77,10 @@ Der Prozess läuft in drei Schritten ab:
 1. Für jede beschlossene Aufgabe ein neues [Aufgaben-Issue erstellen](#aufgabe-erfassen)
 2. Links zu den Aufgaben-Issues im Abschnitt *Aufgaben* eintragen: `- #23 @username`
 3. Traktanden-Issues schliessen (erledigt) oder mit Label `nächste-sitzung` versehen (vertagt)
-4. Issue-Status auf **Blockiert** setzen → zeigt dem Team: Protokoll ist bereit zur Prüfung
-5. Kommentar ins Issue schreiben: *"Protokoll ist fertig – bitte prüfen und mit OK bestätigen."*
-6. Sobald mindestens ein OK-Kommentar eingegangen ist: Issue **schliessen** → wird automatisch ins Protokoll-Archiv aufgenommen
+4. Traktanden-Issues, die zu einem formellen Entscheid geführt haben, zusätzlich mit Label `beschluss` versehen – so sind alle Beschlüsse über `label:beschluss` auffindbar
+5. **Board-Status** auf **Blockiert** setzen → zeigt dem Team: Protokoll ist bereit zur Prüfung
+6. Kommentar ins Issue schreiben: *"Protokoll ist fertig – bitte prüfen und mit OK bestätigen."*
+7. Sobald mindestens ein OK-Kommentar eingegangen ist: Issue **schliessen** → wird automatisch ins Protokoll-Archiv aufgenommen
 
 > Das geschlossene Issue ist das offizielle Beschlussprotokoll. Das Vier-Augen-Prinzip stellt sicher, dass das Protokoll von mindestens einem weiteren Teammitglied geprüft wurde.
 >
@@ -99,7 +100,7 @@ Der Prozess läuft in drei Schritten ab:
    - **Abhängigkeiten:** Was muss vorher erledigt sein?
    - **Beschreibung:** Was genau muss gemacht werden?
    - **Erledigungskriterium:** Woran erkennen wir, dass es fertig ist?
-4. Label `aufgabe` setzen
+4. Label `aufgabe` ist durch die Vorlage bereits gesetzt – kein manuelles Labeling nötig
 5. Person zuweisen (Assignee)
 6. Issue erstellen → erscheint automatisch im Kanban Board
 
@@ -134,6 +135,8 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 - Issues per Drag & Drop zwischen Spalten verschieben
 - Eigene Aufgaben: Filter `assignee:@me` im Suchfeld
 
+> **Hinweis:** Die Links zu den Board-Views enthalten hardkodierte View-IDs. Nach einem Repository-Neuaufbau oder Transfer müssen diese Links in dieser Anleitung aktualisiert werden.
+
 ---
 
 ## Protokolle finden
@@ -147,9 +150,6 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 ---
 
 ## Häufige Fragen
-
-**Wann wird das Label `beschluss` verwendet?**
-Das Label `beschluss` wird manuell auf ein Traktandum-Issue gesetzt, wenn daraus ein formeller Entscheid resultiert ist. So sind alle Beschlüsse über die Suche `label:beschluss` auffindbar.
 
 **Kann ich ein Traktandum auch spontan in der Sitzung einbringen?**
 Ja – der Moderator fügt es direkt in Punkt 6 des Sitzungs-Issues ein, ohne separates Issue.

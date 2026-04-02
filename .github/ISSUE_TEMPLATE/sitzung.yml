@@ -62,8 +62,8 @@ body:
       label: "6. Diskussionsthemen"
       description: "Issue-Nummern der eingereichten Traktanden eintragen. Bis zur Sitzung ergänzen."
       placeholder: |
-        - [ ] #
-        - [ ] #
+        - [ ] #42
+        - [ ] #43
 
   - type: markdown
     attributes:
