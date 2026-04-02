@@ -108,6 +108,8 @@ git push
 
 **Workflow-Inhalt** (entspricht `.github/workflows/protokoll-index.yml`)**:**
 
+> Hinweis: Der Workflow benötigt zusätzlich das Secret `GH_PAT` (siehe Schritt 6b), um Sitzungen mit Status "In Arbeit" aus dem Kanban Board abzufragen.
+
 ```yaml
 name: Protokoll-Index aktualisieren
 
@@ -129,7 +131,9 @@ jobs:
       - name: Protokoll-Index in README.md aktualisieren
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_PAT_TOKEN: ${{ secrets.GH_PAT }}
         run: |
+          # Abgeschlossene Sitzungen
           gh issue list \
             --repo ${{ github.repository }} \
             --label sitzung \
@@ -140,6 +144,7 @@ jobs:
               "| [" + .title + "](" + .url + ") | " + (.closedAt | split("T")[0]) + " |"' \
             > /tmp/protokolle.txt
 
+          # Offene Sitzungen (Nächste Sitzung)
           gh issue list \
             --repo ${{ github.repository }} \
             --label sitzung \
@@ -150,6 +155,49 @@ jobs:
               "| [" + .title + "](" + .url + ") |"' \
             > /tmp/naechste.txt
 
+          # Sitzungen mit Status "In Arbeit" aus dem Kanban Board
+          GH_TOKEN="$GH_PAT_TOKEN" gh api graphql -f query='
+            query {
+              user(login: "rfluethi") {
+                projectV2(number: 11) {
+                  items(first: 50) {
+                    nodes {
+                      content {
+                        ... on Issue {
+                          title
+                          url
+                          state
+                          labels(first: 10) {
+                            nodes { name }
+                          }
+                        }
+                      }
+                      fieldValues(first: 20) {
+                        nodes {
+                          ... on ProjectV2ItemFieldSingleSelectValue {
+                            name
+                            field {
+                              ... on ProjectV2SingleSelectField {
+                                name
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          ' | jq -r '
+            .data.user.projectV2.items.nodes[] |
+            select(.content != null) |
+            select(.content.state == "OPEN") |
+            select(.content.labels.nodes | map(.name) | index("sitzung") != null) |
+            select(.fieldValues.nodes | map(select(.field != null) | select(.field.name == "Status") | .name) | index("In Arbeit") != null) |
+            "| [" + .content.title + "](" + .content.url + ") |"
+          ' > /tmp/in-arbeit.txt || true
+
           {
             echo "# Learn WP DACH – Team Repository"
             echo ""
@@ -159,32 +207,46 @@ jobs:
               echo "## Nächste Sitzung"
               echo ""
               echo "| Sitzung |"
-              echo "|---|"
+              echo "| --- |"
               cat /tmp/naechste.txt
+              echo ""
+            fi
+            if [ -s /tmp/in-arbeit.txt ]; then
+              echo "## In Bearbeitung"
+              echo ""
+              echo "| Sitzung |"
+              echo "| --- |"
+              cat /tmp/in-arbeit.txt
               echo ""
             fi
             echo "## Protokolle"
             echo ""
             echo "| Sitzung | Datum |"
-            echo "|---|---|"
+            echo "| --- | --- |"
             cat /tmp/protokolle.txt
             echo ""
             echo "## Links"
             echo ""
             echo "| | |"
-            echo "|---|---|"
+            echo "| --- | --- |"
             echo "| [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |"
             echo "| [Alle Issues](https://github.com/${{ github.repository }}/issues) | Sitzungen, Traktanden und Aufgaben |"
             echo ""
             echo "## Dokumentation"
             echo ""
             echo "| Dokument | Beschreibung |"
-            echo "|---|---|"
+            echo "| --- | --- |"
             echo "| [Konzept](docs/konzept.md) | Übersicht über das System |"
             echo "| [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |"
             echo "| [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |"
+            echo "| [Mitmachen](CONTRIBUTING.md) | Wie du dich beteiligen kannst |"
+            echo "| [Verhaltenskodex](CODE_OF_CONDUCT.md) | Unsere Verhaltensregeln |"
             echo ""
-            echo "_Zuletzt aktualisiert: $(date '+%Y-%m-%d')_"
+            echo "## Lizenz"
+            echo ""
+            echo "Dieses Repository steht unter der [CC BY 4.0 Lizenz](LICENSE). Inhalte dürfen geteilt und bearbeitet werden, sofern die Urheberschaft angegeben wird."
+            echo ""
+            echo "Zuletzt aktualisiert: $(date '+%Y-%m-%d')"
           } > README.md
 
       - name: Änderungen committen und pushen

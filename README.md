@@ -38,4 +38,8 @@ Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des *
 | [Mitmachen](CONTRIBUTING.md) | Wie du dich beteiligen kannst |
 | [Verhaltenskodex](CODE_OF_CONDUCT.md) | Unsere Verhaltensregeln |
 
+## Lizenz
+
+Dieses Repository steht unter der [CC BY 4.0 Lizenz](LICENSE). Inhalte dürfen geteilt und bearbeitet werden, sofern die Urheberschaft angegeben wird.
+
 Zuletzt aktualisiert: 2026-04-02
