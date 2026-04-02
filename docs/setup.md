@@ -159,7 +159,46 @@ jobs:
 
 ---
 
-## Schritt 6: Copilot Coding Agent deaktivieren
+## Schritt 6: Traktandum-Workflow einrichten
+
+Dieser Workflow verschiebt Issues mit dem Label `traktandum` automatisch in die Spalte **Traktanden** des Kanban Boards.
+
+### 6a: Personal Access Token (PAT) erstellen
+
+Das normale `GITHUB_TOKEN` hat keinen Zugriff auf user-level Projects. Deshalb braucht es einen PAT mit zwei Scopes:
+
+1. GitHub.com → Avatar → **Settings** → **Developer settings** → **Personal access tokens** → **Tokens (classic)**
+2. **Generate new token (classic)**
+3. Note: z.B. `learn-wp-dach-team board`
+4. Scopes aktivieren:
+   - **`repo`** (vollständig ankreuzen) – für Zugriff auf Issue-IDs
+   - **`project`** – für Zugriff auf GitHub Projects
+5. **Generate token** → Token kopieren
+
+### 6b: Token als Repository-Secret speichern
+
+1. Repository → **Settings** → **Secrets and variables** → **Actions**
+2. **New repository secret**
+3. Name: `GH_PAT` (genau so)
+4. Secret: den kopierten Token einfügen
+5. **Add secret**
+
+> Den Token nie in den Code oder in einen Chat einfügen – immer nur als Secret speichern.
+
+### 6c: Workflow-Datei einfügen
+
+```bash
+# Datei traktandum-board.yml in .github/workflows/ ablegen
+git add .github/workflows/traktandum-board.yml
+git commit -m "Workflow: Traktandum automatisch ins Board einordnen"
+git push
+```
+
+**Prüfen:** Ein neues Issue mit Vorlage "Traktandum" erstellen → erscheint nach ca. 30 Sekunden in der Spalte **Traktanden**.
+
+---
+
+## Schritt 7: Copilot Coding Agent deaktivieren
 
 > **Wichtig:** Ohne diese Einstellung übernimmt der Copilot Coding Agent Issues und verschiebt sie ins Kanban Board.
 
@@ -170,7 +209,7 @@ jobs:
 
 ---
 
-## Schritt 7: Copilot-Training deaktivieren *(bei öffentlichem Repo)*
+## Schritt 8: Copilot-Training deaktivieren *(bei öffentlichem Repo)*
 
 1. GitHub.com → Avatar → **Settings**
 2. **Copilot** → **Features**
@@ -180,7 +219,7 @@ jobs:
 
 ---
 
-## Schritt 8: Teammitglieder einladen
+## Schritt 9: Teammitglieder einladen
 
 Repository → **Settings** → **Collaborators** → **Add people**
 
