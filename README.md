@@ -7,6 +7,11 @@ Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des *
 | Sitzung |
 | --- |
 | [Sitzung 2026-04-28](https://github.com/rfluethi/learn-wp-dach-team/issues/7) |
+
+## In Bearbeitung
+
+| Sitzung |
+| --- |
 | [Sitzung 2026-03-31](https://github.com/rfluethi/learn-wp-dach-team/issues/5) |
 
 ## Protokolle
