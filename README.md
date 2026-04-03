@@ -10,18 +10,13 @@ Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des *
 | --- |
 | [Sitzung 2026-04-28](https://github.com/rfluethi/learn-wp-dach-team/issues/7) |
 
-### In Bearbeitung
-
-| Sitzung |
-| --- |
-| [Sitzung 2026-03-31](https://github.com/rfluethi/learn-wp-dach-team/issues/5) |
-
 ### Protokolle
 
 #### 2026
 
 | Sitzung | Datum |
 | --- | --- |
+| [Sitzung 2026-03-31](https://github.com/rfluethi/learn-wp-dach-team/issues/5) | 2026-04-03 |
 | [Sitzung 2026-02-24](https://github.com/rfluethi/learn-wp-dach-team/issues/14) | 2026-04-01 |
 | [Sitzung 2026-01-27](https://github.com/rfluethi/learn-wp-dach-team/issues/13) | 2026-04-01 |
 
@@ -59,4 +54,4 @@ Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des *
 
 Dieses Repository steht unter der [CC BY 4.0 Lizenz](LICENSE). Inhalte dürfen geteilt und bearbeitet werden, sofern die Urheberschaft angegeben wird.
 
-Zuletzt aktualisiert: 2026-04-02
+Zuletzt aktualisiert: 2026-04-03
