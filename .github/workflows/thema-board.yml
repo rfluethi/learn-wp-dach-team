@@ -1,16 +1,16 @@
-name: Traktandum ins Board einordnen
+name: Thema ins Board einordnen
 
 on:
   issues:
     types: [opened, labeled]
 
 jobs:
-  move-to-traktanden:
-    if: contains(github.event.issue.labels.*.name, 'traktandum')
+  move-to-themen:
+    if: contains(github.event.issue.labels.*.name, 'thema')
     runs-on: ubuntu-latest
 
     steps:
-      - name: Issue in Spalte Traktanden verschieben
+      - name: Issue in Spalte Themen verschieben
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
           ISSUE_NODE_ID: ${{ github.event.issue.node_id }}
@@ -33,7 +33,7 @@ jobs:
             exit 1
           fi
 
-          # Status-Feld-ID und Option-ID für "Traktanden" ermitteln
+          # Status-Feld-ID und Option-ID für "Themen" ermitteln
           FIELD_INFO=$(gh api graphql -f query='
             query($projectId: ID!) {
               node(id: $projectId) {
@@ -56,7 +56,7 @@ jobs:
           ' -f projectId="$PROJECT_ID")
 
           FIELD_ID=$(echo "$FIELD_INFO" | jq -r '.data.node.fields.nodes[] | select(.name == "Status") | .id')
-          OPTION_ID=$(echo "$FIELD_INFO" | jq -r '.data.node.fields.nodes[] | select(.name == "Status") | .options[] | select(.name == "Traktanden") | .id')
+          OPTION_ID=$(echo "$FIELD_INFO" | jq -r '.data.node.fields.nodes[] | select(.name == "Status") | .options[] | select(.name == "Themen") | .id')
 
           if [ -z "$FIELD_ID" ] || [ "$FIELD_ID" = "null" ]; then
             echo "::error::Status-Feld nicht gefunden. Board-Konfiguration prüfen."
@@ -64,7 +64,7 @@ jobs:
           fi
 
           if [ -z "$OPTION_ID" ] || [ "$OPTION_ID" = "null" ]; then
-            echo "::error::Status-Option 'Traktanden' nicht gefunden. Spaltenbezeichnung im Board prüfen."
+            echo "::error::Status-Option 'Themen' nicht gefunden. Spaltenbezeichnung im Board prüfen."
             exit 1
           fi
 
@@ -84,7 +84,7 @@ jobs:
             exit 1
           fi
 
-          # Status auf "Traktanden" setzen
+          # Status auf "Themen" setzen
           gh api graphql -f query='
             mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $optionId: String!) {
               updateProjectV2ItemFieldValue(input: {

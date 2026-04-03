@@ -1,7 +1,7 @@
-name: "Traktandum"
+name: "Thema"
 description: "Diskussionsthema für die nächste Sitzung vorschlagen"
-title: "Traktandum: "
-labels: ["traktandum"]
+title: "Thema: "
+labels: ["thema"]
 body:
   - type: input
     id: vorgeschlagen-von
@@ -14,7 +14,7 @@ body:
   - type: dropdown
     id: art
     attributes:
-      label: Art des Traktandums
+      label: Art des Themas
       options:
         - "Information (kein Entscheid nötig)"
         - "Diskussion (Meinungsaustausch)"

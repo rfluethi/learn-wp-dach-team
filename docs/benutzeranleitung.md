@@ -6,7 +6,7 @@ Diese Anleitung richtet sich an alle Teammitglieder des Learn WP DACH Teams.
 
 ## Inhaltsverzeichnis
 
-- [Traktandum vorschlagen](#traktandum-vorschlagen)
+- [Thema vorschlagen](#thema-vorschlagen)
 - [Sitzungs-Issue verwalten (Moderation & Protokollführung)](#sitzungs-issue-verwalten-moderation--protokollführung)
 - [Aufgabe erfassen](#aufgabe-erfassen)
 - [Kanban Board nutzen](#kanban-board-nutzen)
@@ -15,25 +15,25 @@ Diese Anleitung richtet sich an alle Teammitglieder des Learn WP DACH Teams.
 
 ---
 
-## Traktandum vorschlagen
+## Thema vorschlagen
 
 Möchtest du ein Thema in die nächste Sitzung einbringen?
 
 1. [Issues](https://github.com/rfluethi/learn-wp-dach-team/issues) → **New issue**
-2. Vorlage **Traktandum** wählen
+2. Vorlage **Thema** wählen
 3. Ausfüllen:
    - **Titel:** Kurzer, prägnanter Thementitel
    - **Vorgeschlagen von:** Dein Name
    - **Art:** Information / Diskussion / Entscheidung
    - **Beschreibung:** Was ist das Thema?
    - **Gewünschtes Ergebnis:** Was soll am Ende feststehen?
-4. Label `traktandum` setzen
+4. Label `thema` setzen
 5. Issue erstellen
 6. Im [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) das Issue öffnen und das Feld **Estimate** mit der geschätzten Anzahl Minuten ausfüllen
 
 > Das Feld **Estimate** ermöglicht bei der Sitzungsplanung eine Übersicht über die voraussichtliche Gesamtdauer der Sitzung.
 
-Der Moderator verlinkt dein Traktandum im Sitzungs-Issue unter Punkt 6.
+Der Moderator verlinkt dein Thema im Sitzungs-Issue unter Punkt 6.
 
 ---
 
@@ -49,7 +49,7 @@ Der Prozess läuft in drei Schritten ab:
 2. Vorlage **Sitzung** wählen
 3. Titel setzen: `Sitzung YYYY-MM-DD` (z.B. `Sitzung 2026-04-28`)
 4. Felder ausfüllen: Datum, Uhrzeit, Moderation, Protokollführung
-5. Issue erstellen → das ist die Traktandenliste
+5. Issue erstellen → das ist die Themenliste
 
 > Das Label `sitzung` wird durch die Vorlage automatisch gesetzt – kein manuelles Labeling nötig.
 
@@ -57,8 +57,8 @@ Der Prozess läuft in drei Schritten ab:
 
 ### Schritt 2: Sitzung vorbereiten *(Moderation, vor der Sitzung)*
 
-1. Alle eingereichten Traktanden-Issues unter **Punkt 6 (Diskussionsthemen)** verlinken: `- [ ] #42`
-2. Reihenfolge der Traktanden festlegen
+1. Alle eingereichten Themen-Issues unter **Punkt 6 (Diskussionsthemen)** verlinken: `- [ ] #42`
+2. Reihenfolge der Themen festlegen
 3. **Board-Status** auf **In Arbeit** setzen: [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) → Sitzungs-Issue anklicken → rechts im Panel **Status → In Arbeit** wählen
 
 > **Hinweis:** Der Board-Status (im Aufgaben-Board) ist unabhängig vom GitHub-Issue-Status (offen/geschlossen). Hier wird immer der **Board-Status** gemeint.
@@ -76,8 +76,8 @@ Der Prozess läuft in drei Schritten ab:
 
 1. Für jede beschlossene Aufgabe ein neues [Aufgaben-Issue erstellen](#aufgabe-erfassen)
 2. Links zu den Aufgaben-Issues im Abschnitt *Aufgaben* eintragen: `- #23 @username`
-3. Traktanden-Issues schliessen (erledigt) oder mit Label `nächste-sitzung` versehen (vertagt)
-4. Traktanden-Issues, die zu einem formellen Entscheid geführt haben, zusätzlich mit Label `beschluss` versehen – so sind alle Beschlüsse über `label:beschluss` auffindbar
+3. Themen-Issues schliessen (erledigt) oder mit Label `nächste-sitzung` versehen (vertagt)
+4. Themen-Issues, die zu einem formellen Entscheid geführt haben, zusätzlich mit Label `beschluss` versehen – so sind alle Beschlüsse über `label:beschluss` auffindbar
 5. **Board-Status** auf **Blockiert** setzen → zeigt dem Team: Protokoll ist bereit zur Prüfung
 6. Kommentar ins Issue schreiben: *"Protokoll ist fertig – bitte prüfen und mit OK bestätigen."*
 7. Sobald mindestens ein OK-Kommentar eingegangen ist: Issue **schliessen** → wird automatisch ins Protokoll-Archiv aufgenommen
@@ -114,7 +114,7 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 
 | Spalte | Bedeutung |
 | --- | --- |
-| Traktanden | Vorgeschlagene Themen für nächste Sitzung |
+| Themen | Vorgeschlagene Themen für nächste Sitzung |
 | Offen | Aufgabe noch nicht begonnen |
 | In Arbeit | Aktiv in Bearbeitung / Sitzung in Vorbereitung |
 | Blockiert | Aufgabe hat Blocker – oder: Protokoll wartet auf Review (OK) |
@@ -127,7 +127,7 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 | My Items | [Meine Aufgaben](https://github.com/users/rfluethi/projects/11/views/5?sliceBy%5Bvalue%5D=In+Arbeit) | Nur eigene Aufgaben |
 | Lerngruppe | [Lerngruppen-Aufgaben](https://github.com/users/rfluethi/projects/11/views/6) | Alle Aufgaben mit Label `lerngruppe` |
 | Webseite | [Webseiten-Aufgaben](https://github.com/users/rfluethi/projects/11/views/7) | Alle Aufgaben mit Label `webseite` |
-| Sitzungsvorbereitung | [Traktanden](https://github.com/users/rfluethi/projects/11/views/8?groupedBy%5BcolumnId%5D=Assignees&sliceBy%5BcolumnId%5D=Assignees) | Vorgeschlagene Diskussionsthemen |
+| Sitzungsvorbereitung | [Themen](https://github.com/users/rfluethi/projects/11/views/8?groupedBy%5BcolumnId%5D=Assignees&sliceBy%5BcolumnId%5D=Assignees) | Vorgeschlagene Diskussionsthemen |
 | Protokolle | [Protokoll-Archiv](https://github.com/users/rfluethi/projects/11/views/10) | Alle geschlossenen Sitzungs-Issues |
 
 **Weitere Tipps:**
@@ -151,10 +151,10 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 
 ## Häufige Fragen
 
-**Kann ich ein Traktandum auch spontan in der Sitzung einbringen?**
+**Kann ich ein Thema auch spontan in der Sitzung einbringen?**
 Ja – der Moderator fügt es direkt in Punkt 6 des Sitzungs-Issues ein, ohne separates Issue.
 
-**Was passiert mit vertagten Traktanden?**
+**Was passiert mit vertagten Themen?**
 Label `nächste-sitzung` setzen. Der Moderator der nächsten Sitzung verlinkt es dann.
 
 **Wer kann Issues erstellen und bearbeiten?**

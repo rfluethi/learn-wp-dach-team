@@ -36,12 +36,12 @@ mkdir -p .github/ISSUE_TEMPLATE
 Die drei Vorlagen-Dateien in `.github/ISSUE_TEMPLATE/` ablegen:
 
 - `sitzung.yml`
-- `traktandum.yml`
+- `thema.yml`
 - `aufgabe.yml`
 
 ```bash
 git add .github/
-git commit -m "Issue-Vorlagen für Sitzungen, Traktanden und Aufgaben"
+git commit -m "Issue-Vorlagen für Sitzungen, Themen und Aufgaben"
 git push
 ```
 
@@ -54,8 +54,8 @@ git push
 ```bash
 REPO="DEIN-USERNAME/learn-wp-dach-team"
 
-gh label create "sitzung"         --repo "$REPO" --color "0075ca" --description "Monatliches Team-Meeting (Traktanden + Protokoll)" --force
-gh label create "traktandum"      --repo "$REPO" --color "e4e669" --description "Vorgeschlagenes Diskussionsthema für nächste Sitzung" --force
+gh label create "sitzung"         --repo "$REPO" --color "0075ca" --description "Monatliches Team-Meeting (Themen + Protokoll)" --force
+gh label create "thema"           --repo "$REPO" --color "e4e669" --description "Vorgeschlagenes Diskussionsthema für nächste Sitzung" --force
 gh label create "aufgabe"         --repo "$REPO" --color "f4a261" --description "Action Item / Task aus einer Sitzung" --force
 gh label create "beschluss"       --repo "$REPO" --color "0e8a16" --description "Entscheidung gefällt" --force
 gh label create "blockiert"       --repo "$REPO" --color "d73a4a" --description "Aufgabe hat einen Blocker oder Abhängigkeit" --force
@@ -75,11 +75,11 @@ gh label create "organisation"    --repo "$REPO" --color "e99695" --description 
 1. GitHub → Tab **Projects** → **New project**
 2. Vorlage: **Board**
 3. Name: `Learn WP DACH – Aufgaben`
-4. Spalten erstellen (Traktanden, Offen, In Arbeit, Blockiert, Erledigt):
+4. Spalten erstellen (Themen, Offen, In Arbeit, Blockiert, Erledigt):
 
    | Spalte | Beschreibung |
    | --- | --- |
-   | Traktanden | Vorgeschlagene Diskussionsthemen |
+   | Themen | Vorgeschlagene Diskussionsthemen |
    | Offen | Aufgaben, noch nicht begonnen |
    | In Arbeit | Aufgaben aktiv in Bearbeitung |
    | Blockiert | Aufgaben mit Blocker |
@@ -92,7 +92,7 @@ gh label create "organisation"    --repo "$REPO" --color "e99695" --description 
 6. Feld **Estimate** erstellen: Project → **`...`** → **Settings** → **Custom fields** → **Add field**
    - Typ: **Number**
    - Name: `Estimate`
-   - Dieses Feld nimmt den geschätzten Zeitbedarf pro Traktandum in Minuten auf und erlaubt eine Gesamtschätzung der Sitzungsdauer.
+   - Dieses Feld nimmt den geschätzten Zeitbedarf pro Thema in Minuten auf und erlaubt eine Gesamtschätzung der Sitzungsdauer.
 
 ---
 
@@ -206,7 +206,7 @@ jobs:
           {
             echo "# Learn WP DACH – Team Repository"
             echo ""
-            echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt."
+            echo "Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt."
             echo ""
             echo "## Sitzungen"
             echo ""
@@ -234,7 +234,7 @@ jobs:
             echo "| | |"
             echo "| --- | --- |"
             echo "| [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |"
-            echo "| [Alle Issues](https://github.com/${{ github.repository }}/issues) | Sitzungen, Traktanden und Aufgaben |"
+            echo "| [Alle Issues](https://github.com/${{ github.repository }}/issues) | Sitzungen, Themen und Aufgaben |"
             echo ""
             echo "## Dokumentation"
             echo ""
@@ -267,9 +267,9 @@ jobs:
 
 ---
 
-## Schritt 6: Traktandum-Workflow einrichten
+## Schritt 6: Thema-Workflow einrichten
 
-Dieser Workflow verschiebt Issues mit dem Label `traktandum` automatisch in die Spalte **Traktanden** des Kanban Boards.
+Dieser Workflow verschiebt Issues mit dem Label `thema` automatisch in die Spalte **Themen** des Kanban Boards.
 
 ### 6a: Personal Access Token (PAT) erstellen
 
@@ -296,13 +296,13 @@ Das normale `GITHUB_TOKEN` hat keinen Zugriff auf user-level Projects. Deshalb b
 ### 6c: Workflow-Datei einfügen
 
 ```bash
-# Datei traktandum-board.yml in .github/workflows/ ablegen
-git add .github/workflows/traktandum-board.yml
-git commit -m "Workflow: Traktandum automatisch ins Board einordnen"
+# Datei thema-board.yml in .github/workflows/ ablegen
+git add .github/workflows/thema-board.yml
+git commit -m "Workflow: Thema automatisch ins Board einordnen"
 git push
 ```
 
-**Prüfen:** Ein neues Issue mit Vorlage "Traktandum" erstellen → erscheint nach ca. 30 Sekunden in der Spalte **Traktanden**.
+**Prüfen:** Ein neues Issue mit Vorlage "Thema" erstellen → erscheint nach ca. 30 Sekunden in der Spalte **Themen**.
 
 ---
 
@@ -355,7 +355,7 @@ Alle Teammitglieder brauchen einen GitHub-Account.
 
 ### Workflow schlägt fehl
 
-**Symptom:** GitHub Actions zeigt roten Fehler beim `protokoll-index.yml` oder `traktandum-board.yml`.
+**Symptom:** GitHub Actions zeigt roten Fehler beim `protokoll-index.yml` oder `thema-board.yml`.
 
 **Vorgehen:**
 

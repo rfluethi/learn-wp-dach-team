@@ -1,5 +1,5 @@
 name: "Sitzung"
-description: "Monatliches Team-Meeting – Traktandenliste und Beschlussprotokoll"
+description: "Monatliches Team-Meeting – Themenliste und Beschlussprotokoll"
 title: "Sitzung YYYY-MM-DD"
 labels: ["sitzung"]
 body:
@@ -44,9 +44,9 @@ body:
     attributes:
       value: |
         ---
-        ## Traktanden
+        ## Themen
 
-        **Feste Traktanden** (immer gleich):
+        **Feste Themen** (immer gleich):
 
         - [ ] 1. Begrüssung (+ ev. Vorstellungsrunde)
         - [ ] 2. News: Was gibt es Neues in der WordPress-Welt?
@@ -60,7 +60,7 @@ body:
     id: diskussionsthemen
     attributes:
       label: "6. Diskussionsthemen"
-      description: "Issue-Nummern der eingereichten Traktanden eintragen. Bis zur Sitzung ergänzen."
+      description: "Issue-Nummern der eingereichten Themen eintragen. Bis zur Sitzung ergänzen."
       placeholder: |
         - [ ] #42
         - [ ] #43

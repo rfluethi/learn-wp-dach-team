@@ -8,7 +8,7 @@ Das Learn WP DACH Team verwaltet Sitzungsplanung, Beschlussprotokolle und Aufgab
 
 Jede Sitzung wird als **ein einziges GitHub Issue** geführt:
 
-- **Vor der Sitzung:** Das Issue ist die Traktandenliste
+- **Vor der Sitzung:** Das Issue ist die Themenliste
 - **Nach der Sitzung:** Das Issue ist das Beschlussprotokoll
 
 Aufgaben aus der Sitzung werden als eigene Issues im Kanban Board verwaltet.
@@ -32,8 +32,8 @@ Jede Sitzung folgt dieser festen Grundstruktur:
 
 | Typ | Label | Wofür |
 |---|---|---|
-| Sitzung | `sitzung` | Traktandenliste + Beschlussprotokoll |
-| Traktandum | `traktandum` | Diskussionsthema für die nächste Sitzung vorschlagen |
+| Sitzung | `sitzung` | Themenliste + Beschlussprotokoll |
+| Thema | `thema` | Diskussionsthema für die nächste Sitzung vorschlagen |
 | Aufgabe | `aufgabe` | Action Item mit Verantwortlichen und Fälligkeitsdatum |
 
 ---
@@ -60,7 +60,7 @@ Board-Status:                           läuft                  geschlossen →
 | Label | Verwendung |
 |---|---|
 | `sitzung` | Meeting-Issues |
-| `traktandum` | Vorgeschlagene Diskussionsthemen |
+| `thema` | Vorgeschlagene Diskussionsthemen |
 | `aufgabe` | Action Items / Tasks |
 | `blockiert` | Aufgaben mit Blocker oder Abhängigkeit |
 | `nächste-sitzung` | Vertage Themen für das nächste Meeting |
@@ -77,7 +77,7 @@ Board-Status:                           läuft                  geschlossen →
 
 | Spalte | Inhalt |
 |---|---|
-| Traktanden | Vorgeschlagene Diskussionsthemen |
+| Themen | Vorgeschlagene Diskussionsthemen |
 | Offen | Aufgaben, noch nicht begonnen |
 | In Arbeit | Aufgaben aktiv in Bearbeitung |
 | Blockiert | Aufgaben mit Blocker – oder Sitzungsprotokoll wartet auf Review |

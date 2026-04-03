@@ -1,18 +1,18 @@
 # Mitmachen beim Learn WP DACH Team
 
-Willkommen! Dieses Repository verwaltet die Sitzungen, Traktanden und Aufgaben des Learn WP DACH Teams.
+Willkommen! Dieses Repository verwaltet die Sitzungen, Themen und Aufgaben des Learn WP DACH Teams.
 
 ---
 
 ## Wie du mitmachen kannst
 
-### Traktandum vorschlagen
+### Thema vorschlagen
 
 Du hast ein Thema, das du in der nächsten Sitzung besprechen möchtest?
 
-→ [Traktandum einreichen](../../issues/new?template=traktandum.yml)
+→ [Thema einreichen](../../issues/new?template=thema.yml)
 
-Mehr dazu in der [Benutzeranleitung](docs/benutzeranleitung.md#traktandum-vorschlagen).
+Mehr dazu in der [Benutzeranleitung](docs/benutzeranleitung.md#thema-vorschlagen).
 
 ### Aufgabe melden oder übernehmen
 

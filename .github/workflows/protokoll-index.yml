@@ -91,7 +91,7 @@ jobs:
           {
             echo "# Learn WP DACH – Team Repository"
             echo ""
-            echo "Dieses Repository enthält die Sitzungsprotokolle, Traktanden und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt."
+            echo "Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Learn WP DACH Teams**. Das monatliche Meeting findet jeweils am letzten Dienstag des Monats um 20:00 Uhr statt."
             echo ""
             echo "## Sitzungen"
             echo ""
@@ -119,7 +119,7 @@ jobs:
             echo "| | |"
             echo "| --- | --- |"
             echo "| [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) | Kanban Board mit allen offenen Aufgaben |"
-            echo "| [Alle Issues](https://github.com/${{ github.repository }}/issues) | Sitzungen, Traktanden und Aufgaben |"
+            echo "| [Alle Issues](https://github.com/${{ github.repository }}/issues) | Sitzungen, Themen und Aufgaben |"
             echo ""
             echo "## Dokumentation"
             echo ""
