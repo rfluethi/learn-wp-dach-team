@@ -12,6 +12,12 @@ Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Lea
 
 ### Protokolle
 
+#### ausserordentlich
+
+| Sitzung | Datum |
+| --- | --- |
+| [Sitzung ausserordentlich 2026-04-13](https://github.com/rfluethi/learn-wp-dach-team/issues/35) | 2026-04-09 |
+
 #### 2026
 
 | Sitzung | Datum |
@@ -54,4 +60,4 @@ Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Lea
 
 Dieses Repository steht unter der [CC BY 4.0 Lizenz](LICENSE). Inhalte dürfen geteilt und bearbeitet werden, sofern die Urheberschaft angegeben wird.
 
-Zuletzt aktualisiert: 2026-04-03
+Zuletzt aktualisiert: 2026-04-09
