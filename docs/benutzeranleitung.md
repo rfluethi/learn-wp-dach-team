@@ -158,7 +158,7 @@ Ja – der Moderator fügt es direkt in Punkt 6 des Sitzungs-Issues ein, ohne se
 Label `nächste-sitzung` setzen. Der Moderator der nächsten Sitzung verlinkt es dann.
 
 **Wer kann Issues erstellen und bearbeiten?**
-Alle eingeladenen Teammitglieder (Collaborators). GitHub-Account ist Voraussetzung.
+Das Repository ist öffentlich lesbar. Issues erstellen kann jeder mit einem GitHub-Account. Direkte Bearbeitungsrechte (Labels setzen, Mergen) haben eingeladene Teammitglieder (Collaborators).
 
 **Wie finde ich meine offenen Aufgaben?**
 Aufgaben-Board → Filter `assignee:@me` oder direkt: Issues → `is:open label:aufgabe assignee:@me`

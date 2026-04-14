@@ -31,7 +31,8 @@ Nach jeder Sitzung wird das Protokoll zur Prüfung freigegeben. Issues mit Statu
 ## Voraussetzungen
 
 - GitHub-Account (kostenlos unter [github.com](https://github.com))
-- Einladung als Collaborator (beim Team-Admin anfragen)
+
+Dieses Repository ist **öffentlich lesbar** – du kannst alle Inhalte ohne Anmeldung einsehen. Issues erstellen und Pull Requests einreichen ist mit einem GitHub-Account möglich. Für direkten Schreibzugriff (Mergen, Labels setzen) ist eine Einladung als Collaborator notwendig – beim Team-Admin anfragen.
 
 ---
 
