@@ -169,6 +169,3 @@ Die `README.md` enthält direkte Links auf Issue-Nummern (z.B. `https://github.c
 - [ ] Protokoll-Index-Workflow manuell auslösen, um README.md zu aktualisieren
 - [ ] Alle Links in der Dokumentation (`docs/`, `SECURITY.md`) auf neue Repository-URL prüfen
 
----
-
-*Kein Code oder Inhalt wurde bei der Erstellung dieses Dokuments auf GitHub übertragen.*
