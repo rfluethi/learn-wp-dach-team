@@ -63,7 +63,8 @@ Board-Status:                           läuft                  geschlossen →
 | `thema` | Vorgeschlagene Diskussionsthemen |
 | `aufgabe` | Action Items / Tasks |
 | `blockiert` | Aufgaben mit Blocker oder Abhängigkeit |
-| `nächste-sitzung` | Vertage Themen für das nächste Meeting |
+| `überprüfung` | Aufgabe erledigt – wartet auf Kontrolle durch eine zweite Person |
+| `nächste-sitzung` | Vertagte Themen für das nächste Meeting |
 | `lerngruppe` | Themen rund um Lerngruppen |
 | `webseite` | Themen rund um learn-wp-dach.org |
 | `übersetzung` | Übersetzungsprojekte |
@@ -80,8 +81,9 @@ Board-Status:                           läuft                  geschlossen →
 | Themen | Vorgeschlagene Diskussionsthemen |
 | Offen | Aufgaben, noch nicht begonnen |
 | In Arbeit | Aufgaben aktiv in Bearbeitung |
-| Blockiert | Aufgaben mit Blocker – oder Sitzungsprotokoll wartet auf Review |
-| Erledigt | Abgeschlossene Aufgaben |
+| Blockiert | Aufgaben mit Blocker oder Abhängigkeit |
+| Überprüfung | Aufgabe erledigt – wartet auf Kontrolle durch eine zweite Person |
+| Erledigt | Abgeschlossene und geprüfte Aufgaben |
 
 > Sitzungs-Issues erscheinen **nicht** im Kanban – sie sind das Protokoll-Archiv und werden über die Protokoll-View oder die Suche gefunden.
 

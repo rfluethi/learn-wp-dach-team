@@ -117,8 +117,9 @@ Das [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) zeigt alle o
 | Themen | Vorgeschlagene Themen für nächste Sitzung |
 | Offen | Aufgabe noch nicht begonnen |
 | In Arbeit | Aktiv in Bearbeitung / Sitzung in Vorbereitung |
-| Blockiert | Aufgabe hat Blocker – oder: Protokoll wartet auf Review (OK) |
-| Erledigt | Fertig |
+| Blockiert | Aufgabe hat Blocker oder Abhängigkeit |
+| Überprüfung | Aufgabe erledigt – wartet auf Kontrolle durch eine zweite Person |
+| Erledigt | Fertig und geprüft |
 
 **Vordefinierte Views:**
 

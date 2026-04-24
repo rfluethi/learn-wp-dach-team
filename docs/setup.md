@@ -59,6 +59,7 @@ gh label create "thema"           --repo "$REPO" --color "e4e669" --description 
 gh label create "aufgabe"         --repo "$REPO" --color "f4a261" --description "Action Item / Task aus einer Sitzung" --force
 gh label create "beschluss"       --repo "$REPO" --color "0e8a16" --description "Entscheidung gefällt" --force
 gh label create "blockiert"       --repo "$REPO" --color "d73a4a" --description "Aufgabe hat einen Blocker oder Abhängigkeit" --force
+gh label create "überprüfung"     --repo "$REPO" --color "f9c513" --description "Aufgabe erledigt – wartet auf Kontrolle durch eine zweite Person" --force
 gh label create "nächste-sitzung" --repo "$REPO" --color "bfd4f2" --description "Vertagt – kommt in die nächste Sitzung" --force
 gh label create "lerngruppe"      --repo "$REPO" --color "7057ff" --description "Thema rund um Lerngruppen" --force
 gh label create "webseite"        --repo "$REPO" --color "cfd3d7" --description "Thema rund um learn-wp-dach.org" --force
@@ -75,15 +76,16 @@ gh label create "organisation"    --repo "$REPO" --color "e99695" --description 
 1. GitHub → Tab **Projects** → **New project**
 2. Vorlage: **Board**
 3. Name: `Learn WP DACH – Aufgaben`
-4. Spalten erstellen (Themen, Offen, In Arbeit, Blockiert, Erledigt):
+4. Spalten erstellen (Themen, Offen, In Arbeit, Blockiert, Überprüfung, Erledigt):
 
    | Spalte | Beschreibung |
    | --- | --- |
    | Themen | Vorgeschlagene Diskussionsthemen |
    | Offen | Aufgaben, noch nicht begonnen |
    | In Arbeit | Aufgaben aktiv in Bearbeitung |
-   | Blockiert | Aufgaben mit Blocker |
-   | Erledigt | Abgeschlossene Aufgaben |
+   | Blockiert | Aufgaben mit Blocker oder Abhängigkeit |
+   | Überprüfung | Aufgabe erledigt – wartet auf Kontrolle durch eine zweite Person |
+   | Erledigt | Abgeschlossene und geprüfte Aufgaben |
 
 5. Automation einrichten: Project → **`...`** → **Workflows**
    - *Item added to project* → Status: **Offen**

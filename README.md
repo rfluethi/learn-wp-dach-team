@@ -45,6 +45,7 @@ Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Lea
 | [Konzept](docs/konzept.md) | Übersicht über das System |
 | [Benutzeranleitung](docs/benutzeranleitung.md) | Schritt-für-Schritt für alle Teammitglieder |
 | [Setup-Anleitung](docs/setup.md) | Technische Einrichtung (Admin) |
+| [Repo-Umzug-Infos für Admin](docs/repo-umzug-infos-fuer-admin.md) | Beschreibung des Repos und Checkliste für den Repository-Umzug |
 
 ## Mitmachen
 
