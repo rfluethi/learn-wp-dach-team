@@ -63,9 +63,13 @@ def extract_minutes_date(closed_at: str | None) -> str:
 
 
 def build(issues: list[dict], repo: str) -> dict:
-    """Baut die JSON-Struktur."""
-    today = datetime.now(timezone.utc).date()
+    """Baut die JSON-Struktur.
 
+    Unterscheidung "nächste Sitzung" vs. "Protokoll" rein über den Issue-State:
+    - state == OPEN  →  Kandidat für next_session (Sitzung noch nicht abgeschlossen,
+                        weil noch kein Protokoll erstellt wurde – Datum egal)
+    - state == CLOSED →  Protokoll (past_sessions)
+    """
     next_candidates: list[dict] = []
     past: list[dict] = []
 
@@ -81,14 +85,7 @@ def build(issues: list[dict], repo: str) -> dict:
         state = (issue.get("state") or "").upper()
         body = issue.get("body", "") or ""
 
-        try:
-            session_date_obj = datetime.strptime(session_date, "%Y-%m-%d").date()
-        except ValueError:
-            continue
-
-        is_future = session_date_obj >= today
-
-        if state == "OPEN" and is_future:
+        if state == "OPEN":
             next_candidates.append(
                 {
                     "title": title,
@@ -107,7 +104,8 @@ def build(issues: list[dict], repo: str) -> dict:
                 }
             )
 
-    # Nächste Sitzung: nächstgelegenes Datum gewinnt.
+    # Nächste Sitzung: bei mehreren offenen Sitzungen gewinnt
+    # das früheste Datum (= die am dringendsten anstehende).
     next_session = None
     if next_candidates:
         next_candidates.sort(key=lambda s: s["session_date"])
