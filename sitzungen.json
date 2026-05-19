@@ -1,0 +1,68 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-05-19T12:42:27Z",
+  "source_repo": "rfluethi/learn-wp-dach-team",
+  "next_session": null,
+  "past_sessions": [
+    {
+      "title": "Sitzung 2026-04-28",
+      "session_date": "2026-04-28",
+      "minutes_date": "",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/7"
+    },
+    {
+      "title": "Sitzung 2026-04-13",
+      "session_date": "2026-04-13",
+      "minutes_date": "2026-04-16",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/35"
+    },
+    {
+      "title": "Sitzung 2026-03-31",
+      "session_date": "2026-03-31",
+      "minutes_date": "2026-04-03",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/5"
+    },
+    {
+      "title": "Sitzung 2026-02-24",
+      "session_date": "2026-02-24",
+      "minutes_date": "2026-04-01",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/14"
+    },
+    {
+      "title": "Sitzung 2026-01-27",
+      "session_date": "2026-01-27",
+      "minutes_date": "2026-04-01",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/13"
+    },
+    {
+      "title": "Sitzung 2025-12-16",
+      "session_date": "2025-12-16",
+      "minutes_date": "2026-04-01",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/12"
+    },
+    {
+      "title": "Sitzung 2025-11-26",
+      "session_date": "2025-11-26",
+      "minutes_date": "2026-04-01",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/11"
+    },
+    {
+      "title": "Sitzung 2025-10-28",
+      "session_date": "2025-10-28",
+      "minutes_date": "2026-04-01",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/10"
+    },
+    {
+      "title": "Sitzung 2025-09-23",
+      "session_date": "2025-09-23",
+      "minutes_date": "2026-04-01",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/9"
+    },
+    {
+      "title": "Sitzung 2025-08-26",
+      "session_date": "2025-08-26",
+      "minutes_date": "2026-04-01",
+      "url": "https://github.com/rfluethi/learn-wp-dach-team/issues/8"
+    }
+  ]
+}
