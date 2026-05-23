@@ -9,8 +9,9 @@ on:
   issues:
     types: [opened, edited, closed, reopened, labeled, unlabeled]
   schedule:
-    # Nächtliches Safety-Net (03:17 UTC – exotisch, um Action-Spitzen zu meiden)
-    - cron: '17 3 * * *'
+    # Alle 12 Stunden (03:17 und 15:17 UTC – exotische Minuten, um Action-Spitzen zu meiden).
+    - cron: '17 3,15 * * *'
+  # Manueller Trigger über die Actions-Oberfläche oder gh CLI.
   workflow_dispatch:
 
 # Nur ein Lauf gleichzeitig – verhindert Push-Konflikte auf den data-Branch.
@@ -46,7 +47,7 @@ jobs:
             --label sitzung \
             --state all \
             --limit 200 \
-            --json number,title,body,state,closedAt,url \
+            --json number,title,body,state,closedAt,url,labels \
             > /tmp/issues.json
 
           echo "Anzahl Issues mit Label 'sitzung':"
