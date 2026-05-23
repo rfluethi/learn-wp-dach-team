@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Liest Issues mit Label 'sitzung' und erzeugt sitzungen.json
-gemäß dem Schema aus dem Konzept.
+gemäß dem Schema v2.
 
 Pfad-Empfehlung: .github/scripts/build-sitzungen-json.py
 im Repo learn-wp-dach-team.
@@ -19,16 +19,30 @@ import argparse
 import json
 import re
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 # Schema-Version – bei Breaking Changes hochsetzen.
-SCHEMA_VERSION = 1
+# v2 (2026-05): drei Listen (upcoming, in_progress, past); title aus
+# Body-Feld "Veranstaltung:"; Einordnung anhand Label "Erledigt".
+SCHEMA_VERSION = 2
 
-# Titel-Format: "Sitzung 2026-04-28"
-TITLE_DATE_RE = re.compile(r"Sitzung\s+(\d{4}-\d{2}-\d{2})")
+# Label, das ein Issue als "fertig protokolliert" markiert.
+LABEL_DONE = "erledigt"
 
-# Im Body: **Uhrzeit:** 20:00 Uhr  ODER  ### Uhrzeit\n20:00
+# Datum im Titel: das erste YYYY-MM-DD-Vorkommen gewinnt.
+TITLE_DATE_RE = re.compile(r"\b(\d{4}-\d{2}-\d{2})\b")
+
+# Body-Feld "Veranstaltung:". Wir akzeptieren beide GitHub-Formen:
+#   **Veranstaltung:** Sitzung
+#   ### Veranstaltung
+#   Sitzung
+EVENT_RE = re.compile(
+    r"(?:\*\*Veranstaltung:?\*\*|###\s*Veranstaltung)\s*[:\n]?\s*([^\n]+)",
+    re.IGNORECASE,
+)
+
+# Body-Feld "Uhrzeit:". Gleiche zwei Formen.
 TIME_RE = re.compile(
     r"(?:\*\*Uhrzeit:?\*\*|###\s*Uhrzeit)\s*[:\n]?\s*(\d{1,2}:\d{2})",
     re.IGNORECASE,
@@ -36,9 +50,22 @@ TIME_RE = re.compile(
 
 
 def extract_session_date(title: str) -> str | None:
-    """Liefert YYYY-MM-DD aus dem Titel oder None."""
+    """Liefert das erste YYYY-MM-DD aus dem Titel oder None."""
     match = TITLE_DATE_RE.search(title or "")
     return match.group(1) if match else None
+
+
+def extract_event_name(body: str, fallback_title: str) -> str:
+    """Liefert den String hinter "Veranstaltung:" aus dem Body.
+
+    Fällt auf den Issue-Titel ohne Datum zurück, wenn das Feld fehlt.
+    """
+    match = EVENT_RE.search(body or "")
+    if match:
+        return match.group(1).strip()
+    # Fallback: Issue-Titel minus Datum, getrimmt.
+    name = TITLE_DATE_RE.sub("", fallback_title or "").strip()
+    return name or (fallback_title or "")
 
 
 def extract_session_time(body: str) -> str:
@@ -55,22 +82,34 @@ def extract_minutes_date(closed_at: str | None) -> str:
     if not closed_at:
         return ""
     try:
-        # GitHub liefert ISO 8601 mit Z.
         dt = datetime.fromisoformat(closed_at.replace("Z", "+00:00"))
         return dt.date().isoformat()
     except ValueError:
         return ""
 
 
-def build(issues: list[dict], repo: str) -> dict:
+def has_label(issue: dict, label_name: str) -> bool:
+    """True, wenn Issue das Label trägt (case-insensitive)."""
+    target = label_name.lower()
+    for lbl in issue.get("labels", []) or []:
+        name = (lbl.get("name") or "") if isinstance(lbl, dict) else str(lbl)
+        if name.lower() == target:
+            return True
+    return False
+
+
+def build(issues: list[dict], repo: str, today: date | None = None) -> dict:
     """Baut die JSON-Struktur.
 
-    Unterscheidung "nächste Sitzung" vs. "Protokoll" rein über den Issue-State:
-    - state == OPEN  →  Kandidat für next_session (Sitzung noch nicht abgeschlossen,
-                        weil noch kein Protokoll erstellt wurde – Datum egal)
-    - state == CLOSED →  Protokoll (past_sessions)
+    Einordnung:
+    - Label "Erledigt"               → past_sessions (mit minutes_date)
+    - sonst, session_date >= heute   → upcoming_sessions (mit session_time)
+    - sonst, session_date < heute    → in_progress_sessions (mit session_time)
     """
-    next_candidates: list[dict] = []
+    today = today or date.today()
+
+    upcoming: list[dict] = []
+    in_progress: list[dict] = []
     past: list[dict] = []
 
     for issue in issues:
@@ -81,44 +120,51 @@ def build(issues: list[dict], repo: str) -> dict:
             continue
 
         url = issue.get("url", "")
-        # gh issue list (JSON) liefert State als "OPEN"/"CLOSED".
-        state = (issue.get("state") or "").upper()
         body = issue.get("body", "") or ""
+        event_name = extract_event_name(body, title)
+        done = has_label(issue, LABEL_DONE)
 
-        if state == "OPEN":
-            next_candidates.append(
-                {
-                    "title": title,
-                    "session_date": session_date,
-                    "session_time": extract_session_time(body),
-                    "url": url,
-                }
-            )
-        else:
+        if done:
             past.append(
                 {
-                    "title": title,
+                    "title": event_name,
                     "session_date": session_date,
                     "minutes_date": extract_minutes_date(issue.get("closedAt")),
                     "url": url,
                 }
             )
+            continue
 
-    # Nächste Sitzung: bei mehreren offenen Sitzungen gewinnt
-    # das früheste Datum (= die am dringendsten anstehende).
-    next_session = None
-    if next_candidates:
-        next_candidates.sort(key=lambda s: s["session_date"])
-        next_session = next_candidates[0]
+        try:
+            session_date_obj = date.fromisoformat(session_date)
+        except ValueError:
+            continue
 
-    # Vergangenheit: absteigend nach session_date.
+        record = {
+            "title": event_name,
+            "session_date": session_date,
+            "session_time": extract_session_time(body),
+            "url": url,
+        }
+
+        if session_date_obj >= today:
+            upcoming.append(record)
+        else:
+            in_progress.append(record)
+
+    # Upcoming: aufsteigend (die als nächstes anstehende oben).
+    upcoming.sort(key=lambda s: (s["session_date"], s.get("session_time") or ""))
+    # In progress: absteigend (die jüngste, also am dringendsten zu protokollieren, oben).
+    in_progress.sort(key=lambda s: s["session_date"], reverse=True)
+    # Past: absteigend nach session_date.
     past.sort(key=lambda s: s["session_date"], reverse=True)
 
     return {
         "schema_version": SCHEMA_VERSION,
         "generated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
         "source_repo": repo,
-        "next_session": next_session,
+        "upcoming_sessions": upcoming,
+        "in_progress_sessions": in_progress,
         "past_sessions": past,
     }
 
