@@ -12,9 +12,9 @@ body:
     id: veranstaltung
     attributes:
       label: Veranstaltung
-      placeholder: "Sitzung"
-      value: "Sitzung"
-      description: "Anzeigename auf der Webseite (z.B. „Sitzung", „Workshop", „Vortrag")."
+      placeholder: Sitzung
+      value: Sitzung
+      description: 'Anzeigename auf der Webseite (z. B. Sitzung, Workshop, Vortrag).'
     validations:
       required: true
 
