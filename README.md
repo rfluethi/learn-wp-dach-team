@@ -4,32 +4,13 @@ Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Lea
 
 ## Sitzungen
 
-### Nächste Sitzung
+<!-- BEGIN SITZUNGEN -->
+<!-- Der Block zwischen den Markern wird automatisch von der GitHub Action
+     `sitzungen-json.yml` aus den Issues gepflegt. Nicht manuell editieren. -->
 
-| Sitzung |
-| --- |
-| [Sitzung 2026-04-28](https://github.com/rfluethi/learn-wp-dach-team/issues/7) |
+_Wird beim nächsten Action-Lauf befüllt._
 
-### Protokolle
-
-#### 2026
-
-| Sitzung | Datum |
-| --- | --- |
-| [Sitzung 2026-04-13](https://github.com/rfluethi/learn-wp-dach-team/issues/35) | 2026-04-16 |
-| [Sitzung 2026-03-31](https://github.com/rfluethi/learn-wp-dach-team/issues/5) | 2026-04-03 |
-| [Sitzung 2026-02-24](https://github.com/rfluethi/learn-wp-dach-team/issues/14) | 2026-04-01 |
-| [Sitzung 2026-01-27](https://github.com/rfluethi/learn-wp-dach-team/issues/13) | 2026-04-01 |
-
-#### 2025
-
-| Sitzung | Datum |
-| --- | --- |
-| [Sitzung 2025-12-16](https://github.com/rfluethi/learn-wp-dach-team/issues/12) | 2026-04-01 |
-| [Sitzung 2025-11-26](https://github.com/rfluethi/learn-wp-dach-team/issues/11) | 2026-04-01 |
-| [Sitzung 2025-10-28](https://github.com/rfluethi/learn-wp-dach-team/issues/10) | 2026-04-01 |
-| [Sitzung 2025-09-23](https://github.com/rfluethi/learn-wp-dach-team/issues/9) | 2026-04-01 |
-| [Sitzung 2025-08-26](https://github.com/rfluethi/learn-wp-dach-team/issues/8) | 2026-04-01 |
+<!-- END SITZUNGEN -->
 
 ## Links
 
