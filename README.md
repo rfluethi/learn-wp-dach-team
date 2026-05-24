@@ -10,14 +10,13 @@ Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Lea
 
 ### Anstehende Sitzungen
 
-| Veranstaltung | Datum | Uhrzeit |
-| --- | --- | --- |
-| [Test](https://github.com/rfluethi/learn-wp-dach-team/issues/55) | 23.05.2026 | 18:00 |
+_Aktuell keine anstehenden Sitzungen geplant._
 
 ### Sitzungen in Bearbeitung
 
 | Veranstaltung | Datum | Uhrzeit |
 | --- | --- | --- |
+| [Test](https://github.com/rfluethi/learn-wp-dach-team/issues/55) | 23.05.2026 | 18:00 |
 | [Sitzung](https://github.com/rfluethi/learn-wp-dach-team/issues/7) | 28.04.2026 | 20:00 |
 
 ### Protokolle
@@ -41,7 +40,7 @@ Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Lea
 | [Sitzung](https://github.com/rfluethi/learn-wp-dach-team/issues/9) | 23.09.2025 | 01.04.2026 |
 | [Sitzung](https://github.com/rfluethi/learn-wp-dach-team/issues/8) | 26.08.2025 | 01.04.2026 |
 
-_Stand: 23.05.2026, 15:40 UTC — automatisch generiert aus den Issues._
+_Stand: 24.05.2026, 04:44 UTC — automatisch generiert aus den Issues._
 
 <!-- END SITZUNGEN -->
 
