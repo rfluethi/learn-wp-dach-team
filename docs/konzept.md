@@ -97,6 +97,30 @@ Alle geschlossenen Sitzungs-Issues sind dauerhaft abrufbar:
 
 ---
 
+## Anzeige auf der DACH-WordPress-Site
+
+Im Repo `learn-wp-dach-team` läuft die Action `sitzungen-json.yml` weiter und schreibt `sitzungen.json` auf den `data`-Branch. Sie wird vom neuen Plugin (Training Meeting Tracker) genauso konsumiert wie vom alten. Hier ist nichts zu ändern, sofern die Datenquelle gleich bleiben soll.
+
+Damit ergibt sich folgender Datenfluss:
+
+```
+Issues mit Label "sitzung"
+        │
+        ▼
+Action sitzungen-json.yml
+        │
+        ▼
+sitzungen.json auf dem data-Branch
+        │
+        ▼
+WordPress-Plugin "Training Meeting Tracker"
+        │
+        ▼
+Darstellung auf der DACH-Webseite
+```
+
+---
+
 ## Weiterführende Dokumente
 
 - [Benutzeranleitung](benutzeranleitung.md) – Schritt-für-Schritt-Anleitung für alle Teammitglieder

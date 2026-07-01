@@ -96,7 +96,7 @@ Das Sitzungs-Issue ist geschlossen, alle Aufgaben sind als eigene Issues erfasst
 * [Aufgabe erfassen](aufgabe-erfassen.md) – Detail zu Schritt 4
 * [Aufgaben-Board](aufgaben-board.md) – wie der Board-Status funktioniert
 * [Häufige Fragen](haeufige-fragen.md) – Sonderfälle (spontane Themen, vertagte Themen)
-* [GitHub-basierte Sitzungsverwaltung](konzept.md) – Hintergrund zum Workflow
+* [GitHub-basierte Sitzungsverwaltung](WordPress-Training-Team-DACH/GitHub-Repo/learn-wp-dach-team/handbuch/Aufgaben%20und%20Sitzungsverwaltung/konzept.md) – Hintergrund zum Workflow
 
 ## Metadaten
 

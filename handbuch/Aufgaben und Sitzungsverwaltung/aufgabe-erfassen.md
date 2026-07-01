@@ -40,7 +40,7 @@ Ein klar formuliertes Erledigungskriterium („Woran erkennen wir, dass es ferti
 
 * [Aufgaben-Board](aufgaben-board.md) – wie Aufgaben weiter durchlaufen
 * [Sitzung durchführen](sitzung-durchfuehren.md) – wie Aufgaben aus Beschlüssen entstehen
-* [GitHub-basierte Sitzungsverwaltung](konzept.md) – Hintergrund
+* [GitHub-basierte Sitzungsverwaltung](WordPress-Training-Team-DACH/GitHub-Repo/learn-wp-dach-team/handbuch/Aufgaben%20und%20Sitzungsverwaltung/konzept.md) – Hintergrund
 
 ## Metadaten
 

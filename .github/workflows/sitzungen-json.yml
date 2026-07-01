@@ -81,7 +81,18 @@ jobs:
               MSG="${MSG} (Issue #${{ github.event.issue.number }})"
             fi
             git commit -m "${MSG}"
-            git push origin main
+
+            # Push mit Retry: falls Remote weiter ist (paralleler Run, manueller
+            # Commit), rebasen wir mit "unsere Version gewinnt" und versuchen
+            # nochmal. Bis zu 3 Versuche.
+            for attempt in 1 2 3; do
+              if git push origin main; then
+                break
+              fi
+              echo "Push abgelehnt (Versuch $attempt) — rebase + retry..."
+              git fetch origin main
+              git rebase -X ours origin/main || git rebase --abort
+            done
           fi
 
       - name: data-Branch auschecken oder anlegen
@@ -125,4 +136,15 @@ jobs:
             MSG="${MSG} (Issue #${{ github.event.issue.number }})"
           fi
           git commit -m "${MSG}"
-          git push origin data
+
+          # Push mit Retry: bei parallelen Läufen oder manuellen Commits am
+          # data-Branch rebasen wir mit "unsere Version gewinnt" und pushen
+          # nochmal. Bis zu 3 Versuche.
+          for attempt in 1 2 3; do
+            if git push origin data; then
+              break
+            fi
+            echo "Push abgelehnt (Versuch $attempt) — rebase + retry..."
+            git fetch origin data
+            git rebase -X ours origin/data || git rebase --abort
+          done

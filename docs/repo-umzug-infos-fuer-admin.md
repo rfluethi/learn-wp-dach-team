@@ -22,12 +22,13 @@ Das Kernprinzip: **Ein Issue = eine Sitzung.** Vor der Sitzung dient das Issue a
 | `README.md` | Einstiegsseite mit automatisch generiertem Protokoll-Index (via GitHub Actions) |
 | `docs/` | Konzept, Benutzeranleitung und Setup-Anleitung (3 Markdown-Dateien) |
 | `.github/ISSUE_TEMPLATE/` | 3 Issue-Vorlagen: `sitzung.yml`, `thema.yml`, `aufgabe.yml` |
-| `.github/workflows/` | 2 GitHub Actions Workflows (siehe unten) |
+| `.github/workflows/` | 3 GitHub Actions Workflows (siehe unten) |
 | `CONTRIBUTING.md`, `CODE_OF_CONDUCT.md`, `SECURITY.md`, `LICENSE` | Standard Community-Dateien |
 
 ### Branches
 
-- `main` (Hauptbranch, einziger verbleibender Branch)
+- `main` (Hauptbranch)
+- `data` (automatisch durch `sitzungen-json.yml` gepflegt, enthält `sitzungen.json` für das WordPress-Plugin)
 
 ### GitHub Actions Workflows
 
@@ -36,6 +37,9 @@ Wird ausgelöst, wenn ein Issue mit dem Label `sitzung` geschlossen wird (oder m
 
 **2. `thema-board.yml` – Thema ins Board einordnen**  
 Wird ausgelöst, wenn ein Issue mit dem Label `thema` erstellt oder gelabelt wird. Der Workflow fügt das Issue automatisch in die Spalte „Themen" des Kanban-Boards ein.
+
+**3. `sitzungen-json.yml` – sitzungen.json auf dem `data`-Branch aktualisieren**  
+Im Repo `learn-wp-dach-team` läuft die Action `sitzungen-json.yml` weiter und schreibt `sitzungen.json` auf den `data`-Branch. Sie wird vom neuen Plugin (Training Meeting Tracker) genauso konsumiert wie vom alten. Hier ist nichts zu ändern, sofern die Datenquelle gleich bleiben soll.
 
 ### Verknüpftes GitHub-Projekt (ProjectV2)
 

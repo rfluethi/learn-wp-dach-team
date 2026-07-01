@@ -269,6 +269,14 @@ jobs:
 
 ---
 
+### Hinweis: sitzungen.json für das WordPress-Plugin
+
+Im Repo `learn-wp-dach-team` läuft die Action `sitzungen-json.yml` weiter und schreibt `sitzungen.json` auf den `data`-Branch. Sie wird vom neuen Plugin (Training Meeting Tracker) genauso konsumiert wie vom alten. Hier ist nichts zu ändern, sofern die Datenquelle gleich bleiben soll.
+
+Die Workflow-Datei liegt unter `.github/workflows/sitzungen-json.yml`. Sie nutzt zwei Python-Skripte in `.github/scripts/` (`build-sitzungen-json.py` und `render-sitzungen-readme.py`) und legt den `data`-Branch beim ersten Lauf automatisch als Orphan-Branch an. Trigger sind Issue-Events mit dem Label `sitzung`, ein 12-Stunden-Cron und manueller Start über die Actions-Oberfläche.
+
+---
+
 ## Schritt 6: Thema-Workflow einrichten
 
 Dieser Workflow verschiebt Issues mit dem Label `thema` automatisch in die Spalte **Themen** des Kanban Boards.

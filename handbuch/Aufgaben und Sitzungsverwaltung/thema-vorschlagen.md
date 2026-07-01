@@ -38,7 +38,7 @@ Die Schätzung in Minuten gibt der Moderation bei der Sitzungsplanung eine Über
 
 * [Sitzung durchführen](sitzung-durchfuehren.md) – wie das Thema in die Sitzung kommt
 * [Häufige Fragen](haeufige-fragen.md) – z.B. zu spontanen Themen in der Sitzung
-* [GitHub-basierte Sitzungsverwaltung](konzept.md) – Hintergrund
+* [GitHub-basierte Sitzungsverwaltung](WordPress-Training-Team-DACH/GitHub-Repo/learn-wp-dach-team/handbuch/Aufgaben%20und%20Sitzungsverwaltung/konzept.md) – Hintergrund
 
 ## Metadaten
 

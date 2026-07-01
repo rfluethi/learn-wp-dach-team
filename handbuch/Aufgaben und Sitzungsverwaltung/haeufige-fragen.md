@@ -46,7 +46,7 @@ Im Board das Issue öffnen, dann über das Drei-Punkte-Menü *Remove from projec
 * [Aufgabe erfassen](aufgabe-erfassen.md)
 * [Sitzung durchführen](sitzung-durchfuehren.md)
 * [Aufgaben-Board](aufgaben-board.md)
-* [GitHub-basierte Sitzungsverwaltung](konzept.md)
+* [GitHub-basierte Sitzungsverwaltung](WordPress-Training-Team-DACH/GitHub-Repo/learn-wp-dach-team/handbuch/Aufgaben%20und%20Sitzungsverwaltung/konzept.md)
 
 ## Metadaten
 

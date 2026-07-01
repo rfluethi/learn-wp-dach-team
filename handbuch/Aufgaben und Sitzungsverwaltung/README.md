@@ -13,7 +13,7 @@ Dieses Verzeichnis enthält die Anleitungen, Prozessbeschreibungen und Hintergru
 | [sitzung-durchfuehren.md](sitzung-durchfuehren.md) | Prozessbeschreibung | Vom Sitzungs-Issue zum Protokoll: vollständiger Ablauf in sieben Schritten. |
 | [aufgaben-board.md](aufgaben-board.md) | Tool-Übersicht | Spalten, vordefinierte Views, Konventionen und Zugang zum Aufgaben-Board. |
 | [haeufige-fragen.md](haeufige-fragen.md) | FAQ / Hintergrund | Häufige Fragen zur Sitzungs- und Aufgabenverwaltung. |
-| [konzept.md](konzept.md) | Konzept | Hintergrund: Warum verwalten wir Themen, Sitzungen und Aufgaben über GitHub? |
+| [konzept.md](WordPress-Training-Team-DACH/GitHub-Repo/learn-wp-dach-team/handbuch/Aufgaben%20und%20Sitzungsverwaltung/konzept.md) | Konzept | Hintergrund: Warum verwalten wir Themen, Sitzungen und Aufgaben über GitHub? |
 
 ## Verlinkungs-Skizze
 
@@ -40,7 +40,7 @@ thema-vorschlagen   aufgabe-erfassen   sitzung-durchfuehren
 * Die **Prozessseite** verlinkt zurück auf beide Anleitungen.
 * Das **[Aufgaben-Board](aufgaben-board.md)** wird von allen verlinkt, sobald das Board genannt wird.
 * Die **[FAQ](haeufige-fragen.md)** verlinkt auf alle Seiten, je nach Frage.
-* Die **[Konzeptseite](konzept.md)** ist Ziel von Aufklappbereichen („Warum machen wir das so?").
+* Die **[Konzeptseite](WordPress-Training-Team-DACH/GitHub-Repo/learn-wp-dach-team/handbuch/Aufgaben%20und%20Sitzungsverwaltung/konzept.md)** ist Ziel von Aufklappbereichen („Warum machen wir das so?").
 
 ## Metadaten
 
