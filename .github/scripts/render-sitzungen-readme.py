@@ -138,16 +138,28 @@ def render_block(data: dict) -> str:
 
 
 def replace_block(readme: str, new_block: str) -> str:
-    """Ersetzt den BEGIN/END-Block in der README durch new_block."""
+    """Ersetzt den BEGIN/END-Block oder fällt auf den kompletten Sitzungen-Abschnitt zurück."""
     pattern = re.compile(
         re.escape(BEGIN_MARKER) + r".*?" + re.escape(END_MARKER),
         re.DOTALL,
     )
-    if not pattern.search(readme):
-        raise RuntimeError(
-            f"Marker {BEGIN_MARKER!r} ... {END_MARKER!r} nicht in README gefunden."
-        )
-    return pattern.sub(new_block, readme)
+    if pattern.search(readme):
+        return pattern.sub(new_block, readme)
+
+    # Fallback für ältere README-Versionen ohne Marker:
+    # Ersetze den kompletten Abschnitt "## Sitzungen" bis zur nächsten H2.
+    section_pattern = re.compile(
+        r"(^##\s+Sitzungen\s*$\n)(.*?)(?=^##\s+|\Z)",
+        re.MULTILINE | re.DOTALL,
+    )
+    replacement = r"\1\n" + new_block + "\n\n"
+    if section_pattern.search(readme):
+        return section_pattern.sub(replacement, readme, count=1)
+
+    raise RuntimeError(
+        "Weder Marker noch Abschnitt '## Sitzungen' in README gefunden. "
+        "Bitte README-Struktur prüfen."
+    )
 
 
 def main() -> int:
