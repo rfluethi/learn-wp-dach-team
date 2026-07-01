@@ -32,10 +32,6 @@ Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Lea
 | [Sitzung 2025-09-23](https://github.com/rfluethi/learn-wp-dach-team/issues/9) | 2026-04-01 |
 | [Sitzung 2025-08-26](https://github.com/rfluethi/learn-wp-dach-team/issues/8) | 2026-04-01 |
 
-## Anzeige auf der DACH-WordPress-Site
-
-Im Repo `learn-wp-dach-team` läuft die Action `sitzungen-json.yml` weiter und schreibt `sitzungen.json` auf den `data`-Branch. Sie wird vom neuen Plugin (Training Meeting Tracker) genauso konsumiert wie vom alten. Hier ist nichts zu ändern, sofern die Datenquelle gleich bleiben soll.
-
 ## Links
 
 | | |
@@ -61,4 +57,4 @@ Im Repo `learn-wp-dach-team` läuft die Action `sitzungen-json.yml` weiter und s
 
 Dieses Repository steht unter der [CC BY 4.0 Lizenz](LICENSE). Inhalte dürfen geteilt und bearbeitet werden, sofern die Urheberschaft angegeben wird.
 
-Zuletzt aktualisiert: 2026-06-30
+Zuletzt aktualisiert: 2026-07-01
