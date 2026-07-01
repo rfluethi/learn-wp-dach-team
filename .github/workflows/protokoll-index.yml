@@ -46,7 +46,9 @@ jobs:
             query {
               user(login: "rfluethi") {
                 projectV2(number: 11) {
-                  items(first: 50) {
+                  # Aktuell hat das Board >50 Einträge; mit 50 fehlen neue
+                  # Sitzungs-Issues (z. B. #68) im README-Block.
+                  items(first: 100) {
                     nodes {
                       content {
                         ... on Issue {
