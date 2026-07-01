@@ -4,6 +4,12 @@ Dieses Repository enthält die Sitzungsprotokolle, Themen und Aufgaben des **Lea
 
 ## Sitzungen
 
+### Nächste Sitzung
+
+| Sitzung |
+| --- |
+| [Sitzung 2026-07-29](https://github.com/rfluethi/learn-wp-dach-team/issues/68) |
+
 ### In Bearbeitung
 
 | Sitzung |
