@@ -4,6 +4,13 @@
 
 So legst du eine Aufgabe (Action Item) im Repository an. Diese Seite richtet sich an alle Teammitglieder, die in oder nach einer Sitzung eine Aufgabe erfassen.
 
+<details>
+<summary>Hintergrund: Aufgaben als Issues</summary>
+
+Aufgaben entstehen meist aus Sitzungsbeschlüssen und werden als eigenes Issue geführt, damit aus jedem Beschluss ein nachverfolgbares Action Item wird ([Konzeptseite](konzept.md)). Die **Assignee** ist die auf GitHub eingetragene verantwortliche Person. Grundlagen zu Issues stehen in der [GitHub-Dokumentation](https://docs.github.com/en/issues).
+
+</details>
+
 ## Voraussetzungen
 
 * GitHub-Account
@@ -30,7 +37,7 @@ So legst du eine Aufgabe (Action Item) im Repository an. Diese Seite richtet sic
 Das Issue erscheint automatisch im [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) in der Spalte **Offen**. Das Label `aufgabe` ist durch die Vorlage bereits gesetzt.
 
 <details>
-<summary>Warum ein Erledigungskriterium?</summary>
+<summary>Hintergrund: Warum ein Erledigungskriterium hilft</summary>
 
 Ein klar formuliertes Erledigungskriterium („Woran erkennen wir, dass es fertig ist?") verhindert Diskussionen bei der Abnahme und ist die Grundlage für die Spalte *Überprüfung* im Kanban Board.
 
@@ -40,8 +47,25 @@ Ein klar formuliertes Erledigungskriterium („Woran erkennen wir, dass es ferti
 
 * [Aufgaben-Board](aufgaben-board.md) – wie Aufgaben weiter durchlaufen
 * [Sitzung durchführen](sitzung-durchfuehren.md) – wie Aufgaben aus Beschlüssen entstehen
-* [GitHub-basierte Sitzungsverwaltung](WordPress-Training-Team-DACH/GitHub-Repo/learn-wp-dach-team/handbuch/Aufgaben%20und%20Sitzungsverwaltung/konzept.md) – Hintergrund
+* [GitHub-basierte Sitzungsverwaltung](konzept.md) – Hintergrund
 
-## Metadaten
+## Seiten-Glossar
 
-*Verantwortliche Rolle: GitHub-Spezialist · Letzte Aktualisierung: 2026-05-03 · Letzte Prüfung: 2026-05-03*
+| Begriff | Definition |
+|---|---|
+| Action Item | Eine aus einem Beschluss entstandene Aufgabe mit verantwortlicher Person und Fälligkeit, geführt als eigenes Issue. |
+
+---
+
+## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
+
+* Seitentyp: Anleitung
+* Verantwortliche Rolle: GitHub-Spezialist
+* Themengebiet: Organisation
+* Zielgruppe: Alle Mitglieder
+* Eltern-Seite: Aufgaben und Sitzungsverwaltung
+* Reihenfolge: 20
+* Textauszug: So legst du eine Aufgabe (Action Item) im Repository an.
+* Letzte Aktualisierung: 2026-07-12
+* Letzte Prüfung: 2026-05-03
+* Prüfintervall: 180

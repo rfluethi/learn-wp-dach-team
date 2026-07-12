@@ -26,7 +26,7 @@ Das Prüfintervall einer Seite ist abgelaufen (die Applikation markiert die Seit
 2. Die inhaltsverantwortliche Rolle prüft die Seite und setzt das Prüfdatum; damit ist der Normalfall erledigt.
 3. Bleibt die Prüfung länger als das **doppelte Intervall** aus, eskaliert die Applikation: Die Seite zeigt sichtbar **UNGEPRÜFT**.
 4. Die Handbuch-Redaktion bringt UNGEPRÜFT-Seiten in die nächste Team-Sitzung; dort wird die Prüfung einer Person zugeteilt (als Aufgabe im Aufgaben-Board).
-5. Die Handbuch-Redaktion wertet quartalsweise das Feedback («War diese Seite hilfreich?», Spalte „Feedback" in der Handbuch-Liste) aus und stößt Überarbeitungen an.
+5. Die Handbuch-Redaktion wertet quartalsweise das Feedback („War diese Seite hilfreich?", Spalte „Feedback" in der Handbuch-Liste) aus und stößt Überarbeitungen an.
 
 ## Ergebnis
 
@@ -42,18 +42,16 @@ Dokumentation ohne Pflege wird falsch, und falsche Dokumentation ist schlechter 
 ## Verwandte Seiten / Tools
 
 * [So prüfst du eine Seite auf Aktualität](seite-pruefen.md)
-* [Übersicht: Handbuch-Applikation](uebersicht-handbuch-applikation.md)
-* Aufgaben-Board (für zugeteilte Prüfungen): siehe Bereich Aufgaben- und Sitzungsverwaltung
-
----
+* [Handbuch-Applikation](README.md) – Startseite des Bereichs
+* [Aufgaben-Board](../Aufgaben%20und%20Sitzungsverwaltung/aufgaben-board.md) – für zugeteilte Prüfungen
 
 ## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
 
 * Seitentyp: Prozessbeschreibung
-* Verantwortliche Rolle: [ANNAHME: Handbuch-Redaktion]
-* Themengebiet: [ANNAHME: Technik]
+* Verantwortliche Rolle: Handbuch-Redaktion
+* Themengebiet: Technik
 * Zielgruppe: Inhalts-Ersteller:innen, Organisation/Koordination
-* Eltern-Seite: Übersicht: Handbuch-Applikation
+* Eltern-Seite: Handbuch-Applikation
 * Reihenfolge: 30
 * Textauszug: Dieser Prozess beschreibt, wie das Team die Aktualität des Handbuchs sichert: von der fälligen Prüfung über die Eskalation bis zur Verteilung in der Team-Sitzung.
 * Letzte Aktualisierung: [JJJJ-MM-TT]

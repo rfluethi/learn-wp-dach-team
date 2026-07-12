@@ -19,7 +19,7 @@
 [Wofür nutzen wir dieses Tool in der Gruppe?]
 
 <details>
-<summary>Für neue Mitglieder</summary>
+<summary>Hintergrund: Was [Tool] ist</summary>
 
 [Optional: Was ist das für ein Tool, in einem Satz, plus wo du es im Alltag antriffst.]
 
@@ -48,7 +48,7 @@
 * [Interne Links]
 
 <details>
-<summary>Warum genau dieses Tool?</summary>
+<summary>Hintergrund: Warum genau dieses Tool?</summary>
 
 [Optional: Begründung der Auswahl; bei längerer Begründung eigene Konzeptseite verlinken.]
 

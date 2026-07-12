@@ -7,7 +7,7 @@
 3. **Welche Rollen sind beteiligt?** (jede mit ihrer Aufgabe; nur eine Rolle → Anleitung, `vorlage-anleitung.md`)
 4. **Welche Schritte gibt es?** (chronologisch, mit Rollenzuordnung und Übergaben)
 5. **Was liegt am Ende vor?** (Ergebnis, Output, Zustand)
-6. **Welchen Kontext brauchen Neueinsteiger?** (Aufklappbereich „Für neue Mitglieder")
+6. **Welchen Kontext brauchen Neueinsteiger?** (Aufklappbereich mit beschreibendem Titel, z.B. „Hintergrund" oder „Weitere Informationen")
 7. **Welche Rolle ist für die Korrektheit verantwortlich?** (Transport-Block)
 
 ## Vorlage
@@ -18,7 +18,7 @@
 [Welcher Ablauf, wann ausgelöst, mit welchem Ergebnis?]
 
 <details>
-<summary>Für neue Mitglieder</summary>
+<summary>Hintergrund: [worum es geht]</summary>
 
 [Optional: Einordnung für Neueinsteiger.]
 

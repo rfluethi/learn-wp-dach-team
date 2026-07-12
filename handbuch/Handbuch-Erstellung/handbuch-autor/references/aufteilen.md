@@ -15,7 +15,7 @@ Prüfe den Inhalt gegen folgende **Symptome**. Trifft auch nur eines klar zu, li
 
 1. **Titel mit „und" oder mehreren Substantiven:** „WordPress, Übersicht und Anleitung zum Login" → Tool-Übersicht **und** Anleitung.
 2. **Mehrere Diátaxis-Typen im selben Text.** Prüfe absatzweise: Schritt-für-Schritt-Imperative (Anleitung), wer-macht-was mit Übergaben (Prozess), Listen/Tabellen/neutrale Beschreibung (Referenz), Begründungen („Warum machen wir das so") (Hintergrund). Zwei oder mehr Kategorien im selben Text: Mischform.
-3. **Zielgruppenwechsel mitten im Text:** erst basale Erklärungen für Neue, dann knappe Power-User-Befehle. Das löst unser Standard-Aufklappbereich „Für neue Mitglieder" eleganter.
+3. **Zielgruppenwechsel mitten im Text:** erst basale Erklärungen für Neue, dann knappe Power-User-Befehle. Das löst ein Kontext-Aufklappbereich (z.B. „Hintergrund") eleganter.
 4. **„Außerdem"-Absätze:** „Außerdem", „Übrigens", „In diesem Zusammenhang", „Ergänzend" leiten oft thematisch fremde Inhalte ein: Kandidaten für Auslagerung.
 5. **Langer Hintergrund-Block in einer Anleitung:** mehr als ein paar Sätze gehören in einen Aufklappbereich oder, falls eigenständig wertvoll, in eine eigene Konzeptseite.
 6. **Abgeschriebene Hersteller-Dokumentation:** verletzt P2; entfällt bei der Aufteilung und wird durch einen Link ersetzt.

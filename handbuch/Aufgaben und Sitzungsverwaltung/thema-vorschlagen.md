@@ -4,6 +4,13 @@
 
 So bringst du ein Thema in die nächste Sitzung ein. Diese Seite richtet sich an alle Teammitglieder.
 
+<details>
+<summary>Hintergrund: Was ein Themen-Issue ist</summary>
+
+Ein Themen-Vorschlag ist ein GitHub-Issue: ein Eintrag, den alle lesen und kommentieren können. Die Vorlage **Thema** gibt dir die Struktur vor, du füllst nur die Felder aus. Warum wir Sitzungen über GitHub organisieren, erklärt die [Konzeptseite](konzept.md); Grundlagen zu Issues stehen in der [GitHub-Dokumentation](https://docs.github.com/en/issues).
+
+</details>
+
 ## Voraussetzungen
 
 * GitHub-Account
@@ -28,7 +35,7 @@ So bringst du ein Thema in die nächste Sitzung ein. Diese Seite richtet sich an
 Das Thema ist erfasst und erscheint in der [Sitzungsvorbereitung](https://github.com/users/rfluethi/projects/11/views/8?groupedBy%5BcolumnId%5D=Assignees&sliceBy%5BcolumnId%5D=Assignees). Die Moderation verlinkt es im Sitzungs-Issue unter Punkt 6.
 
 <details>
-<summary>Wozu das Feld „Estimate"?</summary>
+<summary>Hintergrund: Wozu das Feld „Estimate" dient</summary>
 
 Die Schätzung in Minuten gibt der Moderation bei der Sitzungsplanung eine Übersicht über die voraussichtliche Gesamtdauer. So lässt sich entscheiden, welche Themen in eine Sitzung passen und welche vertagt werden.
 
@@ -38,8 +45,19 @@ Die Schätzung in Minuten gibt der Moderation bei der Sitzungsplanung eine Über
 
 * [Sitzung durchführen](sitzung-durchfuehren.md) – wie das Thema in die Sitzung kommt
 * [Häufige Fragen](haeufige-fragen.md) – z.B. zu spontanen Themen in der Sitzung
-* [GitHub-basierte Sitzungsverwaltung](WordPress-Training-Team-DACH/GitHub-Repo/learn-wp-dach-team/handbuch/Aufgaben%20und%20Sitzungsverwaltung/konzept.md) – Hintergrund
+* [GitHub-basierte Sitzungsverwaltung](konzept.md) – Hintergrund
 
-## Metadaten
+---
 
-*Verantwortliche Rolle: GitHub-Spezialist · Letzte Aktualisierung: 2026-05-03 · Letzte Prüfung: 2026-05-03*
+## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
+
+* Seitentyp: Anleitung
+* Verantwortliche Rolle: GitHub-Spezialist
+* Themengebiet: Organisation
+* Zielgruppe: Alle Mitglieder
+* Eltern-Seite: Aufgaben und Sitzungsverwaltung
+* Reihenfolge: 10
+* Textauszug: So bringst du ein Thema in die nächste Sitzung ein.
+* Letzte Aktualisierung: 2026-07-12
+* Letzte Prüfung: 2026-05-03
+* Prüfintervall: 180

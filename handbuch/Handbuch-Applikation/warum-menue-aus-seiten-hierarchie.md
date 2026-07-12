@@ -19,17 +19,15 @@ Beim Anlegen einer Seite entscheidest du zwei Dinge getrennt: **Wo im Baum** ste
 ## Verwandte Seiten
 
 * [So legst du eine Handbuch-Seite an](handbuch-seite-anlegen.md)
-* [Übersicht: Handbuch-Applikation](uebersicht-handbuch-applikation.md)
-
----
+* [Handbuch-Applikation](README.md) – Startseite des Bereichs
 
 ## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
 
 * Seitentyp: Hintergrund/Konzept
-* Verantwortliche Rolle: [ANNAHME: Handbuch-Redaktion]
-* Themengebiet: [ANNAHME: Technik]
+* Verantwortliche Rolle: Handbuch-Redaktion
+* Themengebiet: Technik
 * Zielgruppe: Inhalts-Ersteller:innen
-* Eltern-Seite: Übersicht: Handbuch-Applikation
+* Eltern-Seite: Handbuch-Applikation
 * Reihenfolge: 40
 * Textauszug: Diese Seite erklärt, warum das Handbuch-Menü automatisch aus Eltern-Seite und Reihenfolge entsteht und warum die Themengebiete bewusst kein Menü sind.
 * Letzte Aktualisierung: [JJJJ-MM-TT]

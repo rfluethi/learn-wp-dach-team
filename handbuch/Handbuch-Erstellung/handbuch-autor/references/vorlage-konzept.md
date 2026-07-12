@@ -38,4 +38,4 @@ Danach den **Transport-Block** aus `markdown-konventionen.md` anhängen.
 
 * **Keine Schritte, keine Imperative.** Konzeptseiten erklären; Anleitungen leiten an.
 * **Begründung statt Behauptung.** „Weil das die Pflege halbiert" statt „Weil es besser ist".
-* **Verlinkungsanker:** Konzeptseiten sind das Ziel von Aufklappbereichen anderer Seiten. Halte sie klar und stabil; ein eigener Aufklappbereich „Für neue Mitglieder" ist hier meist unnötig, weil die ganze Seite Erklärung ist.
+* **Verlinkungsanker:** Konzeptseiten sind das Ziel von Aufklappbereichen anderer Seiten. Halte sie klar und stabil; ein eigener Kontext-Aufklappbereich ist hier meist unnötig, weil die ganze Seite Erklärung ist.

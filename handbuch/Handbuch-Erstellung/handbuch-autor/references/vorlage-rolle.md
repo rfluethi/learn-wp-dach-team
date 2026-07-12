@@ -18,7 +18,7 @@
 [1 bis 2 Sätze: Was umfasst diese Rolle?]
 
 <details>
-<summary>Für neue Mitglieder</summary>
+<summary>Hintergrund: Wie dir diese Rolle begegnet</summary>
 
 [Optional: Wie dir diese Rolle im Alltag begegnet.]
 
@@ -38,7 +38,7 @@
 * Berichtet an: [Rolle]
 
 <details>
-<summary>Hintergrund zur Rolle</summary>
+<summary>Hintergrund: [worum es geht]</summary>
 
 [Optional]
 

@@ -1,6 +1,6 @@
 # Schreibregeln
 
-Diese Regeln gelten für **alle** Seiten des Handbuchs (Anleitung, Kapitel 7 und 8). Basis: [tekom-Leitlinie „Regelbasiertes Schreiben"](https://www.tekom.de/fileadmin/tekom.de/Die_tekom/Publikationen/Leseproben/2013_RBS_Deutsch_fuer_die_TK_Leseprobe.pdf) und IEC/IEEE 82079-1.
+Diese Regeln gelten für **alle** Seiten des Handbuchs. Die verbindliche Fassung steht im Regelwerk: [Schreibregeln und Markdown-Konventionen](../../schreibregeln-und-markdown.md). Basis: [tekom-Leitlinie „Regelbasiertes Schreiben"](https://www.tekom.de/fileadmin/tekom.de/Die_tekom/Publikationen/Leseproben/2013_RBS_Deutsch_fuer_die_TK_Leseprobe.pdf) und IEC/IEEE 82079-1.
 
 ## S1, Aktiv statt passiv
 
@@ -47,3 +47,4 @@ Prüfe für jeden Absatz: **Unterstützt diese Information eine Handlung oder ei
 * **Tool-Namen** in der Schreibweise des Herstellers: „WordPress", „GitHub", „LibreOffice".
 * **Begriffe aus dem Seiten-Glossar** beim ersten Vorkommen verlinken bzw. am Seitenende erklären. Taucht derselbe Begriff auf mehreren Seiten auf, wird dieselbe Definition wortgleich wiederverwendet.
 * **Konsistenz vor Eleganz:** Wenn zwei Formulierungen gleich gut wären, gewinnt die bereits verwendete.
+* **Verweise immer als Link**, nie als Kapitelnummer oder blosser Dateiname.

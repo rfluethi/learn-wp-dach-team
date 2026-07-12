@@ -26,58 +26,18 @@ Aufgaben aus der Sitzung werden als eigene Issues im Aufgaben-Board verwaltet. S
 
 Jede Sitzung folgt dieser Grundstruktur:
 
-1. Begrüssung (gegebenenfalls Vorstellungsrunde)
+1. Begrüßung (gegebenenfalls Vorstellungsrunde)
 2. News aus der WordPress-Welt
 3. Status offene Arbeiten
 4. Status Projekte (Übersetzungen, Lektionen, Workshops)
 5. Status Lerngruppen
 6. Diskussionsthemen (variabel, von Teammitgliedern vorgeschlagen)
 
-### Übersicht: Issue-Typen
+### Wo die Details stehen
 
-| Typ | Label | Zweck |
-|---|---|---|
-| Sitzung | `sitzung` | Themenliste und Beschlussprotokoll |
-| Thema | `thema` | Diskussionsthema für die nächste Sitzung |
-| Aufgabe | `aufgabe` | Action Item mit Verantwortlichen und Fälligkeit |
-
-### Workflow im Überblick
-
-```
-1 Woche vorher     Sitzung              Nach der Sitzung     Review (max. 3 Werktage)
-──────────────     ───────              ────────────────     ───────────────────────
-Moderation         Protokollführung     Status →             Team gibt OK
-erstellt        →  erfasst Beschlüsse → "Blockiert",      →  im Kommentar →
-Sitzungs-Issue     und Aufgaben         Protokoll-Review     Issue wird
-Board-Status                            läuft                geschlossen →
-"In Arbeit"             │               (Timeout: 3 Werk-    Protokoll-Archiv
-                        ▼               tage, dann direkt
-                   Aufgaben-Issues      schliessen)
-                   → Aufgaben-Board
-```
-
-### Übersicht: Labels
-
-| Label | Verwendung |
-|---|---|
-| `sitzung` | Sitzungs-Issues |
-| `thema` | Vorgeschlagene Diskussionsthemen |
-| `aufgabe` | Action Items |
-| `beschluss` | Themen, die zu einem formellen Entscheid geführt haben |
-| `blockiert` | Aufgaben mit Blocker oder Abhängigkeit |
-| `überprüfung` | Aufgabe erledigt, wartet auf Kontrolle |
-| `nächste-sitzung` | Vertagte Themen |
-| `lerngruppe` | Themen rund um Lerngruppen |
-| `webseite` | Themen rund um learn-wp-dach.org |
-| `übersetzung` | Übersetzungsprojekte |
-| `organisation` | Organisatorische Aufgaben |
-
-### Übersicht: Kanban-Spalten
-
-Eine ausführliche Beschreibung der Spalten und Views findest du im [Aufgaben-Board](aufgaben-board.md). Kurzfassung:
-
-* **Themen → Offen → In Arbeit → (ggf. Blockiert) → Überprüfung → Erledigt**
-* Sitzungs-Issues erscheinen **nicht** im Board als reguläre Aufgaben. Sie sind über die View *Protokolle* auffindbar.
+* **Issue-Typen und Labels:** vollständige Referenz unter [Issue-Typen und Labels](issue-typen-und-labels.md).
+* **Ablauf einer Sitzung:** Schritte, Rollen und Workflow-Diagramm unter [Sitzung durchführen](sitzung-durchfuehren.md).
+* **Kanban-Spalten und Views:** unter [Aufgaben-Board](aufgaben-board.md). Sitzungs-Issues erscheinen **nicht** im Board als reguläre Aufgaben; sie sind über die View *Protokolle* auffindbar.
 
 <details>
 <summary>Hintergrund: Board-Status vs. Issue-Status</summary>
@@ -89,7 +49,7 @@ Der **Board-Status** (Spalte im Kanban) ist unabhängig vom **Issue-Status** (of
 <details>
 <summary>Hintergrund: Vier-Augen-Prinzip beim Protokoll</summary>
 
-Bevor ein Sitzungs-Issue geschlossen wird, muss mindestens ein weiteres Teammitglied das Protokoll mit einem OK-Kommentar bestätigen. Damit ist sichergestellt, dass Beschlüsse nicht nur aus der Sicht der Protokollführung dokumentiert sind. Falls nach drei Werktagen kein OK eingeht, darf die Protokollführung das Issue trotzdem schliessen, mit Hinweis in der nächsten Sitzung. So bleibt der Prozess auch bei urlaubsbedingten Verzögerungen handlungsfähig.
+Bevor ein Sitzungs-Issue geschlossen wird, muss mindestens ein weiteres Teammitglied das Protokoll mit einem OK-Kommentar bestätigen. Damit ist sichergestellt, dass Beschlüsse nicht nur aus der Sicht der Protokollführung dokumentiert sind. Falls nach drei Werktagen kein OK eingeht, darf die Protokollführung das Issue trotzdem schließen, mit Hinweis in der nächsten Sitzung. So bleibt der Prozess auch bei urlaubsbedingten Verzögerungen handlungsfähig.
 
 </details>
 
@@ -99,9 +59,28 @@ Bevor ein Sitzungs-Issue geschlossen wird, muss mindestens ein weiteres Teammitg
 * [Aufgabe erfassen](aufgabe-erfassen.md)
 * [Sitzung durchführen](sitzung-durchfuehren.md)
 * [Aufgaben-Board](aufgaben-board.md)
+* [Issue-Typen und Labels](issue-typen-und-labels.md)
 * [Häufige Fragen](haeufige-fragen.md)
-* [Setup-Anleitung](setup.md) – technische Einrichtung (für Admins)
+* [Setup-Anleitung](../../docs/setup.md) – technische Einrichtung (für Admins)
 
-## Metadaten
+## Seiten-Glossar
 
-*Verantwortliche Rolle: GitHub-Spezialist · Letzte Aktualisierung: 2026-05-03 · Letzte Prüfung: 2026-05-03*
+| Begriff | Definition |
+|---|---|
+| Action Item | Eine aus einem Beschluss entstandene Aufgabe mit verantwortlicher Person und Fälligkeit, geführt als eigenes Issue. |
+| Board-Status | Spalte eines Issues im Aufgaben-Board; unabhängig vom Issue-Status (offen/geschlossen) auf GitHub. |
+
+---
+
+## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
+
+* Seitentyp: Hintergrund/Konzept
+* Verantwortliche Rolle: GitHub-Spezialist
+* Themengebiet: Organisation
+* Zielgruppe: Alle Mitglieder
+* Eltern-Seite: Aufgaben und Sitzungsverwaltung
+* Reihenfolge: 70
+* Textauszug: Diese Seite erklärt, warum das Learn WP DACH Team Sitzungsplanung, Beschlussprotokolle und Aufgaben über GitHub Issues und ein Kanban Board verwaltet, und welche Grundkonzepte dabei gelten.
+* Letzte Aktualisierung: 2026-07-12
+* Letzte Prüfung: 2026-05-03
+* Prüfintervall: 365

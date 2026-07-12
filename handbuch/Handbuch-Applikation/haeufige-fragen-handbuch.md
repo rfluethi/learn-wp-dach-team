@@ -28,30 +28,28 @@ Die Prüfung ist länger als das doppelte Prüfintervall überfällig; die Seite
 <details>
 <summary>Ich habe die Seite aktualisiert, warum ist die Prüfung trotzdem fällig?</summary>
 
-Aktualisierung und Prüfung sind getrennte Angaben; das Prüfdatum setzt du bewusst in der Box «Aktualität & Verantwortung». Details: [So prüfst du eine Seite auf Aktualität](seite-pruefen.md).
+Aktualisierung und Prüfung sind getrennte Angaben; das Prüfdatum setzt du bewusst in der Box „Aktualität & Verantwortung". Details: [So prüfst du eine Seite auf Aktualität](seite-pruefen.md).
 
 </details>
 
 <details>
 <summary>Wo sehe ich, wie mein Inhalt ankommt?</summary>
 
-Die Ja/Nein-Klicks von «War diese Seite hilfreich?» stehen in der Handbuch-Liste im Adminbereich (Spalte „Feedback"). Details: [Übersicht: Handbuch-Applikation](uebersicht-handbuch-applikation.md).
+Die Ja/Nein-Klicks von „War diese Seite hilfreich?" stehen in der Handbuch-Liste im Adminbereich (Spalte „Feedback"). Details: [Handbuch-Applikation](README.md).
 
 </details>
 
 ## Verwandte Seiten
 
-* [Übersicht: Handbuch-Applikation](uebersicht-handbuch-applikation.md)
-
----
+* [Handbuch-Applikation](README.md) – Startseite des Bereichs
 
 ## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
 
 * Seitentyp: FAQ
-* Verantwortliche Rolle: [ANNAHME: Handbuch-Redaktion]
-* Themengebiet: [ANNAHME: Technik]
+* Verantwortliche Rolle: Handbuch-Redaktion
+* Themengebiet: Technik
 * Zielgruppe: Alle Mitglieder
-* Eltern-Seite: Übersicht: Handbuch-Applikation
+* Eltern-Seite: Handbuch-Applikation
 * Reihenfolge: 50
 * Textauszug: Häufige Fragen rund um das Arbeiten mit der Handbuch-Applikation.
 * Letzte Aktualisierung: [JJJJ-MM-TT]

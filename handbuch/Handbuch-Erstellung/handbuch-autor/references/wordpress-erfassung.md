@@ -13,6 +13,9 @@ WordPress ist die Single Source of Truth. Seit Prototyp 0.10.0 ist der Standardw
 7. **Nach dem letzten Import des Bereichs:** Dashboard → Widget «Handbuch: Prüfung überfällig» → **«.md-Links jetzt automatisch konvertieren»**. Danach dürfen keine Markierungen «⚠ n .md-Links» mehr stehen; bleibt eine, fehlt die Zielseite oder ihr Slug weicht vom Dateinamen ab.
 8. **Sichtprüfung im Frontend:** Menüplatz, Aufklappbereiche, Metadaten-Fußzeile, Karte mit Auszug, interne Links.
 
+
+**Startseite eines Bereichs (README.md):** Sie wird immer zuerst importiert. Im Import-Formular gilt nicht der Dateiname (`README`), sondern der Slug aus der Transport-Block-Zeile `Slug:` (Bereichsname in Slug-Form). Alle übrigen Seiten des Bereichs tragen die Startseite als Eltern-Seite.
+
 ## Notbehelf: manuelles Einfügen (nur wenn der Import nicht verfügbar ist)
 
 Markdown direkt einzufügen ist unzuverlässig (insbesondere werden `<details>` nie zu Details-Blöcken). Falls es doch sein muss: Inhalt ohne Transport-Block in den visuellen Editor einfügen, jedes `<details>` von Hand als Details-Block nachbauen, alle Felder gemäß Transport-Block setzen (Seiten-Attribute, vier Schlagwort-Gruppen, Textauszug wortgleich zum ersten Satz der Kurzbeschreibung, Meta-Box Aktualität), Slug angleichen, veröffentlichen, `.md`-Links über den Dashboard-Knopf konvertieren.

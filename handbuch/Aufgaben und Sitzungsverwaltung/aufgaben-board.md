@@ -4,6 +4,13 @@
 
 Das Aufgaben-Board ist das Kanban Board, in dem alle offenen Aufgaben und Diskussionsthemen verwaltet werden. Diese Seite ist eine Übersicht für alle Teammitglieder.
 
+<details>
+<summary>Hintergrund: Was ein Kanban Board ist</summary>
+
+Ein Kanban Board zeigt Aufgaben als Karten in Spalten; jede Spalte ist ein Bearbeitungsstand, und Karten wandern von links (Offen) nach rechts (Erledigt). Warum wir Aufgaben so verwalten, erklärt die [Konzeptseite](konzept.md); die Bedienung von GitHub Projects beschreibt die [offizielle Dokumentation](https://docs.github.com/en/issues/planning-and-tracking-with-projects).
+
+</details>
+
 ## Wer nutzt es
 
 Alle Teammitglieder. Jedes Mitglied kann eigene Aufgaben einsehen, Themen einreichen und Aufgaben zwischen Spalten verschieben (sofern Mitwirkenden-Rechte bestehen).
@@ -38,6 +45,7 @@ Das Board ist öffentlich lesbar unter [Learn WP DACH – Aufgaben](https://gith
 * Sitzungs-Issues erscheinen **nicht** im Board als reguläre Aufgaben. Sie sind über die View *Protokolle* auffindbar.
 * Aufgaben werden per Drag-and-Drop zwischen Spalten verschoben.
 * Eigene Aufgaben filtern: `assignee:@me` im Suchfeld eingeben.
+* Landet ein Sitzungs-Issue versehentlich als reguläre Aufgabe im Board: Issue im Board öffnen und über das Drei-Punkte-Menü *Remove from project* entfernen. Das Issue selbst bleibt erhalten, nur die Board-Zuordnung wird entfernt.
 
 ## Offizielle Dokumentation
 
@@ -50,12 +58,30 @@ Das Board ist öffentlich lesbar unter [Learn WP DACH – Aufgaben](https://gith
 * [Sitzung durchführen](sitzung-durchfuehren.md)
 
 <details>
-<summary>Hinweis zur Wartung der View-Links</summary>
+<summary>Hinweis: Wartung der View-Links</summary>
 
-Die Links zu den Board-Views enthalten hardkodierte View-IDs. Nach einem Repository-Neuaufbau oder Transfer müssen diese Links aktualisiert werden. Diese Pflege ist Teil der Setup-Anleitung. [ANNAHME: Verantwortlich ist die Rolle, die auch das Repository administriert.]
+Die Links zu den Board-Views enthalten hardkodierte View-IDs. Nach einem Repository-Neuaufbau oder Transfer müssen diese Links aktualisiert werden. Diese Pflege ist Teil der Setup-Anleitung; verantwortlich ist die Rolle, die auch das Repository administriert.
 
 </details>
 
-## Metadaten
+## Seiten-Glossar
 
-*Verantwortliche Rolle: GitHub-Spezialist · Letzte Aktualisierung: 2026-05-03 · Letzte Prüfung: 2026-05-03*
+| Begriff | Definition |
+|---|---|
+| Collaborator | Person mit Schreibrechten im Repository und Board, von der Repository-Administration eingeladen. |
+| View | Gespeicherte Ansicht des Boards mit festen Filtern und Gruppierungen. |
+
+---
+
+## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
+
+* Seitentyp: Tool-Übersicht
+* Verantwortliche Rolle: GitHub-Spezialist
+* Themengebiet: Organisation
+* Zielgruppe: Alle Mitglieder
+* Eltern-Seite: Aufgaben und Sitzungsverwaltung
+* Reihenfolge: 40
+* Textauszug: Das Aufgaben-Board ist das Kanban Board, in dem alle offenen Aufgaben und Diskussionsthemen verwaltet werden.
+* Letzte Aktualisierung: 2026-07-12
+* Letzte Prüfung: 2026-05-03
+* Prüfintervall: 90

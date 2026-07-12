@@ -2,32 +2,69 @@
 
 ## Kurzbeschreibung
 
-Dieses Verzeichnis enthält die Markdown-Entwürfe des ersten realen Handbuch-Bereichs: die Dokumentation der Handbuch-Applikation selbst (unser WordPress-System für das Team-Handbuch). Erstellt mit dem Skill **handbuch-autor** nach der Anleitung v1.4; jeder Entwurf endet mit einem Transport-Block für die WordPress-Erfassung.
+Die Handbuch-Applikation ist der Bereich unserer WordPress-Installation, in dem das Team-Handbuch geschrieben, gepflegt und gelesen wird. Diese Seite beschreibt, was die Applikation kann, wer sie nutzt und welche Konventionen gelten.
 
-## Dateien in diesem Verzeichnis
+<details>
+<summary>Konzept</summary>
+
+Das Handbuch ist eine eigene Inhaltsart in WordPress, getrennt von normalen Seiten und Beiträgen. Du erreichst es im Adminbereich über den Menüpunkt **Handbuch** (Buch-Symbol). Alles, was du dort anlegst, erscheint automatisch im Handbuch-Menü und auf der Übersichtsseite; du musst nichts von Hand verlinken.
+
+</details>
+
+## Wer nutzt es
+
+* **Alle Teammitglieder** lesen das Handbuch und geben Feedback („War diese Seite hilfreich?").
+* **Autor:innen** legen Seiten an und pflegen sie.
+* **Inhaltsverantwortliche Rollen** prüfen ihre Seiten regelmäßig und geben sie frei.
+* **Handbuch-Redaktion** überwacht die Wartungsübersicht und wertet Feedback aus.
+
+## Zugang
+
+Das Handbuch ist intern: Lesen und Schreiben setzen ein Konto auf unserer WordPress-Installation voraus. Zugänge erteilt die Technik-Verantwortung.
+
+## Unsere Konventionen
+
+* **Jede Seite hat einen Seitentyp** (Anleitung, Prozessbeschreibung, Tool-Übersicht, Rolle/Organisation, Hintergrund/Konzept, FAQ) und wird nach der zugehörigen Vorlage geschrieben.
+* **Vier Schlagwort-Gruppen** pro Seite: Seitentyp, Themengebiet, Verantwortliche Rolle, Zielgruppe. Sie speisen Filter und Suche der Übersicht.
+* **Das Menü entsteht automatisch** aus Eltern-Seite und Reihenfolge in den Seiten-Attributen; Details: [Warum das Menü aus der Seiten-Hierarchie entsteht](warum-menue-aus-seiten-hierarchie.md).
+* **Metadaten leben in Feldern**, nie im Seiteninhalt; die Fußzeile mit Erstellt/Aktualisiert/Geprüft/Rolle rendert die Applikation automatisch.
+* **Erfassung über den Markdown-Import** (Handbuch → Markdown-Import): Entwürfe entstehen im Repo und werden importiert, nicht von Hand eingefügt.
+* **Verbindlich für alle Inhalte** ist das [Regelwerk Handbuch-Erstellung](../Handbuch-Erstellung/README.md); der Skill **handbuch-autor** setzt es beim Schreiben mit KI-Unterstützung um.
+
+## Offizielle Dokumentation
+
+* [WordPress-Benutzerdokumentation](https://wordpress.org/documentation/) für die Grundbedienung des Block-Editors.
+* Für die Handbuch-spezifischen Funktionen ist **dieses Handbuch** die Dokumentation (die Applikation ist eine Eigenentwicklung).
+
+## Seiten in diesem Bereich
 
 | Datei | Seitentyp | Beschreibung |
 |---|---|---|
-| [uebersicht-handbuch-applikation.md](uebersicht-handbuch-applikation.md) | Tool-Übersicht | Was die Applikation kann, wer sie nutzt, Konventionen. Eltern-Seite aller übrigen Seiten. |
 | [handbuch-seite-anlegen.md](handbuch-seite-anlegen.md) | Anleitung | Neue Seite anlegen: Inhalt, Menüplatz, Schlagworte, Auszug, Aktualitäts-Felder. |
 | [seite-pruefen.md](seite-pruefen.md) | Anleitung | Seite inhaltlich prüfen und die Prüfung festhalten. |
 | [wartung-des-handbuchs.md](wartung-des-handbuchs.md) | Prozessbeschreibung | Fällige Prüfungen, Eskalation UNGEPRÜFT, Verteilung in der Sitzung, Feedback-Auswertung. |
 | [warum-menue-aus-seiten-hierarchie.md](warum-menue-aus-seiten-hierarchie.md) | Hintergrund/Konzept | Warum das Menü aus dem Seitenbaum entsteht und Themen nur Filter sind. |
 | [haeufige-fragen-handbuch.md](haeufige-fragen-handbuch.md) | FAQ | Wegweiser-Fragen zu den obigen Seiten. |
 
-## Geplante Menüstruktur
+<details>
+<summary>Warum genau diese Lösung?</summary>
 
-```text
-Übersicht: Handbuch-Applikation        (oberste Ebene, Reihenfolge 10)
-├── So legst du eine Handbuch-Seite an        (10)
-├── So prüfst du eine Seite auf Aktualität    (20)
-├── Wartung des Handbuchs                     (30)
-├── Warum das Menü aus der Seiten-Hierarchie… (40)
-└── Häufige Fragen zur Handbuch-Applikation   (50)
-```
+Wir haben das Handbuch als eigene Inhaltsart in WordPress gebaut, statt ein Wiki oder ein zweites System zu betreiben: WordPress ist bereits unsere zentrale Plattform, das Team kennt den Editor, und die Single Source of Truth bleibt an einem Ort. Die Hintergründe stehen in den Konzeptdokumenten des Projekts Handbuch-Training-DACH.
 
-## Offene Punkte vor der Erfassung
+</details>
 
-* Alle Stellen mit `[ANNAHME: …]` bestätigen oder korrigieren (verantwortliche Rolle, Themengebiet, Zugangs-Rolle).
-* Datums-Platzhalter `[JJJJ-MM-TT]` werden erst beim Erfassen gesetzt.
-* Erfassung nach Workflow W5 des Skills (Transport-Block in Felder übertragen, dann löschen).
+---
+
+## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
+
+* Seitentyp: Bereichs-Übersicht
+* Slug: handbuch-applikation
+* Verantwortliche Rolle: Handbuch-Redaktion
+* Themengebiet: Technik
+* Zielgruppe: Alle Mitglieder
+* Eltern-Seite: oberste Ebene
+* Reihenfolge: 10
+* Textauszug: Die Handbuch-Applikation ist der Bereich unserer WordPress-Installation, in dem das Team-Handbuch geschrieben, gepflegt und gelesen wird.
+* Letzte Aktualisierung: 2026-07-12
+* Letzte Prüfung: [JJJJ-MM-TT]
+* Prüfintervall: 90

@@ -48,10 +48,10 @@ Das Badge wechselt automatisch: Nach Ablauf des Prüfintervalls zeigt die Seite 
 ## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
 
 * Seitentyp: Anleitung
-* Verantwortliche Rolle: [ANNAHME: Handbuch-Redaktion]
-* Themengebiet: [ANNAHME: Technik]
+* Verantwortliche Rolle: Handbuch-Redaktion
+* Themengebiet: Technik
 * Zielgruppe: Inhalts-Ersteller:innen
-* Eltern-Seite: Übersicht: Handbuch-Applikation
+* Eltern-Seite: Handbuch-Applikation
 * Reihenfolge: 20
 * Textauszug: Diese Anleitung zeigt, wie du eine Handbuch-Seite inhaltlich prüfst und die Prüfung festhältst.
 * Letzte Aktualisierung: [JJJJ-MM-TT]

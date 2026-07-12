@@ -7,7 +7,7 @@ Diese Anleitung zeigt, wie du eine neue Seite im Handbuch anlegst, einordnest un
 <details>
 <summary>Konzept</summary>
 
-Eine Handbuch-Seite ist kein normaler WordPress-Beitrag, sondern gehört zur eigenen Inhaltsart **Handbuch**. Sie bekommt ihren Platz im Menü über die Eltern-Seite, nicht über eine Menü-Pflege von Hand. Der empfohlene Weg führt über den Markdown-Import: Entwurf im Repo schreiben, importieren, prüfen, veröffentlichen. Begriffe wie Seitentyp oder Themengebiet erklärt die [Übersicht zur Handbuch-Applikation](uebersicht-handbuch-applikation.md).
+Eine Handbuch-Seite ist kein normaler WordPress-Beitrag, sondern gehört zur eigenen Inhaltsart **Handbuch**. Sie bekommt ihren Platz im Menü über die Eltern-Seite, nicht über eine Menü-Pflege von Hand. Der empfohlene Weg führt über den Markdown-Import: Entwurf im Repo schreiben, importieren, prüfen, veröffentlichen. Begriffe wie Seitentyp oder Themengebiet erklärt die [Startseite der Handbuch-Applikation](README.md).
 
 </details>
 
@@ -15,7 +15,7 @@ Eine Handbuch-Seite ist kein normaler WordPress-Beitrag, sondern gehört zur eig
 <summary>Voraussetzungen</summary>
 
 * WordPress-Konto mit Schreibrecht für das Handbuch.
-* Fertiger Entwurf nach der passenden Vorlage der *Anleitung zur Erstellung des Team-Handbuchs*, mit Transport-Block.
+* Fertiger Entwurf nach der passenden [Vorlage des Regelwerks](../Handbuch-Erstellung/inhaltstypen-und-vorlagen.md), mit Transport-Block.
 * Bekannte Eltern-Seite und verantwortliche Rolle (stehen im Transport-Block).
 
 </details>
@@ -30,7 +30,7 @@ Eine Handbuch-Seite ist kein normaler WordPress-Beitrag, sondern gehört zur eig
 6. Klicke auf **Veröffentlichen**.
 7. Nach der letzten Seite eines Bereichs: Öffne **Handbuch → Wartung** und klicke auf **.md-Links jetzt automatisch konvertieren**.
 
-![](handbuch-seiten-anlegen-schritte.png)
+![Die Schritte des Markdown-Imports: Dateiname eintragen, Entwurf einfügen, als Entwurf importieren](assets/handbuch-seiten-anlegen-schritte.png)
 
 ## Ergebnis
 
@@ -45,18 +45,16 @@ Der Import bricht bei einem bereits vergebenen Slug ab; lösche die alte Seite e
 
 ## Verwandte Seiten
 
-* [Übersicht: Handbuch-Applikation](uebersicht-handbuch-applikation.md)
+* [Handbuch-Applikation](README.md) – Startseite des Bereichs
 * [So prüfst du eine Seite auf Aktualität](seite-pruefen.md)
-
----
 
 ## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
 
 * Seitentyp: Anleitung
-* Verantwortliche Rolle: [ANNAHME: Handbuch-Redaktion]
-* Themengebiet: [ANNAHME: Technik]
+* Verantwortliche Rolle: Handbuch-Redaktion
+* Themengebiet: Technik
 * Zielgruppe: Inhalts-Ersteller:innen
-* Eltern-Seite: Übersicht: Handbuch-Applikation
+* Eltern-Seite: Handbuch-Applikation
 * Reihenfolge: 10
 * Textauszug: Diese Anleitung zeigt, wie du eine neue Seite im Handbuch anlegst, einordnest und veröffentlichst.
 * Letzte Aktualisierung: [JJJJ-MM-TT]
