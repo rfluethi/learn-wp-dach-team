@@ -21,7 +21,7 @@ description: >-
 
 # Skill: handbuch-autor
 
-Dieser Skill unterstützt beim Erstellen, Prüfen, Überarbeiten, **Aufteilen** und **Erfassen** von Seiten für unser Team-Handbuch. Er setzt das [Regelwerk Handbuch-Erstellung](../README.md) um. Bei Widersprüchen gilt das Regelwerk.
+Dieser Skill unterstützt beim Erstellen, Prüfen, Überarbeiten, **Aufteilen** und **Erfassen** von Seiten für unser Team-Handbuch. Er setzt das [Regelwerk Handbuch-Erstellung](../../handbuch/Handbuch-Erstellung/README.md) um. Bei Widersprüchen gilt das Regelwerk.
 
 ## Wann triggern
 
@@ -37,12 +37,14 @@ Setze diesen Skill ein, sobald jemand:
 
 ## Grundsätze, die dieser Skill konsequent umsetzt
 
-Diese Grundsätze stammen aus den [Leitprinzipien](../leitprinzipien.md) des Regelwerks. Halte dich an sie auch dann, wenn der Mensch sie nicht nennt.
+Diese Grundsätze stammen aus den [Leitprinzipien](../../handbuch/Handbuch-Erstellung/leitprinzipien.md) des Regelwerks. Halte dich an sie auch dann, wenn der Mensch sie nicht nennt.
 
 * **P1, ein Hauptzweck pro Seite** ([Diátaxis-Framework](https://diataxis.fr/)). Eine Seite ist Anleitung **oder** Erklärung **oder** Nachschlagewerk, nicht alles gleichzeitig.
 * **P2, nicht duplizieren, verlinken.** Hersteller-Dokumentationen werden verlinkt, nie kopiert.
 * **P3, Progressive Disclosure.** Pflichtinformationen sichtbar; Hintergrund und Kontext in Aufklappbereichen. Titel folgen dem Muster **„Kategorie: worum es geht"** (z.B. „Hintergrund: Wozu Labels dienen", „Grundlagen: Board-Status vs. Issue-Status"); generische Sammeltitel wie „Für neue Mitglieder" oder „Mehr Infos" sind ausgeschlossen.
 * **P4, Aktion vor Theorie.** Bei Anleitungen kommt zuerst, was zu tun ist.
+* **Keine internen Kürzel ohne Klartext.** P-, S- und W-Kürzel nie allein verwenden; zuerst der Inhalt in Worten, das Kürzel höchstens in Klammern („Rollen statt Personen (P7)").
+* **Leseransicht vor Repo-Sicht.** In Fließtext und Diagrammen Seitentitel verwenden, keine Dateinamen; Dateinamen nur in technischen Zusammenhängen.
 * **P5, Single Source of Truth.** Jede Information existiert genau einmal; andere Stellen verlinken. Einzige Ausnahme: wortgleiche Glossar-Definitionen auf mehreren Seiten.
 * **P6, Aktualität sichtbar machen.** Verantwortliche Rolle, letzte Aktualisierung und letzte Prüfung werden in WordPress **als Felder** gepflegt und vom Template angezeigt. In Markdown-Entwürfen reisen sie im Transport-Block mit (siehe `references/markdown-konventionen.md`).
 * **P7, Rollen statt Personen.** Verantwortlichkeit über Rollen; Urheberschaft (wer schrieb, wer prüfte) ist davon getrennt und personengebunden.
@@ -66,9 +68,11 @@ Prüfe bei jedem Entwurf und jeder Überarbeitung, ob ein Diagramm die Beschreib
 
 * **Format:** Mermaid-Codeblock (```` ```mermaid ````). Der Markdown-Import wandelt ihn in einen Mermaid-Block um, der im Editor und Frontend gerendert wird.
 * **ASCII-Diagramme sind verboten.** Sie rendern auf den Handbuch-Seiten schlecht. Bestehende ASCII-Diagramme werden bei jeder Überarbeitung (W2) in Mermaid umgewandelt.
+* **Ablaufdiagramme hochkant:** Flussdiagramme standardmäßig vertikal (`flowchart TD`); die Inhaltsspalte ist schmal, horizontale Diagramme werden klein. `flowchart LR` nur, wenn das Diagramm sonst unnötig hoch würde.
 * **Robuste Syntax:** Alle Knoten- und Kantentexte in gerade Anführungszeichen setzen; keine typografischen Anführungszeichen in Labels (sie brechen den Parser).
 * **Vektorgrafiken (SVG):** Für Inhalte, die Mermaid nicht abbilden kann (Oberflächen-Skizzen, Icons, präzise Layouts), eine SVG-Datei im `assets`-Ordner des Bereichs ablegen und mit Alt-Text einbinden.
 * **Sparsam und lesbar:** Ein Diagramm pro Sachverhalt, kurze Knotentexte, keine Deko. Das Diagramm ersetzt Text, es verdoppelt ihn nicht (P5).
+* **Screenshots bei UI-Anleitungen:** Prüfe pro Hauptschritt, ob ein Screenshot hilft. Fehlende Bilder als HTML-Kommentar-Platzhalter mit Ziel-Dateiname (`assets/`) und Alt-Text einfügen und in einer Screenshot-Arbeitsliste festhalten; die Bilder liefert der Mensch.
 
 ## Tiefe trotz Kürze: Hintergrund und weiterführende Links (Pflichtprüfung)
 
@@ -84,7 +88,7 @@ Die Grenzen bleiben bestehen: höchstens zwei bis drei Aufklappbereiche pro Seit
 
 ## Verweise: immer als Link
 
-Verweise auf andere Handbuch-Seiten, das Regelwerk oder externe Quellen stehen **immer als klickbarer Link**. Formulierungen wie „siehe Anleitung, Kapitel 3", blosse Dateinamen oder Kapitelnummern ohne Link sind verboten: Niemand zählt Kapitel, und unbenannte Quellen sind nicht auffindbar.
+Verweise auf andere Handbuch-Seiten, das Regelwerk oder externe Quellen stehen **immer als klickbarer Link**. Formulierungen wie „siehe Anleitung, Kapitel 3", bloße Dateinamen oder Kapitelnummern ohne Link sind verboten: Niemand zählt Kapitel, und unbenannte Quellen sind nicht auffindbar.
 
 ## Annahmen: direkt Werte eintragen, keine Markierungen
 
@@ -135,7 +139,7 @@ Folge diesen Schritten in dieser Reihenfolge. Überspringe keinen.
    | Prozessbeschreibung | `references/vorlage-prozess.md` |
    | Tool-Übersicht | `references/vorlage-tool.md` |
    | Rollen-/Organisationsbeschreibung | `references/vorlage-rolle.md` |
-   | Hintergrund/Konzept | `references/vorlage-konzept.md` |
+   | Hintergrund / Konzept | `references/vorlage-konzept.md` |
    | FAQ | `references/vorlage-faq.md` |
 
 3. **Inhalte sammeln** (Modus A) oder **direkt entwerfen** (Modus B) nach dem Frageleitfaden der Vorlage. Frage dabei immer aktiv: **„Welche Begriffe dieser Seite brauchen einen Glossar-Eintrag?"** Das Seiten-Glossar steht am Ende vor dem Transport-Block; es leer zu lassen ist erlaubt, es zu vergessen nicht.
@@ -188,8 +192,13 @@ Wenn ein Entwurf fertig ist und in WordPress eingepflegt werden soll: Lade `refe
 
 ## Quellen, auf denen dieser Skill basiert
 
-* [Regelwerk Handbuch-Erstellung](../README.md) (intern). **Bei Widersprüchen gilt das Regelwerk.**
+* [Regelwerk Handbuch-Erstellung](../../handbuch/Handbuch-Erstellung/README.md) (intern). **Bei Widersprüchen gilt das Regelwerk.**
 * [Diátaxis-Framework](https://diataxis.fr/) für die Inhaltstypen.
 * [Progressive Disclosure (Nielsen Norman Group)](https://www.nngroup.com/articles/progressive-disclosure/) für die Doppel-Zielgruppe.
 * [tekom-Leitlinie „Regelbasiertes Schreiben"](https://www.tekom.de/fileadmin/tekom.de/Die_tekom/Publikationen/Leseproben/2013_RBS_Deutsch_fuer_die_TK_Leseprobe.pdf) für die Schreibregeln.
-* Normen-Abgleich mit begründeten Abweichungen: [standards-abgleich.md](../standards-abgleich.md) (nicht zur Laufzeit laden, Hintergrunddokument).
+* Normen-Abgleich mit begründeten Abweichungen: [standards-abgleich.md](../../handbuch/Handbuch-Erstellung/standards-abgleich.md) (nicht zur Laufzeit laden, Hintergrunddokument).
+
+
+## Menschenlesbare Beschreibung und Download
+
+Eine für Menschen geschriebene Übersicht dieses Skills (Zweck, die fünf Workflows W1 bis W5, die zwei Arbeitsmodi, Einbindung in den KI-Assistenten) steht im Regelwerk unter [skill-handbuch-autor.md](../../handbuch/Handbuch-Erstellung/skill-handbuch-autor.md). Dort steht auch, wo der Skill als ZIP heruntergeladen werden kann. Bei Widersprüchen zwischen dieser Beschreibung und dem Regelwerk gilt das Regelwerk.

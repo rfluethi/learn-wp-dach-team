@@ -10,6 +10,22 @@ Das Regelwerk gilt für alle Seiten des Handbuchs, unabhängig vom Thema (Tools,
 
 **Format:** Entwürfe entstehen in Markdown im Repository und werden über den Markdown-Import in WordPress veröffentlicht; WordPress ist die Single Source of Truth der veröffentlichten Inhalte.
 
+## So nutzt du dieses Regelwerk
+
+Du musst nicht alles auf einmal lesen. Je nachdem, was du vorhast, gibt es einen kurzen Einstieg.
+
+* **Du willst zum ersten Mal eine Seite schreiben.** Lies zuerst die [Leitprinzipien](leitprinzipien.md) (warum wir es so machen), dann [Inhaltstypen und Vorlagen](inhaltstypen-und-vorlagen.md) (welchen Seitentyp du brauchst). Die Details zu Sprache und Format holst du dir beim Schreiben aus [Schreibregeln und Markdown-Konventionen](schreibregeln-und-markdown.md).
+* **Du willst nur schnell nachschlagen**, wie eine bestimmte Regel lautet: direkt in [Schreibregeln und Markdown-Konventionen](schreibregeln-und-markdown.md).
+* **Du lässt dich von KI unterstützen.** Der [Skill handbuch-autor](skill-handbuch-autor.md) kennt dieses Regelwerk und wendet es an; die Seite erklärt, wie du ihn herunterlädst und nutzt.
+* **Du willst verstehen, woran das Regelwerk sich orientiert:** [Standards-Abgleich](standards-abgleich.md). Hintergrundwissen; einmal lesen genügt.
+
+<details>
+<summary>Grundlagen: Das Problem, das dieses Regelwerk löst</summary>
+
+Ein Handbuch bedient zwei Gruppen mit gegensätzlichen Bedürfnissen: Neue wollen lernen und Kontext, Erfahrene wollen schnell nachschlagen. Schreibt man für beide getrennt, entstehen zwei Handbücher, die auseinanderdriften. Unsere Antwort ist **ein** Dokument, das den Pflichtweg kurz und sichtbar hält und die Tiefe in Aufklappbereichen versteckt. Die [Leitprinzipien](leitprinzipien.md) erklären diese Lösung im Detail.
+
+</details>
+
 ## Abgrenzung zur Handbuch-Applikation
 
 Das Regelwerk und die [Handbuch-Applikation](../Handbuch-Applikation/README.md) sind bewusst zwei getrennte Bereiche, mit dieser Grenzregel:
@@ -24,30 +40,35 @@ Begründung der Trennung: Die App-Dokumentation ändert sich mit jeder Version, 
 
 | Datei | Seitentyp | Beschreibung |
 |---|---|---|
-| [leitprinzipien.md](leitprinzipien.md) | Hintergrund/Konzept | Zielgruppen und die Grundsätze P1 bis P9. Orientierung, bevor du anfängst zu schreiben. |
-| [inhaltstypen-und-vorlagen.md](inhaltstypen-und-vorlagen.md) | Hintergrund/Konzept | Sechs Seitentypen plus Bereichs-Übersicht, Seitenaufbau, Aufklappbereiche, Verweis auf die Vorlagen. |
-| [schreibregeln-und-markdown.md](schreibregeln-und-markdown.md) | Hintergrund/Konzept | Sprache (S1 bis S9), Terminologie und Seiten-Glossar, externe Dokus, Markdown-Konventionen inkl. Diagramme. Verbindlich. |
+| [leitprinzipien.md](leitprinzipien.md) | Hintergrund / Konzept | Zielgruppen und die neun Grundsätze unserer Handbuch-Arbeit. Orientierung, bevor du anfängst zu schreiben. |
+| [inhaltstypen-und-vorlagen.md](inhaltstypen-und-vorlagen.md) | Hintergrund / Konzept | Sechs Seitentypen plus Bereichs-Übersicht, Seitenaufbau, Aufklappbereiche, Verweis auf die Vorlagen. |
+| [schreibregeln-und-markdown.md](schreibregeln-und-markdown.md) | Hintergrund / Konzept | Sprachregeln, Terminologie und Seiten-Glossar, externe Dokus, Markdown-Konventionen inkl. Diagramme. Verbindlich. |
 | [erstellungs-und-pflegeprozess.md](erstellungs-und-pflegeprozess.md) | Prozessbeschreibung | Schritte, Rollen, Pflege; Verweis auf die Review-Checkliste. |
-| [standards-abgleich.md](standards-abgleich.md) | Hintergrund/Konzept | Normen-Abgleich mit begründeten Abweichungen (nur Repo, Hintergrunddokument). |
+| [skill-handbuch-autor.md](skill-handbuch-autor.md) | Tool-Übersicht | Der Skill handbuch-autor: Zweck, die fünf Workflows, Download und Einbindung in den KI-Assistenten. |
+| [standards-abgleich.md](standards-abgleich.md) | Hintergrund / Konzept | Wo wir Normen folgen und wo wir bewusst abweichen. Hintergrundwissen. |
 
 Ein zentrales Glossar gibt es bewusst nicht: Jede Seite definiert ihre Fachbegriffe im eigenen **Seiten-Glossar** (siehe [Schreibregeln und Markdown-Konventionen](schreibregeln-und-markdown.md)).
 
 ## Skill handbuch-autor
 
-| Datei | Inhalt |
-|---|---|
-| [SKILL.md](handbuch-autor/SKILL.md) | Skill `handbuch-autor` für KI-gestütztes Erstellen, Überarbeiten, Aufteilen, Reviewen und Erfassen von Handbuch-Seiten (Workflows W1 bis W5). Die Vorlagen und die Review-Checkliste liegen als einzige Quelle in [handbuch-autor/references/](handbuch-autor/references/) (P5). |
+Der Skill `handbuch-autor` ist die maschinenlesbare Umsetzung dieses Regelwerks: Ein KI-Assistent lädt ihn und schreibt, überarbeitet, teilt, prüft oder erfasst dann Handbuch-Seiten regelkonform. Menschen lesen die Regelwerk-Seiten, die KI liest den Skill; bei Widersprüchen gilt das Regelwerk.
+
+* **Was er kann, wie er aufgebaut ist, Download und Einbindung:** [skill-handbuch-autor.md](skill-handbuch-autor.md).
+* **Quelldateien:** im Repository unter [skills/handbuch-autor/](https://github.com/rfluethi/learn-wp-dach-team/tree/main/skills/handbuch-autor/). Sie liegen bewusst außerhalb des Handbuch-Ordners, damit der Handbuch-Import sie nicht miterfasst.
 
 ## Wie die Seiten zusammenhängen
 
 ```mermaid
 flowchart TD
-    R["README (Startseite)"] --> L["leitprinzipien"]
-    R --> I["inhaltstypen-und-vorlagen"]
-    R --> S["schreibregeln-und-markdown"]
-    R --> E["erstellungs-und-pflegeprozess"]
-    I -- "verweist auf die Vorlagen" --> A["handbuch-autor/references"]
+    R["Handbuch-Erstellung (Startseite)"] --> L["Leitprinzipien des Handbuchs"]
+    R --> I["Inhaltstypen und Vorlagen"]
+    R --> S["Schreibregeln und<br>Markdown-Konventionen"]
+    R --> E["Erstellungs- und Pflegeprozess"]
+    R --> K["Skill handbuch-autor"]
+    R --> ST["Standards-Abgleich"]
+    I -- "verweist auf die Vorlagen" --> A["Skill-Dateien im Repository"]
     E -- "verweist auf die Review-Checkliste" --> A
+    K -- "erklärt und verlinkt" --> A
 ```
 
 ## Verbindlichkeit
@@ -86,11 +107,11 @@ Die Links führen zu informierenden Quellen (Wikipedia, frei lesbare Norm-Auszü
 * Seitentyp: Bereichs-Übersicht
 * Slug: handbuch-erstellung
 * Verantwortliche Rolle: GitHub-Spezialist
-* Themengebiet: Organisation
+* Thema: Organisation
 * Zielgruppe: Inhalts-Ersteller:innen
 * Eltern-Seite: oberste Ebene
 * Reihenfolge: 30
 * Textauszug: Dieser Bereich enthält das Regelwerk für unser Team-Handbuch: die Festlegungen, wie wir Inhalte erstellen, prüfen und pflegen.
-* Letzte Aktualisierung: 2026-07-12
+* Letzte Aktualisierung: 2026-07-28
 * Letzte Prüfung: 2026-05-03
 * Prüfintervall: 365

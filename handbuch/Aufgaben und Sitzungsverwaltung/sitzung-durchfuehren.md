@@ -6,53 +6,57 @@ Beschreibt den Prozess von der Sitzungsvorbereitung bis zum geschlossenen Beschl
 
 ## Auslöser
 
-Eine Woche vor dem nächsten Sitzungstermin.
+Das Ende der laufenden Sitzung: Dort werden Moderation und Protokollführung der nächsten Sitzung bestimmt, und das nächste Sitzungs-Issue wird sofort angelegt. Der Zyklus trägt sich so selbst weiter.
 
 ## Beteiligte Rollen
 
-* **Moderation:** erstellt das Sitzungs-Issue, sammelt Themen, leitet die Sitzung
+* **Moderation:** legt am Sitzungsende das nächste Sitzungs-Issue an, sammelt Themen, leitet die Sitzung
 * **Protokollführung:** dokumentiert Beschlüsse und Aufgaben, führt das Issue zum Abschluss
 * **Team:** prüft das fertige Protokoll und bestätigt mit OK
 
+Moderation und Protokollführung sind keine festen Rollen: In jeder Sitzung wird bestimmt, wer die beiden Aufgaben in der nächsten Sitzung übernimmt. So kommen alle einmal dran. Wer aktuell zuständig ist, steht im Kopf des jeweiligen Sitzungs-Issues.
 
 ## Workflow im Überblick
 
 ```mermaid
-flowchart LR
-    A["Moderation erstellt<br>Sitzungs-Issue<br>(1 Woche vorher,<br>Board-Status: In Arbeit)"] --> B["Protokollführung erfasst<br>Beschlüsse und Aufgaben<br>(während der Sitzung)"]
-    B --> C["Aufgaben-Issues<br>ins Aufgaben-Board"]
-    B --> D["Protokoll-Review<br>(Board-Status: Blockiert,<br>Timeout 3 Werktage)"]
-    D -->|"Team gibt OK<br>im Kommentar"| E["Issue wird geschlossen,<br>Protokoll-Archiv"]
-    D -->|"kein OK nach<br>3 Werktagen"| E
+flowchart TD
+    A["Sitzungsende: Team bestimmt Moderation<br>und Protokollführung der nächsten Sitzung"] --> B["Moderation der laufenden Sitzung<br>erstellt das nächste Sitzungs-Issue"]
+    B --> C["Automatisierung: neuer Termin erscheint<br>auf Startseite und Webseite"]
+    B --> D["Neue Moderation bereitet vor:<br>Themen verlinken, Board-Status: In Arbeit"]
+    D --> E["Sitzung: Protokollführung erfasst<br>Beschlüsse und Aufgaben"]
+    E --> F["Protokoll-Review<br>(Board-Status: Blockiert, Timeout 3 Werktage)"]
+    F -->|"Team gibt OK im Kommentar"| G["Issue wird geschlossen:<br>offizielles Protokoll"]
+    F -->|"kein OK nach 3 Werktagen"| G
 ```
 
 ## Ablauf
 
-### 1. Issue erstellen *(Moderation, eine Woche vor der Sitzung)*
+### 1. Nächste Sitzung anlegen *(Moderation der laufenden Sitzung, am Sitzungsende)*
 
-1. Die Moderation öffnet die [Issues-Übersicht](https://github.com/rfluethi/learn-wp-dach-team/issues) und klickt auf **New issue**.
-2. Sie wählt die Vorlage **Sitzung**.
-3. Sie setzt den Titel im Format `Sitzung JJJJ-MM-TT` (z.B. `Sitzung 2026-04-28`).
-4. Sie füllt die Felder aus: Datum, Uhrzeit, Moderation, Protokollführung.
-5. Sie erstellt das Issue. Damit ist die Themenliste angelegt.
+1. Unter dem festen Tagesordnungspunkt 6 bestimmt das Team, wer die nächste Sitzung moderiert und wer protokolliert.
+2. Die Moderation der **laufenden** Sitzung erstellt noch in der Sitzung das nächste Sitzungs-Issue: [Issues-Übersicht](https://github.com/rfluethi/learn-wp-dach-team/issues) → **New issue** → Vorlage **Sitzung**.
+3. Sie setzt den Titel im Format `Sitzung JJJJ-MM-TT` (nächster Termin: letzter Dienstag des Folgemonats) und trägt in die Kopfzeilen Datum, Uhrzeit und die eben bestimmten Namen für Moderation und Protokollführung ein.
+4. Sie erstellt das Issue.
 
 <details>
-<summary>Hinweis: Das Label „sitzung" setzt die Vorlage</summary>
+<summary>Hintergrund: Warum das Issue sofort am Sitzungsende entsteht</summary>
 
-Die Vorlage **Sitzung** setzt das Label `sitzung` automatisch. Manuelles Labeling ist nicht nötig.
+Eine Automatisierung liest alle Sitzungs-Issues und erzeugt daraus die Tabelle „Anstehende Sitzungen" auf der Repository-Startseite sowie eine Datendatei, die unsere Webseite direkt einbindet. Erst wenn das Issue existiert, ist der nächste Termin dort sichtbar. Darum gehört das Anlegen ans Ende der Sitzung, nicht irgendwann später. Das Label `sitzung` setzt die Vorlage automatisch.
 
 </details>
 
-### 2. Sitzung vorbereiten *(Moderation, vor der Sitzung)*
+### 2. Sitzung vorbereiten *(neue Moderation, in der Woche vor der Sitzung)*
 
-1. Die Moderation verlinkt alle eingereichten Themen-Issues unter **Punkt 6 (Diskussionsthemen)** des Sitzungs-Issues: `- [ ] #42`.
-2. Sie legt die Reihenfolge der Themen fest.
-3. Sie setzt den Board-Status des Sitzungs-Issues auf **In Arbeit**: [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) öffnen → Sitzungs-Issue anklicken → im Panel rechts **Status → In Arbeit** wählen.
+1. Die Moderation verlinkt alle eingereichten Themen-Issues im Abschnitt **Diskussionsthemen** des Sitzungs-Issues: `- [ ] #42`. Die eingereichten Themen findet sie im [Aufgaben-Board](https://github.com/users/rfluethi/projects/11) in der Ansicht *Sitzungsvorbereitung*.
+2. Sie legt die Reihenfolge der Themen fest und prüft anhand der Estimate-Werte, ob alles in die Sitzung passt.
+3. Sie setzt den Board-Status des Sitzungs-Issues auf **In Arbeit**: Sitzungs-Issue im Board anklicken, im Panel rechts **Status → In Arbeit** wählen.
+
+![Das Seitenpanel des Sitzungs-Issues mit geöffnetem Status-Menü und der Auswahl In Arbeit.](_attachments/board-status-setzen.webp)
 
 <details>
 <summary>Grundlagen: Board-Status vs. Issue-Status</summary>
 
-Der Board-Status (im Aufgaben-Board) ist unabhängig vom GitHub-Issue-Status (offen/geschlossen). In dieser Anleitung ist immer der **Board-Status** gemeint.
+Der Board-Status (Spalte im Aufgaben-Board) ist unabhängig vom GitHub-Issue-Status (offen/geschlossen). In dieser Anleitung ist immer der **Board-Status** gemeint.
 
 </details>
 
@@ -60,7 +64,8 @@ Der Board-Status (im Aufgaben-Board) ist unabhängig vom GitHub-Issue-Status (of
 
 1. Die Protokollführung trägt Beschlüsse direkt im Sitzungs-Issue ein, im Abschnitt *Beschlüsse*.
 2. Sie notiert Kernaussagen pro Thema im Abschnitt *Notizen*.
-3. Bringt jemand ein Thema spontan ein, fügt die Moderation es direkt unter Punkt 6 (Diskussionsthemen) ein; ein separates Themen-Issue ist nicht nötig.
+3. Bringt jemand ein Thema spontan ein, fügt die Moderation es direkt im Abschnitt *Diskussionsthemen* ein; ein separates Themen-Issue ist nicht nötig.
+4. Sie hält im Protokoll fest, wer Moderation und Protokollführung der nächsten Sitzung übernimmt (fester Punkt 6; das neue Sitzungs-Issue entsteht gemäß Schritt 1).
 
 ### 4. Aufgaben anlegen *(Protokollführung, nach der Sitzung)*
 
@@ -88,20 +93,18 @@ Der Board-Status (im Aufgaben-Board) ist unabhängig vom GitHub-Issue-Status (of
 ### 7. Protokoll abschließen *(Protokollführung, nach Bestätigung)*
 
 1. Sobald mindestens ein OK-Kommentar eingegangen ist, schließt die Protokollführung das Issue.
-2. Das geschlossene Issue erscheint automatisch im [Protokoll-Archiv](https://github.com/users/rfluethi/projects/11/views/10).
+2. Das geschlossene Issue ist das offizielle Protokoll. Es erscheint automatisch im Protokoll-Index auf der Repository-Startseite und bleibt im Board in der Ansicht *Sitzungen* auffindbar.
 
 <details>
 <summary>Hintergrund: Vier-Augen-Prinzip und Timeout</summary>
 
-Das geschlossene Issue ist das offizielle Beschlussprotokoll. Das OK-Kommentar stellt sicher, dass mindestens ein weiteres Teammitglied das Protokoll geprüft hat.
-
-Falls nach drei Werktagen kein OK eingegangen ist, kann die Protokollführung das Issue auch ohne Kommentar schließen und in der nächsten Sitzung kurz darauf hinweisen.
+Das OK-Kommentar stellt sicher, dass mindestens ein weiteres Teammitglied das Protokoll geprüft hat. Falls nach drei Werktagen kein OK eingegangen ist, kann die Protokollführung das Issue auch ohne Kommentar schließen und in der nächsten Sitzung kurz darauf hinweisen. So bleibt der Prozess auch bei urlaubsbedingten Verzögerungen handlungsfähig.
 
 </details>
 
 ## Ergebnis
 
-Das Sitzungs-Issue ist geschlossen, alle Aufgaben sind als eigene Issues erfasst, und das Protokoll ist im Archiv auffindbar.
+Das Sitzungs-Issue ist geschlossen, alle Aufgaben sind als eigene Issues erfasst, und das Protokoll ist auf der Repository-Startseite und im Board auffindbar. Das nächste Sitzungs-Issue existiert bereits seit dem Sitzungsende, mit Termin und Zuständigen; Startseite und Webseite zeigen den neuen Termin automatisch an.
 
 ## Verwandte Seiten
 
@@ -117,17 +120,15 @@ Das Sitzungs-Issue ist geschlossen, alle Aufgaben sind als eigene Issues erfasst
 |---|---|
 | Board-Status | Spalte eines Issues im Aufgaben-Board; unabhängig vom Issue-Status (offen/geschlossen) auf GitHub. |
 
----
-
 ## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
 
 * Seitentyp: Prozessbeschreibung
 * Verantwortliche Rolle: GitHub-Spezialist
-* Themengebiet: Organisation
+* Thema: Organisation
 * Zielgruppe: Organisation/Koordination
 * Eltern-Seite: Aufgaben und Sitzungsverwaltung
 * Reihenfolge: 30
 * Textauszug: Beschreibt den Prozess von der Sitzungsvorbereitung bis zum geschlossenen Beschlussprotokoll.
-* Letzte Aktualisierung: 2026-07-12
-* Letzte Prüfung: 2026-05-03
+* Letzte Aktualisierung: 2026-07-28
+* Letzte Prüfung: 2026-07-28
 * Prüfintervall: 180

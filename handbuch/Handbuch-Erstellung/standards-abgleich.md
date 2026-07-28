@@ -1,8 +1,12 @@
-# Standards-Abgleich: Wo wir Normen folgen und wo wir bewusst abweichen
+# Standards-Abgleich
 
-> **Zweck:** Dieses Dokument gleicht unser Handbuch-Konzept ([Regelwerk Handbuch-Erstellung](README.md), Skill [handbuch-autor](handbuch-autor/SKILL.md)) mit den einschlägigen Standards ab. Pro Standard steht, was er fordert, was wir übernehmen und wo wir **begründet abweichen**. Die Links führen zu informierenden Quellen (Wikipedia, freie Spezifikationen, frei lesbare Norm-Auszüge), nicht zu Verkaufsseiten. Es ist ein Hintergrunddokument; der Skill lädt es nicht zur Laufzeit.
->
-> **Stand:** 2026-07-12 · Verantwortliche Rolle: Handbuch-Redaktion
+## Kurzbeschreibung
+
+Diese Seite zeigt, wo unser Regelwerk anerkannten Normen und Leitlinien folgt und wo wir bewusst von ihnen abweichen. Sie richtet sich an alle, die die Herkunft der Regeln verstehen wollen; für die tägliche Handbuch-Arbeit wird sie nicht gebraucht.
+
+## Worum geht es
+
+Pro Standard steht, was er fordert, was wir in das [Regelwerk Handbuch-Erstellung](README.md) und den Skill [handbuch-autor](https://github.com/rfluethi/learn-wp-dach-team/blob/main/skills/handbuch-autor/SKILL.md) übernommen haben und wo wir begründet abweichen. Die Links führen zu informierenden Quellen (Wikipedia, freie Spezifikationen, frei lesbare Norm-Auszüge), nicht zu Verkaufsseiten.
 
 ## Einordnung
 
@@ -14,12 +18,12 @@ Unser Handbuch ist ein **internes Organisations- und Arbeitshandbuch** eines kle
 
 **Fordert u.a.:** Zielgruppenanalyse, Informationsarten trennen (instruktiv/konzeptionell/referenziell), Minimalismus (nur handlungs- oder entscheidungsrelevante Information), Verständlichkeit, definierte Erstellungs- und Prüfprozesse, qualifizierte Ersteller, Sicherheits- und Warnhinweise.
 
-**Übernommen:** Trennung der Informationsarten (über Diátaxis, strenger als die Norm), Zielgruppenanalyse (zwei definierte Zielgruppen mit Progressive Disclosure), Minimalismus als Prüffrage in [Schreibregeln](schreibregeln-und-markdown.md) und [Review-Checkliste](handbuch-autor/references/review-checkliste.md) („unterstützt dieser Absatz eine Handlung oder Entscheidung?"), definierter [Erstellungs- und Reviewprozess](erstellungs-und-pflegeprozess.md), Warnungen vor irreversiblen Schritten **vor** dem Schritt.
+**Übernommen:** Trennung der Informationsarten (über Diátaxis, strenger als die Norm), Zielgruppenanalyse (zwei definierte Zielgruppen mit Progressive Disclosure), Minimalismus als Prüffrage in [Schreibregeln](schreibregeln-und-markdown.md) und [Review-Checkliste](https://github.com/rfluethi/learn-wp-dach-team/blob/main/skills/handbuch-autor/references/review-checkliste.md) („unterstützt dieser Absatz eine Handlung oder Entscheidung?"), definierter [Erstellungs- und Reviewprozess](erstellungs-und-pflegeprozess.md). Dazu Warnungen vor irreversiblen Schritten, platziert **vor** dem Schritt.
 
 **Abweichungen, begründet:**
 
 * **Keine formale Konformitätserklärung und kein Warnhinweis-System nach Signalwortstufen** (GEFAHR/WARNUNG/VORSICHT). Unser Inhalt hat keine Personenschutz-Relevanz; ein fetter Hinweis vor irreversiblen Schritten genügt und hält die Seiten lesbar.
-* **Keine formal nachgewiesene Erstellerqualifikation.** Ersatz: Peer-Review-Pflicht plus Skill [handbuch-autor](handbuch-autor/SKILL.md), der die Regeln maschinell durchsetzt. Für ein Team dieser Größe ist gelebte Prüfung wirksamer als Qualifikationsnachweise.
+* **Keine formal nachgewiesene Erstellerqualifikation.** Ersatz: Peer-Review-Pflicht plus Skill [handbuch-autor](https://github.com/rfluethi/learn-wp-dach-team/blob/main/skills/handbuch-autor/SKILL.md), der die Regeln maschinell durchsetzt. Für ein Team dieser Größe ist gelebte Prüfung wirksamer als Qualifikationsnachweise.
 
 ### [ISO 12100](https://de.wikipedia.org/wiki/ISO_12100), [ISO 20607](https://www.iso.org/obp/ui/#!iso:std:68519:en), [ANSI Z535.6](https://en.wikipedia.org/wiki/ANSI_Z535) (Maschinensicherheit)
 
@@ -31,7 +35,7 @@ Die Reihe, je als frei lesbarer Norm-Auszug: [26511 Management](https://www.iso.
 
 **Fordert u.a.:** Management-, Beschaffungs-, Test-, Gestaltungs- und Agile-Prozesse für Nutzerdokumentation.
 
-**Übernommen:** 26514 (Gestaltung) ist im [Regelwerk](README.md) als Referenz verankert (Struktur- und Formatanforderungen); 26515 (agil) prägt unseren schlanken [Erstellungsprozess](erstellungs-und-pflegeprozess.md): dokumentieren im selben Arbeitsgang wie die Änderung (P9), kleine Einheiten, Review statt Big-Bang-Abnahme.
+**Übernommen:** 26514 (Gestaltung) ist im [Regelwerk](README.md) als Referenz verankert (Struktur- und Formatanforderungen). 26515 (agil) prägt unseren schlanken [Erstellungsprozess](erstellungs-und-pflegeprozess.md): dokumentieren im selben Arbeitsgang wie die Änderung (P9), kleine Einheiten, Review statt Big-Bang-Abnahme.
 
 **Abweichungen, begründet:** **Keine getrennten Management- und Beschaffungsprozesse** (26511/26512): Bei einem Team ohne Doku-Abteilung und ohne Zulieferer wäre das Prozess-Theater. Die Testperspektive (26513) deckt unsere Review-Checkliste plus der Praxistest „neues Mitglied folgt der Anleitung" ab.
 
@@ -39,15 +43,15 @@ Die Reihe, je als frei lesbarer Norm-Auszug: [26511 Management](https://www.iso.
 
 **Fordert u.a.:** systematische Gliederung, Terminologiemanagement, Lebenszyklus der Dokumentation.
 
-**Übernommen:** Terminologie-Disziplin (S5, Seiten-Glossar als verbindliche Termliste), Lebenszyklus-Gedanke über Prüfintervalle, Wartungsübersicht und Eskalationsregel.
+**Übernommen:** Terminologie-Disziplin (S5, Seiten-Glossar als verbindliche Termliste), Lebenszyklus-Gedanke über Prüfintervalle und Wartungsübersicht.
 
 **Abweichungen, begründet:** **Kein zentrales Terminologie-Register.** Wir führen Seiten-Glossare mit wortgleich wiederverwendeten Definitionen; das ist eine bewusste Ausnahme von P5 zugunsten in sich verständlicher Seiten. Ein zentrales Register lohnt erst ab deutlich größerem Begriffsbestand; die Wortgleichheits-Regel hält die Tür dafür offen.
 
 ### [tekom-Leitlinie „Regelbasiertes Schreiben"](https://www.tekom.de/fileadmin/tekom.de/Die_tekom/Publikationen/Leseproben/2013_RBS_Deutsch_fuer_die_TK_Leseprobe.pdf)
 
-**Übernommen:** Kern unserer Schreibregeln S1 bis S8 (Aktiv, kurze Sätze, Imperativ, Konkretheit, Ein-Begriff-Regel, konsistente Anrede, keine Füllwörter) plus Standardsatzmuster für Handlungsschritte.
+**Übernommen:** Kern unserer Schreibregeln S1 bis S8 (Aktiv, kurze Sätze, Imperativ, Konkretheit, Ein-Begriff-Regel, konsistente Anrede, keine Füllwörter) plus Standardsatzmuster für Handlungsschritte. S10 (Begriffe vor Gebrauch einführen) folgt der Verständlichkeits-Anforderung aus IEC/IEEE 82079-1.
 
-**Abweichungen, begründet:** Wir übernehmen die **vereinfachte Auswahl**, nicht das volle Regelwerk (über 100 Regeln): Der Nutzen zusätzlicher Regeln fällt bei internen How-tos steil ab, die Einstiegshürde für schreibende Teammitglieder stiege dagegen deutlich.
+**Abweichungen, begründet:** Wir übernehmen die **vereinfachte Auswahl**, nicht das volle Regelwerk (über 100 Regeln). Der Nutzen zusätzlicher Regeln fällt bei internen How-tos steil ab; die Einstiegshürde für schreibende Teammitglieder stiege dagegen deutlich.
 
 ### [DITA 1.3 (OASIS)](https://docs.oasis-open.org/dita/dita/v1.3/os/part0-overview/dita-v1.3-os-part0-overview.html)
 
@@ -65,7 +69,7 @@ Die Reihe, je als frei lesbarer Norm-Auszug: [26511 Management](https://www.iso.
 
 **Fordert u.a.:** kontrolliertes Vokabular, harte Satzlängenlimits, ein Wort = eine Bedeutung.
 
-**Übernommen:** die Prinzipien, auf Deutsch übertragen: S5 (eine Bedeutung, ein Begriff), S2 mit harter 25-Wörter-Prüfung, Standardsatzmuster für Schritte.
+**Übernommen:** die Prinzipien, auf Deutsch übertragen: S5 (eine Bedeutung, ein Begriff), S2 mit harter 20-Wörter-Prüfung und Schachtelsatz-Verbot, Standardsatzmuster für Schritte.
 
 **Abweichungen, begründet:** **Kein kontrolliertes Wörterbuch.** STE100 ist für Englisch definiert und lebt vom gepflegten Dictionary; für Deutsch existiert kein Äquivalent, und der Pflegeaufwand stünde in keinem Verhältnis. Die Glossar-Disziplin pro Seite ist unser verhältnismäßiger Ersatz.
 
@@ -75,7 +79,7 @@ Die Reihe, je als frei lesbarer Norm-Auszug: [26511 Management](https://www.iso.
 
 **Fordert u.a.:** Dokumentenhierarchie (Politik → Prozesse → Arbeitsanweisungen → Nachweise), Lenkung dokumentierter Information (Erstellung, Prüfung, Freigabe, Änderung, Versionierung), Aktualität.
 
-**Übernommen:** Die **Dokumentenhierarchie als Einordnungsfrage** im Skill (Konzeptseite = Grundsatz, Prozessbeschreibung = Prozess, Anleitung = Arbeitsanweisung; Nachweise wie Protokolle und erledigte Issues leben im Tool, nicht im Handbuch). Lenkung: definierter [Erstellungsprozess](erstellungs-und-pflegeprozess.md) mit Review und Freigabe, Versionierung über WordPress-Revisionen, Aktualität über Prüfintervalle mit Eskalation.
+**Übernommen:** Die **Dokumentenhierarchie als Einordnungsfrage** im Skill (Konzeptseite = Grundsatz, Prozessbeschreibung = Prozess, Anleitung = Arbeitsanweisung; Nachweise wie Protokolle und erledigte Issues leben im Tool, nicht im Handbuch). Lenkung: definierter [Erstellungsprozess](erstellungs-und-pflegeprozess.md) mit Review und Freigabe, Versionierung über WordPress-Revisionen, Aktualität über Prüfintervalle.
 
 **Abweichungen, begründet:** **Keine formale Dokumentenlenkung mit Freigabevermerken, Verteilerlisten und gelenkten Kopien.** Wir sind kein zertifiziertes Managementsystem; WordPress-Revisionen plus sichtbare Prüf-Metadaten leisten die Nachvollziehbarkeit mit einem Bruchteil des Aufwands. **Kein systematisches Änderungsprotokoll pro Seite:** WordPress-Revisionen genügen; nur für Lesende relevante Änderungen (z.B. geänderter Ablauf) werden auf der Seite in einem Aufklappbereich festgehalten ([Erstellungs- und Pflegeprozess](erstellungs-und-pflegeprozess.md)).
 
@@ -87,7 +91,7 @@ Die Reihe, je als frei lesbarer Norm-Auszug: [26511 Management](https://www.iso.
 
 **Fordert u.a.:** grafische Prozessnotation mit definierter Semantik.
 
-**Abweichung, begründet:** **Prozessbeschreibungen sind bei uns text-basiert mit ergänzenden Mermaid-Diagrammen**, ohne BPMN-Semantik (Auslöser, Rollen, nummerierter Ablauf, Ergebnis; dazu ein Mermaid-Ablaufdiagramm, wo es den Text verdeutlicht und kürzt, siehe [Schreibregeln und Markdown-Konventionen](schreibregeln-und-markdown.md)). Mermaid ist textbasiert und versionierbar und veraltet damit nicht unbemerkt wie eingebettete Bilder; die volle BPMN-Notation wäre für Prozesse mit drei bis sieben Schritten Überformalisierung. Die eCH-Verwaltungsstandards richten sich an Behörden; ihre konkrete Anwendbarkeit wurde nicht weiter geprüft, weil BPMN bei uns nicht eingesetzt wird.
+**Abweichung, begründet:** **Prozessbeschreibungen sind bei uns text-basiert mit ergänzenden Mermaid-Diagrammen**, ohne BPMN-Semantik. Der Aufbau: Auslöser, Rollen, nummerierter Ablauf, Ergebnis; dazu ein Mermaid-Ablaufdiagramm, wo es den Text verdeutlicht und kürzt ([Schreibregeln und Markdown-Konventionen](schreibregeln-und-markdown.md)). Mermaid ist textbasiert und versionierbar und veraltet damit nicht unbemerkt wie eingebettete Bilder; die volle BPMN-Notation wäre für Prozesse mit drei bis sieben Schritten Überformalisierung. Die eCH-Verwaltungsstandards richten sich an Behörden; ihre konkrete Anwendbarkeit wurde nicht weiter geprüft, weil BPMN bei uns nicht eingesetzt wird.
 
 ## Zusammenfassung der übernommenen Prüfregeln
 
@@ -97,3 +101,22 @@ Aus dem Abgleich sind konkret in den Skill eingeflossen:
 2. **ISO-10013-Ebenenfrage** (Inhaltstypen): Grundsatz/Prozess/Arbeitsanweisung/Nachweis; Nachweise gehören nicht ins Handbuch.
 3. **STE-Anleihe** (Schreibregeln): harte Satzlängenprüfung, Standardsatzmuster für Schritte.
 4. **tekom/VDI-Terminologie-Disziplin** (Schreibregeln): Seiten-Glossar als verbindliche Termliste.
+
+## Verwandte Seiten
+
+* [Regelwerk-Übersicht](README.md)
+* [Leitprinzipien](leitprinzipien.md)
+* [Schreibregeln und Markdown-Konventionen](schreibregeln-und-markdown.md)
+
+## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
+
+* Seitentyp: Hintergrund / Konzept
+* Verantwortliche Rolle: GitHub-Spezialist
+* Thema: Organisation
+* Zielgruppe: Inhalts-Ersteller:innen
+* Eltern-Seite: Handbuch-Erstellung
+* Reihenfolge: 60
+* Textauszug: Diese Seite zeigt, wo unser Regelwerk anerkannten Normen und Leitlinien folgt und wo wir bewusst von ihnen abweichen.
+* Letzte Aktualisierung: 2026-07-28
+* Letzte Prüfung: 2026-07-12
+* Prüfintervall: 365

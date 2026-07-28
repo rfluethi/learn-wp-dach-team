@@ -12,7 +12,7 @@
 6. **Welcher Konzept-Kontext hilft beim Verstehen?** (Aufklappbereich mit beschreibendem Titel, z.B. „Konzept", „Hintergrund" oder „Weitere Informationen")
 7. **Welche Stolpersteine gibt es?** (Aufklappbereich)
 8. **Welche Begriffe brauchen einen Glossar-Eintrag?**
-9. **Welche Rolle ist verantwortlich?** Welche Eltern-Seite, welches Themengebiet? (Transport-Block)
+9. **Welche Rolle ist verantwortlich?** Welche Eltern-Seite, welches Thema? (Transport-Block)
 
 ## Vorlage
 

@@ -5,9 +5,23 @@
 Antworten auf wiederkehrende Fragen rund um Sitzungen, Themen, Aufgaben und Protokolle. Jede Antwort ist kurz und verweist auf die maßgebliche Seite.
 
 <details>
+<summary>Ich bin neu – wo fange ich an?</summary>
+
+Auf der Seite [Neu im Team: erste Schritte](neu-im-team.md). Sie führt dich vom GitHub-Konto bis zur ersten eigenen Aufgabe.
+
+</details>
+
+<details>
+<summary>Muss ich das Label „thema" selbst setzen?</summary>
+
+Nur wenn du ein leeres Issue (*Blank issue*) verwendest. Die Vorlage **Thema** setzt das Label automatisch. Details: [Thema vorschlagen](thema-vorschlagen.md).
+
+</details>
+
+<details>
 <summary>Kann ich ein Thema auch spontan in der Sitzung einbringen?</summary>
 
-Ja. Die Moderation fügt das Thema direkt unter Punkt 6 des Sitzungs-Issues ein; ein separates Themen-Issue ist nicht nötig. Details: [Sitzung durchführen](sitzung-durchfuehren.md).
+Ja. Die Moderation fügt das Thema direkt im Abschnitt *Diskussionsthemen* des Sitzungs-Issues ein; ein separates Themen-Issue ist nicht nötig. Details: [Sitzung durchführen](sitzung-durchfuehren.md).
 
 </details>
 
@@ -19,52 +33,51 @@ Das Themen-Issue erhält das Label `nächste-sitzung`; die Moderation der nächs
 </details>
 
 <details>
+<summary>Wer moderiert die nächste Sitzung?</summary>
+
+Moderation und Protokollführung werden in jeder Sitzung für die nächste bestimmt. Das nächste Sitzungs-Issue mit den beiden Namen entsteht noch am Sitzungsende; dort stehen sie im Kopf. Details: [Sitzung durchführen](sitzung-durchfuehren.md).
+
+</details>
+
+<details>
 <summary>Wo finde ich die Protokolle vergangener Sitzungen?</summary>
 
-Im Protokoll-Archiv (Board-View) oder per Issue-Suche `label:sitzung is:closed`. Details: [Aufgaben-Board](aufgaben-board.md).
+Auf der [Repository-Startseite](https://github.com/rfluethi/learn-wp-dach-team) im automatisch gepflegten Protokoll-Index, im Board in der Ansicht *Sitzungen* oder per Issue-Suche `label:sitzung is:closed`. Details: [Aufgaben-Board](aufgaben-board.md).
 
 </details>
 
 <details>
 <summary>Wie finde ich meine offenen Aufgaben?</summary>
 
-Im Aufgaben-Board mit dem Filter `assignee:@me` im Suchfeld. Details: [Aufgaben-Board](aufgaben-board.md).
+Im Aufgaben-Board über die Ansicht *My items* oder mit dem Filter `assignee:@me` im Suchfeld. Details: [Aufgaben-Board](aufgaben-board.md).
 
 </details>
 
 <details>
 <summary>Wer kann Issues erstellen und bearbeiten?</summary>
 
-Issues erstellen kann jede Person mit GitHub-Account; Schreibrechte (Labels setzen, verschieben) haben eingeladene Teammitglieder als Collaborators. Details: [Aufgaben-Board](aufgaben-board.md).
-
-</details>
-
-<details>
-<summary>Ein Sitzungs-Issue ist versehentlich im Kanban Board gelandet – was tun?</summary>
-
-Im Board über das Drei-Punkte-Menü *Remove from project* entfernen; das Issue selbst bleibt erhalten. Details: [Aufgaben-Board](aufgaben-board.md).
+Issues erstellen kann jede Person mit GitHub-Account; Schreibrechte (Labels setzen, Karten verschieben) haben eingeladene Teammitglieder als Collaborators. Details: [Neu im Team](neu-im-team.md).
 
 </details>
 
 ## Verwandte Seiten
 
+* [Neu im Team: erste Schritte](neu-im-team.md)
 * [Thema vorschlagen](thema-vorschlagen.md)
 * [Aufgabe erfassen](aufgabe-erfassen.md)
 * [Sitzung durchführen](sitzung-durchfuehren.md)
 * [Aufgaben-Board](aufgaben-board.md)
 * [GitHub-basierte Sitzungsverwaltung](konzept.md)
 
----
-
 ## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
 
 * Seitentyp: FAQ
 * Verantwortliche Rolle: GitHub-Spezialist
-* Themengebiet: Organisation
+* Thema: Organisation
 * Zielgruppe: Alle Mitglieder
 * Eltern-Seite: Aufgaben und Sitzungsverwaltung
 * Reihenfolge: 60
 * Textauszug: Antworten auf wiederkehrende Fragen rund um Sitzungen, Themen, Aufgaben und Protokolle.
-* Letzte Aktualisierung: 2026-07-12
-* Letzte Prüfung: 2026-05-03
+* Letzte Aktualisierung: 2026-07-28
+* Letzte Prüfung: 2026-07-28
 * Prüfintervall: 180

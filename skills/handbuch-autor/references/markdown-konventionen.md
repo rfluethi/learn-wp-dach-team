@@ -1,6 +1,6 @@
 # Markdown-Konventionen
 
-Markdown ist bei uns **Entwurfsformat**, WordPress (Block-Editor) ist die Single Source of Truth. Diese Konventionen sorgen dafür, dass ein Entwurf verlustfrei in den Block-Editor übertragen werden kann. Die für alle verbindliche Fassung steht im Regelwerk: [Schreibregeln und Markdown-Konventionen](../../schreibregeln-und-markdown.md).
+Markdown ist bei uns **Entwurfsformat**, WordPress (Block-Editor) ist die Single Source of Truth. Diese Konventionen sorgen dafür, dass ein Entwurf verlustfrei in den Block-Editor übertragen werden kann. Die für alle verbindliche Fassung steht im Regelwerk: [Schreibregeln und Markdown-Konventionen](../../../handbuch/Handbuch-Erstellung/schreibregeln-und-markdown.md).
 
 ## Dateiname = WordPress-Slug (Pflicht)
 
@@ -13,6 +13,7 @@ Der Dateiname eines Entwurfs ist der spätere **WordPress-Slug** der Seite: Klei
 * **Der Seitentitel steht im Entwurf als `#` (H1) zuoberst**; der Markdown-Import übernimmt ihn als WordPress-Seitentitel.
 * **Im Inhalt darunter beginnt die Gliederung bei `##`** (H2); keine weitere H1 im Inhalt, eine doppelte H1 bricht Seitenstruktur und Barrierefreiheit.
 * `##` für Hauptabschnitte, `###` für Unterabschnitte, maximal vier Ebenen.
+* **Regel- und Prinzipiensammlungen gliedern:** eine Unterüberschrift pro Regel oder Prinzip, Titel getrennt vom Text, Beispiele als eigener Absatz; keine fettgedruckten Absatzanfänge als Ersatz für Überschriften.
 
 ## Aufklappbereiche
 
@@ -38,7 +39,9 @@ Inhalt in normalem Markdown.
 
 * Aufzählungen mit `*`; nummerierte Listen nur bei zwingender Reihenfolge; pro Punkt ein Gedanke.
 * **Interne Links in Entwürfen: relativer `.md`-Link auf die Zieldatei** (funktioniert auf GitHub). Beim Erfassen in WordPress werden sie anhand der Slug-Konvention auf die Zielseiten umgestellt (siehe `wordpress-erfassung.md`); ein `.md`-Link in einer veröffentlichten Seite ist immer ein Fehler.
-* **Verweise immer als Link:** Nie „siehe Anleitung, Kapitel 3" oder blosse Dateinamen schreiben; immer den klickbaren Link auf die Zielseite setzen.
+* **Links auf Nur-Repo-Dateien** (Skill-Dateien, Vorlagen, Hintergrunddokumente) stehen als absolute GitHub-URL. Diese Dateien werden nicht als Seiten importiert; ein relativer `.md`-Link bliebe nach dem Import tot.
+* **Verweise immer als Link:** Nie „siehe Anleitung, Kapitel 3" oder bloße Dateinamen schreiben; immer den klickbaren Link auf die Zielseite setzen.
+* **Veränderliche Adressen nur an einer Stelle:** Von Hand gepflegte Adressen (z.B. Download-Links) stehen genau einmal im Handbuch; alle anderen Stellen verlinken auf die Seite mit der Adresse.
 * Externe Links mit vollem URL; Linktext beschreibt das Ziel, kein „hier klicken".
 * **Externe Links müssen verifiziert sein:** vor der Übergabe aufrufen und prüfen; bevorzugt offizielle, stabile Quellen. Wo immer möglich eine vertiefende externe Quelle anbieten.
 * **Informieren, nicht verkaufen:** Keine Shop- oder Katalogseiten verlinken (z.B. Normen-Verkaufsportale). Stattdessen informierende Quellen: freie Spezifikationen, Wikipedia-Artikel, frei lesbare Norm-Auszüge (z.B. ISO Online Browsing Platform).
@@ -49,8 +52,15 @@ Inhalt in normalem Markdown.
 ## Diagramme
 
 * **Mermaid statt ASCII (Pflicht).** ASCII-Diagramme rendern auf den Handbuch-Seiten schlecht und sind verboten. Diagramme entstehen als Mermaid-Codeblock (```` ```mermaid ````); der Markdown-Import wandelt ihn in einen Mermaid-Block um, der im Editor und Frontend gerendert wird.
+* **Ablaufdiagramme hochkant:** Flussdiagramme standardmäßig vertikal (`flowchart TD`); die Inhaltsspalte ist schmal, horizontale Diagramme werden klein. `flowchart LR` nur, wenn das Diagramm sonst unnötig hoch würde.
 * **Aktiv einsetzen:** Wo ein Diagramm die Beschreibung verdeutlicht und kürzt (Abläufe mit Übergaben, Zustandswechsel, Hierarchien, Seiten-Zusammenhänge), ersetzt es den langen Text (P5: ersetzen, nicht verdoppeln).
 * **Vektorgrafiken (SVG):** Für Inhalte, die Mermaid nicht abbilden kann (Oberflächen-Skizzen, Icons, präzise Layouts), eine SVG-Datei im `assets`-Ordner des Bereichs ablegen und mit Alt-Text einbinden.
+
+## Screenshots
+
+* **Bei UI-Anleitungen pro Hauptschritt prüfen**, ob ein Screenshot zeigt, wo geklickt oder hingeschaut werden muss; wenn ja, einplanen.
+* **Ablage:** Bilder im `assets`-Ordner des Bereichs, Dateinamen klein und ohne Umlaute, Einbindung mit beschreibendem Alt-Text.
+* **Fehlende Bilder:** an der Zielstelle ein HTML-Kommentar mit der fertigen Bildzeile (`<!-- SCREENSHOT: ![Alt-Text](assets/datei.webp) -->`) und Eintrag in der Screenshot-Arbeitsliste; Screenshots liefert der Mensch, der Skill erfindet keine Bilder.
 
 ## Transport-Block am Ende des Entwurfs (Pflicht)
 
@@ -61,9 +71,9 @@ In WordPress leben Metadaten **ausschließlich in Feldern** (Meta-Box, Taxonomie
 
 ## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
 
-* Seitentyp: [Anleitung|Prozessbeschreibung|Tool-Übersicht|Rolle/Organisation|Hintergrund/Konzept|FAQ|Bereichs-Übersicht (nur Startseite)]
+* Seitentyp: [Anleitung|Prozessbeschreibung|Tool-Übersicht|Rolle / Organisation|Hintergrund / Konzept|FAQ|Bereichs-Übersicht (nur Startseite)]
 * Verantwortliche Rolle: [Rolle]
-* Themengebiet: [Begriff]
+* Thema: [Begriff]
 * Zielgruppe: [Alle Mitglieder|Inhalts-Ersteller:innen|Organisation/Koordination|Technik; Mehrfachnennung möglich]
 * Eltern-Seite: [Titel oder „oberste Ebene"]
 * Reihenfolge: [Zahl]

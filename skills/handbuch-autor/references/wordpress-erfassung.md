@@ -8,7 +8,7 @@ WordPress ist die Single Source of Truth. Seit Prototyp 0.10.0 ist der Standardw
 2. **wp-admin → Handbuch → Markdown-Import** öffnen.
 3. **Dateiname (ohne .md)** eintragen; er wird der Slug und muss dem Dateinamen im Repo entsprechen (Konvention Dateiname = Slug, Grundlage der Link-Konvertierung).
 4. **Kompletten Entwurf einfügen**, inklusive `# Titel` und Transport-Block, unverändert aus dem Repo.
-5. **Importieren.** Es entsteht ein **Entwurf** mit fertigem Block-Markup (Überschriften, Listen, Tabellen, Aufklappbereiche als echte Details-Blöcke) und gesetzten Feldern: Eltern-Seite, Reihenfolge, Seitentyp, Themengebiet, Verantwortliche Rolle, Zielgruppe, Textauszug, Prüfdatum, Prüfintervall. Der Transport-Block landet nicht im Inhalt.
+5. **Importieren.** Es entsteht ein **Entwurf** mit fertigem Block-Markup (Überschriften, Listen, Tabellen, Aufklappbereiche als echte Details-Blöcke) und gesetzten Feldern: Eltern-Seite, Reihenfolge, Seitentyp, Thema, Verantwortliche Rolle, Zielgruppe, Textauszug, Prüfdatum, Prüfintervall. Der Transport-Block landet nicht im Inhalt.
 6. **Warnhinweise lesen** (z.B. Eltern-Seite nicht gefunden), Entwurf im Editor prüfen, **veröffentlichen**. Menü, Übersicht und Filter ziehen automatisch nach.
 7. **Nach dem letzten Import des Bereichs:** Dashboard → Widget «Handbuch: Prüfung überfällig» → **«.md-Links jetzt automatisch konvertieren»**. Danach dürfen keine Markierungen «⚠ n .md-Links» mehr stehen; bleibt eine, fehlt die Zielseite oder ihr Slug weicht vom Dateinamen ab.
 8. **Sichtprüfung im Frontend:** Menüplatz, Aufklappbereiche, Metadaten-Fußzeile, Karte mit Auszug, interne Links.

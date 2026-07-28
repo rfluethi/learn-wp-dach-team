@@ -24,10 +24,10 @@ Wir ordnen Verantwortlichkeiten über Rollen zu, nicht über Personen (Prinzip P
 
 ### Erstellung einer neuen Seite
 
-Der Erstellungsprozess folgt einem schlanken, an [ISO/IEC/IEEE 26515:2018](https://www.iso.org/obp/ui/#!iso:std:70880:en) angelehnten Vorgehen für agile Dokumentationsentwicklung. Der Skill [handbuch-autor](handbuch-autor/SKILL.md) unterstützt alle Schritte mit KI (W1 neue Seite, W2 überarbeiten, W3 aufteilen, W4 Review, W5 Erfassung).
+Der Erstellungsprozess folgt einem schlanken, an [ISO/IEC/IEEE 26515:2018](https://www.iso.org/obp/ui/#!iso:std:70880:en) angelehnten Vorgehen für agile Dokumentationsentwicklung. Der [Skill handbuch-autor](skill-handbuch-autor.md) unterstützt alle Schritte mit KI: vom ersten Entwurf über Überarbeiten und Aufteilen bis zu Review und Erfassung.
 
 ```mermaid
-flowchart LR
+flowchart TD
     B["Bedarf klären"] --> S["Seitentyp bestimmen,<br>Vorlage wählen"]
     S --> E["Entwurf schreiben<br>(mit Transport-Block)"]
     E --> C["Selbst-Check mit<br>Review-Checkliste"]
@@ -41,14 +41,23 @@ flowchart LR
 2. **Seitentyp festlegen** nach [Inhaltstypen und Vorlagen](inhaltstypen-und-vorlagen.md). Bei Mischform: aufteilen.
 3. **Vorlage wählen** (verlinkt in [Inhaltstypen und Vorlagen](inhaltstypen-und-vorlagen.md)).
 4. **Entwurf schreiben** nach den [Schreibregeln und Markdown-Konventionen](schreibregeln-und-markdown.md), inklusive Transport-Block am Ende.
-5. **Selbst-Check** mit der [Review-Checkliste](handbuch-autor/references/review-checkliste.md).
+5. **Selbst-Check** mit der [Review-Checkliste](https://github.com/rfluethi/learn-wp-dach-team/blob/main/skills/handbuch-autor/references/review-checkliste.md).
 6. **Peer-Review** durch mindestens eine weitere Person, die das Thema fachlich kennt.
 7. **Freigabe** durch die inhaltsverantwortliche Rolle.
 8. **Erfassung in WordPress** über den Markdown-Import; der Transport-Block wird dabei zu Feldern.
 9. **Veröffentlichen** und nach der letzten Seite eines Bereichs die `.md`-Links konvertieren.
 
 <details>
-<summary>Leitsatz zum Pflegeprozess</summary>
+<summary>Beispiel: Eine Seite von der Idee bis zur Veröffentlichung</summary>
+
+So sehen die neun Schritte an einem echten Fall aus. In drei Sitzungen fragten neue Mitglieder, wie man ein Thema einreicht (**Bedarf**). Weil nur eine Person eine Aufgabe erledigt, ist es eine **Anleitung**, keine Prozessbeschreibung (**Seitentyp**), also greift `vorlage-anleitung.md` (**Vorlage**). Die Autor:in schreibt die Datei `ein-thema-vorschlagen.md` (**Entwurf**): drei Schritte offen sichtbar, der Aufklappbereich „Grundlagen: Was ein Thema-Issue ist" für Neue. Dazu kommt der Transport-Block mit der verantwortlichen Rolle *Community-Koordination* und der Eltern-Seite *Aufgaben und Sitzungsverwaltung*.
+
+Der **Selbst-Check** mit der Review-Checkliste fällt auf: der Textauszug fehlt, er wird als erster Satz der Kurzbeschreibung nachgetragen. Im **Peer-Review** merkt eine Kollegin an, dass Schritt 2 zwei Klicks in einem Punkt bündelt; sie werden in zwei Schritte getrennt (ein Schritt, eine Handlung). Die *Community-Koordination* erteilt die **Freigabe**. Beim **Import** wird der Transport-Block zu Feldern, die `<details>` werden zu Details-Blöcken. Nach dem **Veröffentlichen** steht die Seite im Menü; nach der letzten Seite des Bereichs konvertiert der Dashboard-Knopf die `.md`-Links. Gesamtaufwand: rund eine halbe Stunde, weil die Vorlage die Struktur vorgibt und der Skill die Regeln durchsetzt.
+
+</details>
+
+<details>
+<summary>Leitsatz: Warum Pflege entscheidend ist</summary>
 
 Dokumentation ohne Pflege wird falsch. Falsche Dokumentation ist schlechter als keine.
 
@@ -86,7 +95,7 @@ Da wir das Handbuch in WordPress veröffentlichen, nutzen wir die WordPress-Revi
 
 ## Review-Checkliste
 
-Die verbindliche Checkliste liegt als einzige Quelle beim Skill: [review-checkliste.md](handbuch-autor/references/review-checkliste.md) (P5, keine Duplikate). Sie deckt Mischform-Check, Inhalt, Struktur, Sprache und Auffindbarkeit ab und ist die Grundlage von Selbst-Check und Peer-Review.
+Die verbindliche Checkliste liegt als einzige Quelle beim Skill: [review-checkliste.md](https://github.com/rfluethi/learn-wp-dach-team/blob/main/skills/handbuch-autor/references/review-checkliste.md) . So gibt es nur eine Fassung, die nicht driften kann. Sie deckt Mischform-Check, Inhalt, Struktur, Sprache und Auffindbarkeit ab und ist die Grundlage von Selbst-Check und Peer-Review.
 
 ## Ergebnis
 
@@ -98,6 +107,7 @@ Eine Handbuch-Seite, die freigegeben, veröffentlicht und gepflegt ist. Korrekth
 * [Leitprinzipien](leitprinzipien.md) – Prinzipien P6, P7 und P9 prägen den Pflegeprozess
 * [Inhaltstypen und Vorlagen](inhaltstypen-und-vorlagen.md) – Schritt 2 und 3 des Erstellungsprozesses
 * [Schreibregeln und Markdown-Konventionen](schreibregeln-und-markdown.md) – Schritt 4 des Erstellungsprozesses
+* [Skill handbuch-autor](skill-handbuch-autor.md) – KI-Unterstützung für alle Schritte des Prozesses
 
 ## Seiten-Glossar
 
@@ -110,11 +120,11 @@ Eine Handbuch-Seite, die freigegeben, veröffentlicht und gepflegt ist. Korrekth
 
 * Seitentyp: Prozessbeschreibung
 * Verantwortliche Rolle: GitHub-Spezialist
-* Themengebiet: Organisation
+* Thema: Organisation
 * Zielgruppe: Inhalts-Ersteller:innen
 * Eltern-Seite: Handbuch-Erstellung
 * Reihenfolge: 40
 * Textauszug: Diese Seite beschreibt, wie eine Handbuch-Seite vom Bedarf bis zur Veröffentlichung entsteht und wie sie danach gepflegt wird.
-* Letzte Aktualisierung: 2026-07-12
+* Letzte Aktualisierung: 2026-07-28
 * Letzte Prüfung: 2026-05-03
 * Prüfintervall: 180

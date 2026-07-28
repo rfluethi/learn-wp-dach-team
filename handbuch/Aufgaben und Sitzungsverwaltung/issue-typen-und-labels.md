@@ -2,12 +2,12 @@
 
 ## Kurzbeschreibung
 
-Diese Seite listet die Issue-Typen und Labels, mit denen wir Sitzungen, Themen und Aufgaben im Repository kennzeichnen. Sie ist das Nachschlagewerk für alle Teammitglieder.
+Diese Seite listet die Issue-Typen und Labels, mit denen wir Sitzungen, Themen und Aufgaben im Repository kennzeichnen. Sie ist das Nachschlagewerk für alle Teammitglieder (Stand Juli 2026, vor der geplanten Label-Bereinigung).
 
 <details>
 <summary>Hintergrund: Wozu Labels dienen</summary>
 
-Labels sind Schlagworte an GitHub-Issues; sie machen Issues filterbar und speisen die Views des [Aufgaben-Boards](aufgaben-board.md). Die Typ-Labels (`sitzung`, `thema`, `aufgabe`) setzen die Issue-Vorlagen automatisch, alle weiteren setzt du bei Bedarf von Hand. Grundlagen: [GitHub-Dokumentation zu Labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels).
+Labels sind Schlagworte an GitHub-Issues; sie machen Issues filterbar und speisen die Ansichten des [Aufgaben-Boards](aufgaben-board.md). Die Typ-Labels setzen die Issue-Vorlagen automatisch, alle weiteren setzt du bei Bedarf von Hand. Grundlagen: [GitHub-Dokumentation zu Labels](https://docs.github.com/en/issues/using-labels-and-milestones-to-track-work/managing-labels).
 
 </details>
 
@@ -19,29 +19,46 @@ Labels sind Schlagworte an GitHub-Issues; sie machen Issues filterbar und speise
 | Thema | `thema` | Diskussionsthema für die nächste Sitzung |
 | Aufgabe | `aufgabe` | Action Item mit Verantwortlichen und Fälligkeit |
 
-Die Issue-Vorlagen (Sitzung, Thema, Aufgabe) setzen das jeweilige Typ-Label automatisch; manuelles Labeling ist nicht nötig.
+Die Issue-Vorlagen (Sitzung, Thema, Aufgabe) setzen das jeweilige Typ-Label automatisch. Nur bei einem leeren Issue (*Blank issue*) musst du das Typ-Label von Hand setzen; ohne Label greifen weder die Board-Automatisierung noch die Ansichten.
 
 ## Labels
+
+### Typ-Labels (automatisch durch die Vorlagen)
 
 | Label | Verwendung |
 |---|---|
 | `sitzung` | Sitzungs-Issues |
 | `thema` | Vorgeschlagene Diskussionsthemen |
 | `aufgabe` | Action Items |
-| `beschluss` | Themen, die zu einem formellen Entscheid geführt haben |
-| `blockiert` | Aufgaben mit Blocker oder Abhängigkeit |
-| `überprüfung` | Aufgabe erledigt, wartet auf Kontrolle |
-| `nächste-sitzung` | Vertagte Themen |
+
+### Bereichs-Labels (von Hand setzen)
+
+| Label | Verwendung |
+|---|---|
 | `lerngruppe` | Themen rund um Lerngruppen |
 | `webseite` | Themen rund um learn-wp-dach.org |
 | `übersetzung` | Übersetzungsprojekte |
 | `organisation` | Organisatorische Aufgaben |
 
+### Prozess-Labels (von Hand setzen)
+
+| Label | Verwendung |
+|---|---|
+| `beschluss` | Themen, die zu einem formellen Entscheid geführt haben |
+| `nächste-sitzung` | Vertagte Themen |
+
+<details>
+<summary>Hinweis: Label-Bereinigung steht an</summary>
+
+Der Label-Bestand ist historisch gewachsen und wird bereinigt. Im Repository existieren weitere Labels, die hier bewusst nicht als Konvention geführt werden: `documentation` und `enhancement` (GitHub-Standardlabels ohne definierte Verwendung bei uns) sowie `blockiert` und `überprüfung` (sie doppeln die gleichnamigen Board-Spalten). Ein Entscheidungs-Thema für die Bereinigung ist in Vorbereitung; bis dahin gilt: Verwende die oben dokumentierten Labels, setze keine neuen ein.
+
+</details>
+
 ## Verwandte Seiten
 
 * [GitHub-basierte Sitzungsverwaltung](konzept.md) – warum wir mit Issues und Labels arbeiten
 * [Sitzung durchführen](sitzung-durchfuehren.md) – wo die Labels im Ablauf gesetzt werden
-* [Aufgaben-Board](aufgaben-board.md) – Views, die auf diesen Labels aufbauen
+* [Aufgaben-Board](aufgaben-board.md) – Ansichten, die auf diesen Labels aufbauen
 * [Thema vorschlagen](thema-vorschlagen.md) und [Aufgabe erfassen](aufgabe-erfassen.md) – Anleitungen mit den Vorlagen
 
 ## Seiten-Glossar
@@ -50,17 +67,15 @@ Die Issue-Vorlagen (Sitzung, Thema, Aufgabe) setzen das jeweilige Typ-Label auto
 |---|---|
 | Action Item | Eine aus einem Beschluss entstandene Aufgabe mit verantwortlicher Person und Fälligkeit, geführt als eigenes Issue. |
 
----
-
 ## Transport-Metadaten (beim Erfassen in Felder übertragen, dann diesen Block löschen)
 
 * Seitentyp: Tool-Übersicht
 * Verantwortliche Rolle: GitHub-Spezialist
-* Themengebiet: Organisation
+* Thema: Organisation
 * Zielgruppe: Alle Mitglieder
 * Eltern-Seite: Aufgaben und Sitzungsverwaltung
 * Reihenfolge: 50
 * Textauszug: Diese Seite listet die Issue-Typen und Labels, mit denen wir Sitzungen, Themen und Aufgaben im Repository kennzeichnen.
-* Letzte Aktualisierung: 2026-07-12
-* Letzte Prüfung: 2026-05-03
+* Letzte Aktualisierung: 2026-07-28
+* Letzte Prüfung: 2026-07-28
 * Prüfintervall: 90

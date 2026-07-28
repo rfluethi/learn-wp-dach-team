@@ -22,6 +22,7 @@ Protokollführung:
 - [ ] 3. Status offene Arbeiten → [Aufgaben-Board](https://github.com/users/rfluethi/projects/11)
 - [ ] 4. Status Projekte (Übersetzungen, Lektionen, Workshops) → [LearnWP Content - Localization](https://github.com/orgs/WordPress/projects/104/views/12)
 - [ ] 5. Status Lerngruppen
+- [ ] 6. Moderation und Protokollführung für die nächste Sitzung bestimmen; Moderation erstellt das nächste Sitzungs-Issue noch in der Sitzung
 
 **Diskussionsthemen** (Issue-Nummern eintragen):
 
