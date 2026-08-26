@@ -44,7 +44,7 @@ _Aktuell keine anstehenden Sitzungen geplant._
 | [Sitzung](https://github.com/rfluethi/learn-wp-dach-team/issues/9) | 23.09.2025 | 01.04.2026 |
 | [Sitzung](https://github.com/rfluethi/learn-wp-dach-team/issues/8) | 26.08.2025 | 01.04.2026 |
 
-_Stand: 26.08.2026, 03:35 UTC — automatisch generiert aus den Issues._
+_Stand: 26.08.2026, 08:57 UTC — automatisch generiert aus den Issues._
 
 <!-- END SITZUNGEN -->
 
